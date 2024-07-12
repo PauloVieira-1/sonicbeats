@@ -10,7 +10,7 @@ function Intro() {
         <>
             <Container id='intro'>
                 <Row className='mt-5'>
-                    <Col sm={5}>
+                    <Col lg={5} sm={12}>
                         <h1 className='fw-bold display-3 transition-fast'>Where Sound Meets Craftsmanship.</h1>
                         <div className='transition-slow'>
                             <p className='lead mt-4 fw-light'>
@@ -18,10 +18,10 @@ function Intro() {
                                 designed to deliver unparalleled audio quality and timeless craftsmanship. 
                                 Elevate your listening experience with Soniccraft.
                             </p>
-                            <Button className="btn-rounded mt" variant='outline-primary'>Discover Projects</Button>{' '}
+                            <Button className="btn-rounded d-none d-md-none d-lg-block" variant='outline-primary' style={{marginTop: '15px'}}>Discover Projects</Button>{' '}
                         </div>
                     </Col>
-                    <Col sm={7} className='text-center'>
+                    <Col lg={7} sm={12} className='text-center'>
                         <img 
                             src={introImage}  
                             alt="intro" 
