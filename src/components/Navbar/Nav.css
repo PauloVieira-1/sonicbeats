@@ -1,29 +1,18 @@
-.nav-rounded {
-    border-radius: 50px !important;
-    margin-top: 10px;
-    width: 90%;
-    background: blur();
-    display: inline-block;
-    list-style-type: none;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 
-}
 
-.nav-rounded img {
-    margin-right: 20px;
-    margin-left: 20px;
-}
-
-.btn-rounded {
-    border-radius: 50px !important;
-    width: 150px;
-    height: 40px;
-}
 
 #nav {
+    margin-top: 10px;
+    background: blur();
+    list-style-type: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
     animation-name: slideInDown;
     animation-duration: 1s;
     animation-iteration-count: 1;
+    transition: top 0.3s;
+    top: 0;
+    position: relative;
+
 }
 
 @keyframes slideInDown {
@@ -35,4 +24,20 @@
         transform: translate3d(0, 0, 0);
     }
 }
+
+
+@media only screen and (min-width: 1000px) {
+    .nav-rounded {
+        border-radius: 50px !important;
+        width: 90%;
+        
+    }
+
+    .nav-rounded img {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+}
+
 

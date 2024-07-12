@@ -1,0 +1,28 @@
+.btn-rounded {
+    border-radius: 50px !important;
+    padding: 5px 10px 5px 10px;
+
+}
+
+.transition-fast{
+    animation-name: transition-to-left;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    transition: top 0.3s;
+}
+
+.transition-slow{
+    animation-name: transition-to-left;
+    animation-duration: 1.3s;
+    animation-iteration-count: 1;
+    transition: top 0.3s;
+}
+
+@keyframes transition-to-left {
+    from {
+        transform: translateX(-1000px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

@@ -49,7 +49,7 @@ function NavRounded() {
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#link">About</Nav.Link>
             <Nav.Link href="#link">Gallery</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown title="Learn More" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -61,7 +61,7 @@ function NavRounded() {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Nav.Link className="mx-3" href="#home">
+          <Nav.Link className="mx-3 d-none d-md-none d-lg-block" href="#home">
             <Button className="btn-rounded" variant='outline-primary'>Request Product</Button>{' '}
           </Nav.Link>
         </Navbar.Collapse>
