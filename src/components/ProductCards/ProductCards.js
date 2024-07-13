@@ -1,14 +1,22 @@
 import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
+import { useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import TabButton from '../ProductCards/TabButton';
 import './ProductCards.css'
+import { ProductExamples } from './ProductExampls';
+import { Card } from 'react-bootstrap';
 
 
 function ProductCards() {
+    
+    const [product, setProduct] = useState("Product1")
+    function handleSelect(product){
+        setProduct(product)
+    }
+  
     return (
-        <Container className='mt-5'>
+        <Container className='mt-5 bg-light p-4 rounded-5'>
       {/* Stack the columns on mobile by making one full-width and the other half-width */}
       <Row>
         <Col xs={12} md={12}>
@@ -26,18 +34,30 @@ function ProductCards() {
       {/* Columns are always 50% wide, on mobile and desktop */}
       <Row className='mt-3'>
         <Col xs={12} md={3}>
-          <TabButton>Product 1</TabButton>
+          <TabButton onSelect={() => handleSelect("Product1")}>Product 1</TabButton>
         </Col>
         <Col xs={12} md={3}>
-          <TabButton>Product 1</TabButton>
+          <TabButton onSelect={() => handleSelect("Product2")}>Product 2</TabButton>
         </Col>
         <Col xs={12} md={3}>
-          <TabButton>Product 1</TabButton>
+          <TabButton onSelect={() =>handleSelect("Product3")}>Product 3</TabButton>
         </Col>
         <Col xs={12} md={3}>
-          <TabButton>Product 1</TabButton>
+          <TabButton onSelect={() => handleSelect("Product4")}>Product 4</TabButton>
         </Col>
-
+      </Row>
+      <Row>
+        <div className='mt-4 mb-5'>
+          <Card>
+            <Card.Img variant="top" src={ProductExamples[product].image}/>
+            <Card.Body>
+              <Card.Title>{ProductExamples[product].title}</Card.Title>
+              <Card.Text>
+                {ProductExamples[product].description}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
       </Row>
     </Container>
 

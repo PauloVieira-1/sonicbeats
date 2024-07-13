@@ -1,8 +1,8 @@
 import { Button } from "react-bootstrap";
-function TabButton({children}) {
+function TabButton({children, onSelect}) {
     return (
         <li>
-            <Button className="btn-rounded wide-button" variant="outline-secondary">{children}</Button>
+            <Button onClick = {onSelect} className="btn-rounded wide-button" variant="outline-secondary">{children}</Button>
         </li>
     )
 }

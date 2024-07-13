@@ -1,7 +1,9 @@
 .btn-rounded {
     border-radius: 50px !important;
-    padding: 5px 10px 5px 10px;
+}
 
+.padding {
+    padding: 5px 10px 5px 10px;
 }
 
 .transition-fast{

@@ -18,7 +18,7 @@ function Intro() {
                                 designed to deliver unparalleled audio quality and timeless craftsmanship. 
                                 Elevate your listening experience with Soniccraft.
                             </p>
-                            <Button className="btn-rounded d-none d-md-none d-lg-block" variant='outline-primary' style={{marginTop: '15px'}}>Discover Projects</Button>{' '}
+                            <Button className="btn-rounded padding d-none d-md-none d-lg-block" variant='outline-primary' style={{marginTop: '15px'}}>Discover Projects</Button>{' '}
                         </div>
                     </Col>
                     <Col lg={7} sm={12} className='text-center'>
