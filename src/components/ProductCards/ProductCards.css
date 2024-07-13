@@ -1,0 +1,8 @@
+li {
+    list-style: none;
+    text-align: center;
+}
+
+.wide-button {
+    padding: 5px 30px 5px 30px;
+}

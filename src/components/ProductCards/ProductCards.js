@@ -2,6 +2,9 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import TabButton from '../ProductCards/TabButton';
+import './ProductCards.css'
+
 
 function ProductCards() {
     return (
@@ -23,16 +26,16 @@ function ProductCards() {
       {/* Columns are always 50% wide, on mobile and desktop */}
       <Row className='mt-3'>
         <Col xs={12} md={3}>
-          <Button className='btn-rounded px-5' variant='outline-secondary'>Product 1</Button>
+          <TabButton>Product 1</TabButton>
         </Col>
         <Col xs={12} md={3}>
-          <Button className='btn-rounded px-5' variant='outline-secondary'>Product 1</Button>
+          <TabButton>Product 1</TabButton>
         </Col>
         <Col xs={12} md={3}>
-          <Button className='btn-rounded px-5' variant='outline-secondary'>Product 1</Button>
+          <TabButton>Product 1</TabButton>
         </Col>
         <Col xs={12} md={3}>
-          <Button className='btn-rounded px-5' variant='outline-secondary'>Product 1</Button>
+          <TabButton>Product 1</TabButton>
         </Col>
 
       </Row>
