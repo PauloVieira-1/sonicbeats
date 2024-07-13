@@ -16,7 +16,7 @@ function ProductCards() {
     }
   
     return (
-        <Container className='mt-5 bg-light p-4 rounded-5'>
+        <Container className='mt-5 bg-light p-4 rounded-5 shadow'>
       {/* Stack the columns on mobile by making one full-width and the other half-width */}
       <Row>
         <Col xs={12} md={12}>
