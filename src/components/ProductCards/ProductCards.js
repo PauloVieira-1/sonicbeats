@@ -17,7 +17,6 @@ function ProductCards() {
   
     return (
         <Container className='mt-5 bg-light p-4 rounded-5 shadow'>
-      {/* Stack the columns on mobile by making one full-width and the other half-width */}
       <Row>
         <Col xs={12} md={12}>
             <h2>Our Speaker Selection</h2>
@@ -31,7 +30,6 @@ function ProductCards() {
 
         </Col>
       </Row>
-      {/* Columns are always 50% wide, on mobile and desktop */}
       <Row className='mt-3'>
         <Col xs={12} md={3}>
           <TabButton isActive={product === "Product1"} onSelect={() => handleSelect("Product1")}>Product 1</TabButton>

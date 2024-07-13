@@ -20,6 +20,22 @@
     transition: top 0.3s;
 }
 
+.shadow-transition{
+    animation-name: shadow-transition;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes shadow-transition {
+    from {
+        box-shadow: none;
+    }
+    to {
+        box-shadow: rgba(75, 75, 75, 0.25) 0px 14px 28px, rgba(50, 50, 50, 0.22) 0px 10px 10px;
+        }
+}
+
 @keyframes transition-to-left {
     from {
         transform: translateX(-1000px);
