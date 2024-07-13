@@ -31,16 +31,16 @@ function ProductCards() {
         </Col>
       </Row>
       <Row className='mt-3'>
-        <Col xs={12} md={3}>
+        <Col xs={6} md={3} className='mt-3'>
           <TabButton isActive={product === "Product1"} onSelect={() => handleSelect("Product1")}>Product 1</TabButton>
         </Col>
-        <Col xs={12} md={3}>
+        <Col xs={6} md={3} className='mt-3'>
           <TabButton isActive={product === "Product2"} onSelect={() => handleSelect("Product2")}>Product 2</TabButton>
         </Col>
-        <Col xs={12} md={3}>
+        <Col xs={6} md={3} className='mt-3'>
           <TabButton isActive={product === "Product3"} onSelect={() =>handleSelect("Product3")}>Product 3</TabButton>
         </Col>
-        <Col xs={12} md={3}>
+        <Col xs={6} md={3} className='mt-3'>
           <TabButton isActive={product === "Product4"} onSelect={() => handleSelect("Product4")}>Product 4</TabButton>
         </Col>
       </Row>

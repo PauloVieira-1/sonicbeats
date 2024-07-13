@@ -3,10 +3,6 @@ li {
     text-align: center;
 }
 
-.wide-button {
-    padding: 5px 30px 5px 30px;
-}
-
 .active {
     background-color: #3F75A0;
     transition: shadow-transition 0.5s;
