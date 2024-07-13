@@ -8,8 +8,10 @@ export const ProductExamples = {
     Product1 : {
         name : "Product 1",
         image : product1Image,
-        title: "1Lorem ipsum dolor sit amet",
-        description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        title: "Unleash Endless Sound with Infinity",
+        description : "Introducing Infinity, our premium Bluetooth 5.0 speaker crafted from recycled Eik wood. The name Infinity encapsulates the essence of our design philosophy: creating products that are timeless, enduring, and sustainable. Each piece of Eik wood is carefully repurposed to bring you an eco-friendly product that doesn’t compromise on quality or luxury."
+
+
     },
     Product2 : {
         name : "Product 2",
