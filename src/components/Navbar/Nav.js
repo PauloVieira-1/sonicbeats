@@ -7,7 +7,6 @@ import Logo from '../../assets/Logo.svg'
 import { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 
-
 function NavRounded() {
   
   useEffect(() => {

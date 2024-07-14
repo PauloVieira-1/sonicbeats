@@ -1,4 +1,14 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+$custom-colors: (
+    "custom-color-grey": #dedede,
+    "primary": #3F75A0
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
 $primary: #3F75A0;
-$secondary: #FFC300;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss"
