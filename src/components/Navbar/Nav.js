@@ -56,7 +56,7 @@ function NavRounded() {
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
-                Separated link
+                Additional Services
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

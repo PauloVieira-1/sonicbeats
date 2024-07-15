@@ -47,13 +47,13 @@ function ProductCards() {
         </Col>
       </Row>
       <Row>
-        <div className='mt-4 mb-3'>
+        <div className='mt-4 mb-5'>
           <Container>
             <Row className='rounded-3 bg-white border'>
-              <Col className='p-0'>
+              <Col className='p-0' sm={12} lg={6}>
                 <img src={ProductExamples[product].image} alt={ProductExamples[product].title} className='img-fluid rounded-3'/>
               </Col>
-              <Col className='p-5'>
+              <Col className='p-5' sm={12} lg={6}>
                 <h3>{ProductExamples[product].title}</h3>
                 <p>{ProductExamples[product].description}</p>
               </Col>
