@@ -1,8 +1,10 @@
 import { useState } from 'react';
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import TabButton from '../ProductCards/TabButton';
+
 import './ProductCards.css'
 import { ProductExamples } from './ProductExampls';
 import { Card } from 'react-bootstrap';
@@ -45,8 +47,19 @@ function ProductCards() {
         </Col>
       </Row>
       <Row>
-        <div className='mt-4 mb-5'>
-          <Card>
+        <div className='mt-4 mb-3'>
+          <Container>
+            <Row className='rounded-3 bg-white border'>
+              <Col className='p-0'>
+                <img src={ProductExamples[product].image} alt={ProductExamples[product].title} className='img-fluid rounded-3'/>
+              </Col>
+              <Col className='p-5'>
+                <h3>{ProductExamples[product].title}</h3>
+                <p>{ProductExamples[product].description}</p>
+              </Col>
+            </Row>
+          </Container>
+          {/*<Card>
             <Card.Img variant="top" src={ProductExamples[product].image}/>
             <Card.Body>
               <Card.Title>{ProductExamples[product].title}</Card.Title>
@@ -54,7 +67,7 @@ function ProductCards() {
                 {ProductExamples[product].description}
               </Card.Text>
             </Card.Body>
-          </Card>
+          </Card>*/}
         </div>
       </Row>
     </Container>
