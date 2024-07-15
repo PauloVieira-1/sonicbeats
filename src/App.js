@@ -1,6 +1,7 @@
 import NavRounded from "../src/components/Navbar/Nav"
 import Intro from "../src/components/Intro/Intro"
 import ProductCards from "./components/ProductCards/ProductCards"
+import Footer from "../src/components/Footer/Footer"
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -41,6 +42,7 @@ function App() {
           </Row>
        </Container>
       </div>
+      <Footer />
     </>
   )
 }
