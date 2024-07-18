@@ -14,8 +14,46 @@ import './styles/Global.css'
 import EndImage from '../src/assets/End-Image.png'
 import Logo from '../src/assets/Logo.svg'
 
+import { useEffect, useRef } from 'react';
+
 
 function App() {
+  
+  const headingRef = useRef(null);
+  const paraRef = useRef(null);
+
+  const revealRefs = [headingRef, paraRef];
+
+  useEffect(() => {
+    const headingTarget = headingRef.current;
+    const paraTarget = paraRef.current;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        
+        const headingEntry = entries[0];
+
+        if (headingEntry.isIntersecting) {
+          entry.target.classList.add("transition-fast");
+        }
+
+      });
+    });
+
+    revealRefs.forEach((ref) => {
+      if (ref) {
+      observer.observe(ref.current);
+      }
+      
+      return () => {
+        if (ref) {
+          observer.unobserve(ref.current);
+        }
+      };
+    });
+
+  }, []);
+  
   return (
     <>
       <NavRounded />
@@ -36,8 +74,8 @@ function App() {
         </Col>
         <Col style={{height: '300px', marginTop: 'px'}}>
         <div className="text-center">
-          <h1 className="mt-5 mb-2 fw-lighter display-6" style={{fontSize: '70px'}}>Our Story</h1>
-          <p className="fw-lighter fs-5 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+          <h1 className="mt-5 mb-2 fw-lighter display-6" style={{fontSize: '70px'}} ref={headingRef}>Our Story</h1>
+          <p className="fw-lighter fs-5 mt-3" ref={paraRef}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
           <Button className="btn-rounded wide" variant='outline-secondary' style={{marginTop: '15px'}}>About Us</Button>{' '}
         </div>
         </Col>
