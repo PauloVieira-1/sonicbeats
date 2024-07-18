@@ -31,7 +31,7 @@ function NavRounded() {
 }, []);
   
   return (
-    <Navbar id="nav" expand="lg" className="bg-transparent navbar-nav mx-auto nav-rounded">
+    <Navbar id="nav" expand="lg" className=" navbar-nav mx-auto nav-rounded">
       <Container>
         <Navbar.Brand href="#home">
         <img
