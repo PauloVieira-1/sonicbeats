@@ -12,7 +12,7 @@ function Footer() {
             <Container className="mt-4"> 
                 <Row className='p-3'>
                     <Col className="d-flex justify-content-center">
-                        <Button className="btn-rounded wide" variant="outline-primary">Back to Top</Button>
+                        <Button className="btn-rounded wide" variant="outline-primary" onClick={() => window.scrollTo(0, 0)}>Back to Top</Button>
                     </Col>
                 </Row>
                 <div className="footer">
@@ -34,7 +34,7 @@ function Footer() {
                              width="25"
                              height="25"
                              className='mx-3'
-                             ></img>
+                              onClick={() => window.open('https://www.instagram.com/sonicbeats.nl/', '_blank')}></img>
                             <img src={Facebook}
                             width="25"
                             height="25"
