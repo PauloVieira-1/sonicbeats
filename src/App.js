@@ -25,16 +25,16 @@ function App() {
   const revealRefs = [headingRef, paraRef];
 
   useEffect(() => {
-    const headingTarget = headingRef.current;
-    const paraTarget = paraRef.current;
-
+  
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        
-        const headingEntry = entries[0];
 
-        if (headingEntry.isIntersecting) {
+        if (entry.target === headingRef.current && entry.isIntersecting) {
           entry.target.classList.add("transition-fast");
+        }
+
+        if (entry.target === paraRef.current && entry.isIntersecting) {
+          entry.target.classList.add("transition-slow");
         }
 
       });
@@ -45,13 +45,17 @@ function App() {
       observer.observe(ref.current);
       }
       
-      return () => {
-        if (ref) {
+    });
+    
+    return () => {
+      revealRefs.forEach((ref) => {
+        if (ref.current) {
           observer.unobserve(ref.current);
         }
-      };
-    });
-
+      });
+      
+    };
+    
   }, []);
   
   return (
