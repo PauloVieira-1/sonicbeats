@@ -6,6 +6,7 @@ import './Nav.css'
 import Logo from '../../assets/Logo.svg'
 import { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 function NavRounded() {
   
@@ -33,22 +34,25 @@ function NavRounded() {
   return (
     <Navbar id="nav" expand="lg" className=" navbar-nav mx-auto nav-rounded">
       <Container>
-        <Navbar.Brand href="#home">
-        <img
-              alt=""
-              src= {Logo}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
-          Soniccraft</Navbar.Brand>
+        <Link className="nav-link" to='/'>
+          <Navbar.Brand href="#home">
+          <img
+                alt=""
+                src= {Logo}
+                width="30"
+                height="30"
+                className="d-inline-block align-top"
+              />{' '}
+            Soniccraft
+          </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">About</Nav.Link>
-            <Nav.Link href="#link">Gallery</Nav.Link>
-            <NavDropdown title="Learn More" id="basic-nav-dropdown">
+            <Nav.Link href='/'><Link className="nav-link" to='/'>Home</Link></Nav.Link>
+            <Nav.Link href='/'><Link className="nav-link" to='/about'>About</Link></Nav.Link>
+            <Nav.Link href='/'><Link className="nav-link" to='/'>Gallery</Link></Nav.Link>
+            <NavDropdown title="Learn More" id="basic-nav-dropdown" className='nav-link'>
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
