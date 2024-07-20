@@ -15,6 +15,8 @@ import EndImage from '../../../assets/End-Image.png'
 import Logo from '../../../assets/Logo.svg'
 
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+
 
 
 function Home () {
@@ -79,7 +81,9 @@ function Home () {
         <div className="text-center">
           <h1 className="mt-5 mb-2 fw-lighter display-6" style={{fontSize: '70px'}} ref={headingRef}>Our Story</h1>
           <p className="fw-lighter fs-5 mt-3" ref={paraRef}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
-          <Button className="btn-rounded wide" variant='outline-secondary' style={{marginTop: '15px'}}>About Us</Button>{' '}
+          <Link to={'/about'}>
+            <Button className="btn-rounded wide" variant='outline-secondary' style={{marginTop: '15px'}}>About Us</Button>{' '}
+          </Link>
         </div>
         </Col>
       </Container>
@@ -103,7 +107,6 @@ function Home () {
           </Row>
        </Container>
       </div>
-      <Footer />
     </>
   )
 
