@@ -14,7 +14,7 @@ function ImageCarousel() {
   };
 
   return (
-    <div>
+    <div className='mt-3'>
         <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item className='c-item'>
             <img src={Product1} className='img-fluid c-img'></img>
