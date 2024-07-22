@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Product1 from '../../assets/Product1c.jpeg';
 import Product2 from '../../assets/Product2.jpeg';
 import { Container, Row, Col } from 'react-bootstrap';
-import '../ImageCarousel/ImageCaroousel.css';
+import '../ImageCarousel/ImageCarousel.css';
 
 
 function ImageCarousel() {
