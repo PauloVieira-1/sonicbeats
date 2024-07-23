@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 function TeamComponent (props) {
     return (
         <>
-            <Container style={{minHeight: '400px', zIndex: '0'}} className= {`mt-3 mb-5 bg-secondary rounded-4 ${props.shadow ? 'shadow' : ''} ${props.active ? 'transition-down' : ''}`} > 
+            <Container style={{minHeight: '400px', zIndex: '0'}} className= {`mt-3 mb-5 bg-secondary rounded-4 ${props.shadow ? 'shadow' : ''} ${props.active ? 'transition-width' : ''}`} > 
                 <Row>
                     <Col className='p-4'>
                     <Card className="bg-dark text-white">

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import Product1 from '../../assets/Product1c.jpeg';
-import Product2 from '../../assets/Product2.jpeg';
+import Product1 from '../../assets/AboutPage/carousel-image-1.jpeg';
+import Product2 from '../../assets/AboutPage/carousel-image-2.jpeg';
+import Product3 from '../../assets/AboutPage/carousel-image-3.jpeg';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../ImageCarousel/ImageCarousel.css';
 
@@ -31,7 +32,7 @@ function ImageCarousel() {
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className='c-item'>
-        <img src={Product1} className='img-fluid c-img'></img>
+        <img src={Product3} className='img-fluid c-img'></img>
         <Carousel.Caption>
             <h3>Third slide label</h3>
             <p>

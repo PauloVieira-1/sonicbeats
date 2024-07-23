@@ -51,6 +51,60 @@
     z-index: 0;
 }
 
+.transition-width{
+    animation-name: transition-width;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition :ease-out;
+    z-index: 0;
+}
+
+.transition-reverse-width{
+    animation-name: transition-reverse-width;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition :ease-out;
+    z-index: 0;
+}
+
+@keyframes transition-reverse-width {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+@keyframes transition-width {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.transition-height {
+    animation-name: transition-height;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition :ease-in;
+    z-index: 0;
+}
+
+@keyframes transition-height {
+    from {
+        max-height: 0px;
+    }
+    to {
+        max-height: 500px;
+    }
+}
+
 @keyframes transition-down {
     from {
         transform: translateY(-1000px);

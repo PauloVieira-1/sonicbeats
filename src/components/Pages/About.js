@@ -1,6 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import InfoSection from '../InfoSection/InfoSection';
-import VerticalImage from '../../assets/Vertical.jpeg'
+import VerticalImage from '../../assets/AboutPage/dan.jpeg'
 import ImageCarousel from '../ImageCarousel/ImageCarousel';
 import TeamComponent from '../InfoSection/TeamComponent';
 import { useRef, useState, useEffect} from 'react';
@@ -77,7 +77,7 @@ function About() {
                 </Container>    
             </div>   
             <main >
-                <div className='my-3' style={{zIndex: '100'}}> 
+                <div className='my-5' style={{zIndex: '100'}}> 
                     <InfoSection 
                         title = {'Our Story'}
                         heading = {'Passion for Sound, Commitment to Sustainability'}
