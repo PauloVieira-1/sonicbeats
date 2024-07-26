@@ -2,13 +2,12 @@
 @import "../../node_modules/bootstrap/scss/variables";
 
 $custom-colors: (
-    "custom-color-grey": #dedede,
-    "primary": #3F75A0
+  "custom-color-grey": #dedede,
+  "primary": #3f75a0,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
+$primary: #3f75a0;
 
-$primary: #3F75A0;
-
-@import "../../node_modules/bootstrap/scss/bootstrap.scss"
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

@@ -1,59 +1,79 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import TabButton from '../ProductCards/TabButton';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import TabButton from "../ProductCards/TabButton";
 
-import './ProductCards.css'
-import { ProductExamples } from './ProductExampls';
-import { Card } from 'react-bootstrap';
-
+import "./ProductCards.css";
+import { ProductExamples } from "./ProductExampls";
 
 function ProductCards() {
-    
-    const [product, setProduct] = useState("Product1")
-    function handleSelect(product){
-        setProduct(product)
-    }
-  
-    return (
-      <Container className='mt-5 bg-light px-4 pt-4 rounded-5 shadow'>
+  const [product, setProduct] = useState("Product1");
+  function handleSelect(product) {
+    setProduct(product);
+  }
+
+  return (
+    <Container className="mt-5 bg-light px-4 pt-4 rounded-5 shadow">
       <Row>
         <Col xs={12} md={12}>
-            <h2>Our Speaker Selection</h2>
-            <p>Explore our collection of past speaker models. Each product is unique, 
-                offering distinctive features and quality sound. While these models 
-                showcase our past innovations, you can place orders for customized, individual 
-                speakers tailored to your specific needs.
-            </p>
+          <h2>Our Speaker Selection</h2>
+          <p>
+            Explore our collection of past speaker models. Each product is
+            unique, offering distinctive features and quality sound. While these
+            models showcase our past innovations, you can place orders for
+            customized, individual speakers tailored to your specific needs.
+          </p>
         </Col>
-        <Col xs={6} md={4}>
-
-        </Col>
+        <Col xs={6} md={4}></Col>
       </Row>
-      <Row className='mt-3'>
-        <Col xs={6} md={3} className='mt-3'>
-          <TabButton isActive={product === "Product1"} onSelect={() => handleSelect("Product1")}>Product 1</TabButton>
+      <Row className="mt-3">
+        <Col xs={6} md={3} className="mt-3">
+          <TabButton
+            isActive={product === "Product1"}
+            onSelect={() => handleSelect("Product1")}
+          >
+            Product 1
+          </TabButton>
         </Col>
-        <Col xs={6} md={3} className='mt-3'>
-          <TabButton isActive={product === "Product2"} onSelect={() => handleSelect("Product2")}>Product 2</TabButton>
+        <Col xs={6} md={3} className="mt-3">
+          <TabButton
+            isActive={product === "Product2"}
+            onSelect={() => handleSelect("Product2")}
+          >
+            Product 2
+          </TabButton>
         </Col>
-        <Col xs={6} md={3} className='mt-3'>
-          <TabButton isActive={product === "Product3"} onSelect={() =>handleSelect("Product3")}>Product 3</TabButton>
+        <Col xs={6} md={3} className="mt-3">
+          <TabButton
+            isActive={product === "Product3"}
+            onSelect={() => handleSelect("Product3")}
+          >
+            Product 3
+          </TabButton>
         </Col>
-        <Col xs={6} md={3} className='mt-3'>
-          <TabButton isActive={product === "Product4"} onSelect={() => handleSelect("Product4")}>Product 4</TabButton>
+        <Col xs={6} md={3} className="mt-3">
+          <TabButton
+            isActive={product === "Product4"}
+            onSelect={() => handleSelect("Product4")}
+          >
+            Product 4
+          </TabButton>
         </Col>
       </Row>
       <Row>
-        <div className='mt-4 mb-5'>
+        <div className="mt-4 mb-5">
           <Container>
-            <Row className='rounded-3 bg-white border'>
-              <Col className='p-0' sm={12} lg={6}>
-                <img src={ProductExamples[product].image} alt={ProductExamples[product].title} className='img-fluid rounded-3'/>
+            <Row className="rounded-3 bg-white border">
+              <Col className="p-0" sm={12} lg={6}>
+                <img
+                  src={ProductExamples[product].image}
+                  alt={ProductExamples[product].title}
+                  className="img-fluid rounded-3"
+                />
               </Col>
-              <Col className='p-5' sm={12} lg={6}>
+              <Col className="p-5" sm={12} lg={6}>
                 <h3>{ProductExamples[product].title}</h3>
                 <p>{ProductExamples[product].description}</p>
               </Col>
@@ -71,9 +91,7 @@ function ProductCards() {
         </div>
       </Row>
     </Container>
-
-    )
-
+  );
 }
 
-export default ProductCards
+export default ProductCards;

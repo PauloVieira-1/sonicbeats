@@ -1,10 +1,9 @@
 li {
-    list-style: none;
-    text-align: center;
+  list-style: none;
+  text-align: center;
 }
 
 .active {
-    background-color: #3F75A0;
-    transition: shadow-transition 0.5s;
+  background-color: #3f75a0;
+  transition: shadow-transition 0.5s;
 }
-

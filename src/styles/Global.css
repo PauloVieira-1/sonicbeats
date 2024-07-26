@@ -1,143 +1,144 @@
 .btn-rounded {
-    border-radius: 50px !important;
+  border-radius: 50px !important;
 }
 
 .padding {
-    padding: 5px 10px 5px 10px;
+  padding: 5px 10px 5px 10px;
 }
 
 .wide {
-    padding: 5px 40px 5px 40px;
+  padding: 5px 40px 5px 40px;
 }
 
-.transition-fast{
-    animation-name: transition-to-left;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-    transition: top 0.3s;
+.transition-fast {
+  animation-name: transition-to-left;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  transition: top 0.3s;
 }
 
-.transition-slow{
-    animation-name: transition-to-left;
-    animation-duration: 1.3s;
-    animation-iteration-count: 1;
-    transition: top 0.3s;
+.transition-slow {
+  animation-name: transition-to-left;
+  animation-duration: 1.3s;
+  animation-iteration-count: 1;
+  transition: top 0.3s;
 }
 
-.shadow-transition{
-    animation-name: shadow-transition;
-    animation-duration: 0.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+.shadow-transition {
+  animation-name: shadow-transition;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .fade-in-animation {
-    animation: fadeInAnimation ease-in 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  animation: fadeInAnimation ease-in 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
-.recolor-image{
-    filter: invert(100%) brightness(200%);
-    transition: all 0.5s ease-out;
+.recolor-image {
+  filter: invert(100%) brightness(200%);
+  transition: all 0.5s ease-out;
 }
 
-.transition-down{
-    animation-name: transition-down;
-    animation-duration: 0.7s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    transition :ease-out;
-    z-index: 0;
+.transition-down {
+  animation-name: transition-down;
+  animation-duration: 0.7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  transition: ease-out;
+  z-index: 0;
 }
 
-.transition-width{
-    animation-name: transition-width;
-    animation-duration: 0.7s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    transition :ease-out;
-    z-index: 0;
+.transition-width {
+  animation-name: transition-width;
+  animation-duration: 0.7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  transition: width 0.7s ease-out;
+  z-index: 0;
 }
 
-.transition-reverse-width{
-    animation-name: transition-reverse-width;
-    animation-duration: 0.7s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    transition :ease-out;
-    z-index: 0;
+.transition-reverse-width {
+  animation-name: transition-reverse-width;
+  animation-duration: 0.7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  transition: width 0.7s ease-out;
+  z-index: 0;
 }
 
 @keyframes transition-reverse-width {
-    from {
-        width: 100%;
-    }
-    to {
-        width: 0;
-    }
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
 }
 
 @keyframes transition-width {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .transition-height {
-    animation-name: transition-height;
-    animation-duration: 0.7s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    transition :ease-in;
-    z-index: 0;
+  animation-name: transition-height;
+  animation-duration: 0.7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  transition: ease-in;
+  z-index: 0;
 }
 
 @keyframes transition-height {
-    from {
-        max-height: 0px;
-    }
-    to {
-        max-height: 500px;
-    }
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 500px;
+  }
 }
 
 @keyframes transition-down {
-    from {
-        transform: translateY(-1000px);
-    }
-    to {
-        transform: translateY(0);
-    }
+  from {
+    transform: translateY(-1000px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
-
 @keyframes shadow-transition {
-    from {
-        box-shadow: none;
-    }
-    to {
-        box-shadow: rgba(75, 75, 75, 0.25) 0px 14px 28px, rgba(50, 50, 50, 0.22) 0px 10px 10px;
-        }
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow:
+      rgba(75, 75, 75, 0.25) 0px 14px 28px,
+      rgba(50, 50, 50, 0.22) 0px 10px 10px;
+  }
 }
 
 @keyframes transition-to-left {
-    from {
-        transform: translateX(-1000px);
-    }
-    to {
-        transform: translateX(0);
-    }
+  from {
+    transform: translateX(-1000px);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
