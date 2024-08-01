@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
- 
+
 import Logo from "../../assets/svg/Logo.svg";
 import Facebook from "../../assets/svg/facebook.svg";
 import Instagram from "../../assets/svg/instagram.svg";

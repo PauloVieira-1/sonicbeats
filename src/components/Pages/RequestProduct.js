@@ -1,4 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
+import RequestProductForm from "../RequestProductForm/RequestProductForm.js";
 
 function RequestProduct() {
   return (
@@ -56,7 +57,9 @@ function RequestProduct() {
               </Row>
             </Container>
           </Col>
-          <Col></Col>
+          <Col className="p-5">
+            <RequestProductForm />
+          </Col>
         </Row>
       </Container>
     </>

@@ -10,7 +10,7 @@ const InfoSection = forwardRef(function InfoSection(props, ref) {
   if (props.button) {
     additionalButton = (
       <Button
-        className={`d-flex align-items-center btn-rounded d-none d-lg-block position-absolute bottom-0 start-10 ${props.active ? "active shadow-transition" : ""}`}
+        className={`d-flex align-items-center btn-rounded d-none d-lg-block position-relative start-10 ${props.active ? "active shadow-transition" : ""}`}
         style={{
           marginTop: "15px",
           paddingLeft: "8px",
@@ -65,7 +65,7 @@ const InfoSection = forwardRef(function InfoSection(props, ref) {
 export default InfoSection;
 
 function additionalContent(props) {
-    if (props.image) {
+  if (props.image) {
     return (
       <Col md={4} className="p-4 text-center .d-sm-none .d-md-block">
         <img

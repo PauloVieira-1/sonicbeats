@@ -27,7 +27,6 @@ function About() {
               entry.target.classList.add("fade-in-animation");
               break;
           }
-          
         }
       });
     });
