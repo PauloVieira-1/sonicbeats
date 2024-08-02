@@ -45,8 +45,8 @@ function RequestProductForm() {
   return (
     <Form onSubmit={form.handleSubmit}>
       <Form.Group className="mb-3">
-        <Form.Label className={`${form.errors.name === "name is a required field" ? "invalid-color" : ""}`}>
-          {form.errors.name === "name is a required field" ? "Required" : "Name"} </Form.Label>
+        <Form.Label className={`${ form.touched.name && form.errors.name === "name is a required field" ? "invalid-color" : ""}`}>
+          {(form.touched.name && form.errors.name === "name is a required field") ? "Required" : "Name"} </Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter name"
@@ -57,10 +57,10 @@ function RequestProductForm() {
       </Form.Group>
       <Form.Group className="mb-3" value={form.values.email}>
         <Form.Label
-          className={`${(form.errors.email === "Invalid email address" || form.errors.email === "email is a required field") ? "invalid-color" : ""}`}
+          className={`${(form.touched.email && form.errors.email === "email is a required field" ) ? "invalid-color" : ""}`}
         >
-          {form.errors.email === ("Invalid email address" || "email is a required field")
-            ? "Invalid Email"
+          {(form.touched.email && form.errors.email) === ("email is a required field")
+            ? "Required"
             : "Email"}
         </Form.Label>
         <Form.Control
@@ -72,7 +72,7 @@ function RequestProductForm() {
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label className={`${form.errors.phone === "phone is a required field" ? "invalid-color" : ""}`}> {form.errors.phone === "phone is a required field" ? "Required" : "Phone"}</Form.Label>
+        <Form.Label className={`${(form.touched.phone && form.errors.phone) === "phone is a required field" ? "invalid-color" : ""}`}> {(form.touched.phone && form.errors.phone) === "phone is a required field" ? "Required" : "Phone"}</Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter phone number"

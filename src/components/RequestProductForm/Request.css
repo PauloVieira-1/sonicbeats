@@ -1,3 +1,39 @@
 .invalid-color {
   color: rgb(232, 91, 91);
 }
+
+.main-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+.card-custom{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.card-front{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.card-back{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+}
+
+.flip{
+  transform: rotateY(180deg);
+}
