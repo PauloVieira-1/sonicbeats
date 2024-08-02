@@ -1,7 +1,5 @@
-import NavRounded from "../Navbar/Nav";
 import Intro from "../Intro/Intro";
 import ProductCards from "../ProductCards/ProductCards";
-import Footer from "../Footer/Footer";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -86,6 +84,7 @@ function Home() {
                 className="btn-rounded wide"
                 variant="outline-secondary"
                 style={{ marginTop: "15px" }}
+                onClick={() => window.scrollTo(0, 0)}
               >
                 About Us
               </Button>{" "}

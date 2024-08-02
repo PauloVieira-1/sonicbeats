@@ -16,21 +16,33 @@ function ImageCarousel() {
     <div className="mt-3">
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item className="c-item">
-          <img src={Product1} className="img-fluid c-img"></img>
+          <img
+            src={Product1}
+            className="img-fluid c-img"
+            alt="First slide"
+          ></img>
           <Carousel.Caption>
             <h3>First slide label</h3>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="c-item">
-          <img src={Product2} className="img-fluid c-img"></img>
+          <img
+            src={Product2}
+            className="img-fluid c-img"
+            alt="Second slide"
+          ></img>
           <Carousel.Caption>
             <h3>Second slide label</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="c-item">
-          <img src={Product3} className="img-fluid c-img"></img>
+          <img
+            src={Product3}
+            className="img-fluid c-img"
+            alt="Third slide"
+          ></img>
           <Carousel.Caption>
             <h3>Third slide label</h3>
             <p>

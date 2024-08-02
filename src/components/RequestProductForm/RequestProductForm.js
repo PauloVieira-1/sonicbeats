@@ -5,9 +5,7 @@ import "./Request.css";
 import axios from "axios";
 
 function RequestProductForm() {
-
-
-    let form = useFormik({
+  let form = useFormik({
     initialValues: {
       name: "",
       email: "",
@@ -27,18 +25,17 @@ function RequestProductForm() {
     }),
 
     onSubmit: async (values) => {
-        alert(JSON.stringify(values, null, 2));
-        console.log(values);
+      alert(JSON.stringify(values, null, 2));
+      console.log(values);
 
-         const response =  await axios
-        .post("http://localhost:8080/items", values)
-        .then(response => {
+      const response = await axios
+        .post("http://localhost:3000/requests", values)
+        .then((response) => {
           console.log(response);
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error);
         });
-
     },
   });
 
@@ -48,7 +45,8 @@ function RequestProductForm() {
   return (
     <Form onSubmit={form.handleSubmit}>
       <Form.Group className="mb-3">
-        <Form.Label>Name</Form.Label>
+        <Form.Label className={`${form.errors.name === "name is a required field" ? "invalid-color" : ""}`}>
+          {form.errors.name === "name is a required field" ? "Required" : "Name"} </Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter name"
@@ -59,9 +57,9 @@ function RequestProductForm() {
       </Form.Group>
       <Form.Group className="mb-3" value={form.values.email}>
         <Form.Label
-          className={`${form.errors.email === "Invalid email address" ? "invalid-color" : ""}`}
+          className={`${(form.errors.email === "Invalid email address" || form.errors.email === "email is a required field") ? "invalid-color" : ""}`}
         >
-          {form.errors.email === "Invalid email address"
+          {form.errors.email === ("Invalid email address" || "email is a required field")
             ? "Invalid Email"
             : "Email"}
         </Form.Label>
@@ -74,7 +72,7 @@ function RequestProductForm() {
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label>Phone Number</Form.Label>
+        <Form.Label className={`${form.errors.phone === "phone is a required field" ? "invalid-color" : ""}`}> {form.errors.phone === "phone is a required field" ? "Required" : "Phone"}</Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter phone number"

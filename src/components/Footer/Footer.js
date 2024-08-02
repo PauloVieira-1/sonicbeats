@@ -46,9 +46,22 @@ function Footer() {
                     "_blank",
                   )
                 }
+                alt="instagram"
               ></img>
-              <img src={Facebook} width="25" height="25" className="mx-3"></img>
-              <img src={Twitter} width="25" height="25" className="mx-3"></img>
+              <img
+                src={Facebook}
+                width="25"
+                height="25"
+                className="mx-3"
+                alt="facebook"
+              ></img>
+              <img
+                src={Twitter}
+                width="25"
+                height="25"
+                className="mx-3"
+                alt="twitter"
+              ></img>
             </Col>
           </Row>
           <p className="text-center mt-3">

@@ -15,7 +15,6 @@ const InfoSection = forwardRef(function InfoSection(props, ref) {
           marginTop: "15px",
           paddingLeft: "8px",
           paddingRight: "8px",
-          paddingRight: "15px",
         }}
         variant="outline-secondary"
         ref={ref}
@@ -72,7 +71,7 @@ function additionalContent(props) {
           className="img-fluid rounded-3 border"
           style={{ height: "400px" }}
           src={props.image}
-          alt="image"
+          alt=""
         />
       </Col>
     );

@@ -26,6 +26,8 @@ function About() {
             case infoSection.current:
               entry.target.classList.add("fade-in-animation");
               break;
+            default:
+              break;
           }
         }
       });
@@ -44,7 +46,7 @@ function About() {
         }
       });
     };
-  }, []);
+  }, [revealRefs]);
 
   const DiscoverTeamRef = useRef();
 
