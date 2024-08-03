@@ -6,10 +6,9 @@
   position: relative;
   width: 100%;
   height: 100%;
-
 }
 
-.card-custom{
+.card-custom {
   position: relative;
   width: 100%;
   height: 100%;
@@ -17,7 +16,7 @@
   transition: all 0.5s ease;
 }
 
-.card-front{
+.card-front {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -25,7 +24,7 @@
   transform-style: preserve-3d;
 }
 
-.card-back{
+.card-back {
   position: relative;
   width: 100%;
   height: 100%;
@@ -34,6 +33,10 @@
   transform: rotateY(180deg);
 }
 
-.flip{
+.flip {
   transform: rotateY(180deg);
+}
+
+.bullets {
+  list-style: circle;
 }

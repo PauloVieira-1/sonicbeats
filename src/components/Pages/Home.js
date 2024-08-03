@@ -76,8 +76,8 @@ function Home() {
               Our Story
             </h1>
             <p className="fw-lighter fs-5 mt-3" ref={paraRef}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor{" "}
+              Visit our About page to learn more about our journey, our passion
+              for sound, and our dedication to sustainability{" "}
             </p>
             <Link to={"/about"}>
               <Button
@@ -100,19 +100,22 @@ function Home() {
                 src={EndImage}
                 alt=""
                 className="img-fluid"
-                style={{ width: "100%" }}
+                style={{ height: "100%" }}
               />
             </Col>
             <Col lg={5} sm={12} className="p-5">
-              <h2 className="mt-5 pl-5 text-end display-3 fw-bold">
+              <h2 className="mt-2 pl-5 text-end display-3 fw-bold">
                 Additional Services
               </h2>
               <p className="pl-5 text-end fw-lighter fs-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation. Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor
+                At Sonicraft, we specialize in a range of custom-made
+                sound-related products designed to meet your unique needs.
+                Whether you are looking for bespoke home audio systems,
+                professional studio equipment, or personalized sound solutions,
+                our team is dedicated to delivering exceptional quality and
+                innovative design. Each product is crafted with the same
+                commitment to sustainability and passion for sound that defines
+                our brand.
               </p>
               <div className="pl-5 text-end">
                 <Button

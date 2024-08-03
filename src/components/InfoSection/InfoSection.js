@@ -10,11 +10,11 @@ const InfoSection = forwardRef(function InfoSection(props, ref) {
   if (props.button) {
     additionalButton = (
       <Button
-        className={`d-flex align-items-center btn-rounded d-none d-lg-block position-relative start-10 ${props.active ? "active shadow-transition" : ""}`}
+        className={`d-flex align-items-center btn-rounded d-none d-lg-block position-relative start-10 bottom-0 ${props.active ? "active shadow-transition" : ""}`}
         style={{
-          marginTop: "15px",
+          marginTop: "65px",
           paddingLeft: "8px",
-          paddingRight: "8px",
+          paddingRight: "16px",
         }}
         variant="outline-secondary"
         ref={ref}
@@ -27,7 +27,7 @@ const InfoSection = forwardRef(function InfoSection(props, ref) {
             alt="plus"
             style={{
               marginRight: "6px",
-              marginLeft: "5px",
+              marginLeft: "6px",
               verticalAlign: "middle",
               position: "relative",
               top: "-1px",
@@ -51,7 +51,7 @@ const InfoSection = forwardRef(function InfoSection(props, ref) {
           <Col className="p-5">
             <h3 className="fw-medium fs-1 mb-">{props.title}</h3>
             <h5 className="fw-lighter mt-3">{props.heading}</h5>
-            <p>{props.content}</p>
+            <p className="mt-3">{props.content}</p>
             <div className="flex">{additionalButton}</div>
           </Col>
           {additionalContent(props)}

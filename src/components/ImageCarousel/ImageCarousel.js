@@ -21,21 +21,29 @@ function ImageCarousel() {
             className="img-fluid c-img"
             alt="First slide"
           ></img>
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <Carousel.Caption style={{ textAlign: "left" }}>
+            <h3>Infinity</h3>
+            <p>
+              A name that embodies timeless elegance and boundless possibilities{" "}
+              <br />
+              in audio excellence. Limited Availability.
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="c-item">
+          <Carousel.Caption style={{ textAlign: "left" }}>
+            <h3>Little Men</h3>
+            <p>
+              A compact powerhouse that defies its size, delivering impressive{" "}
+              <br />
+              sound quality in a sleek, portable design.
+            </p>
+          </Carousel.Caption>
           <img
             src={Product2}
             className="img-fluid c-img"
             alt="Second slide"
           ></img>
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="c-item">
           <img
@@ -43,7 +51,7 @@ function ImageCarousel() {
             className="img-fluid c-img"
             alt="Third slide"
           ></img>
-          <Carousel.Caption>
+          <Carousel.Caption style={{ textAlign: "left" }}>
             <h3>Third slide label</h3>
             <p>
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.

@@ -34,7 +34,7 @@ function ProductCards() {
             isActive={product === "Product1"}
             onSelect={() => handleSelect("Product1")}
           >
-            Product 1
+            {ProductExamples["Product1"].name}
           </TabButton>
         </Col>
         <Col xs={6} md={3} className="mt-3">
@@ -42,7 +42,7 @@ function ProductCards() {
             isActive={product === "Product2"}
             onSelect={() => handleSelect("Product2")}
           >
-            Product 2
+            {ProductExamples["Product2"].name}
           </TabButton>
         </Col>
         <Col xs={6} md={3} className="mt-3">
@@ -50,7 +50,7 @@ function ProductCards() {
             isActive={product === "Product3"}
             onSelect={() => handleSelect("Product3")}
           >
-            Product 3
+            {ProductExamples["Product3"].name}
           </TabButton>
         </Col>
         <Col xs={6} md={3} className="mt-3">
@@ -58,7 +58,7 @@ function ProductCards() {
             isActive={product === "Product4"}
             onSelect={() => handleSelect("Product4")}
           >
-            Product 4
+            {ProductExamples["Product4"].name}
           </TabButton>
         </Col>
       </Row>
@@ -70,12 +70,22 @@ function ProductCards() {
                 <img
                   src={ProductExamples[product].image}
                   alt={ProductExamples[product].title}
-                  className="img-fluid rounded-3"
+                  className="img-fluid rounded-3 h-100"
                 />
               </Col>
-              <Col className="p-5" sm={12} lg={6}>
-                <h3>{ProductExamples[product].title}</h3>
+              <Col className="px-5 py-4" sm={12} lg={6}>
+                <h3 className="mb-3">{ProductExamples[product].title}</h3>
                 <p>{ProductExamples[product].description}</p>
+                <ul className="fw-lighter ml-0">
+                  {Object.keys(ProductExamples[product].specifications).map(
+                    (key) => (
+                      <li key={key} className="text-start bullets">
+                        {key.split("_").join(" ")}:{" "}
+                        {ProductExamples[product].specifications[key]}
+                      </li>
+                    ),
+                  )}
+                </ul>
               </Col>
             </Row>
           </Container>
