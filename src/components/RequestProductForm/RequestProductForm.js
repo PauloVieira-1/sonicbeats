@@ -122,7 +122,10 @@ function RequestProductForm() {
         </Form.Select>
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label>Describe Your Speaker</Form.Label>
+        <Form.Label className={`${form.touched.description && form.errors.description === "description is a required field" ? "invalid-color" : ""}`}>{(form.touched.description && form.errors.description) ===
+          "description is a required field"
+            ? "Required"
+            : "Description"}</Form.Label>
         <Form.Control
           as="textarea"
           rows={3}
@@ -131,7 +134,7 @@ function RequestProductForm() {
           onChange={form.handleChange}
         />
       </Form.Group>
-      <Button variant="primary" type="submit" className="rounded-5 w-25 mt-3">
+      <Button variant="primary" type="submit" className="rounded-5 px-5 mt-3">
         Submit
       </Button>
     </Form>

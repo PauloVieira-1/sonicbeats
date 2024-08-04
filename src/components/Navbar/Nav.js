@@ -85,6 +85,13 @@ function NavRounded() {
               </Button>{" "}
             </Link>
           </Nav.Link>
+          <Nav.Link className="mx-0 d-md-block d-lg-none mt-4" href="#home">
+            <Link to={"/request-product"}>
+              <Button className="btn-rounded" variant="outline-primary" style={{ left: "-10px"}}>
+                Request Product
+              </Button>{" "}
+            </Link>
+          </Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>

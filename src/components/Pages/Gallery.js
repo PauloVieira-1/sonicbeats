@@ -4,7 +4,13 @@ import { useRef, useEffect } from "react";
 import GalleryText from "../Gallery/GalleryText";
 import GalleryImage from "../Gallery/GalleryImage";
 
-import Image1 from "../../assets/jpeg/Product1.jpeg";
+import Image from "../../assets/jpeg/Product1.jpeg";
+import Image1 from "../../assets/GalleryImages/Image1.PNG";
+import Image2 from "../../assets/GalleryImages/Image2.JPG";
+import Image3 from "../../assets/GalleryImages/Image3.JPG";
+import Image4 from "../../assets/GalleryImages/Image4.JPG";
+import Image5 from "../../assets/GalleryImages/Image5.JPG";
+
 
 function Gallery() {
   const headingRef = useRef(null);
@@ -71,7 +77,7 @@ function Gallery() {
             </GalleryText>
           </Col>
           <Col>
-            <GalleryImage imageName={Image1} subHeading="subHeading" description="description" id={1}>
+            <GalleryImage imageName={Image} subHeading="subHeading" description="description" id={1}>
               ExampleHeading
             </GalleryImage>
           </Col>
@@ -84,12 +90,12 @@ function Gallery() {
 
         <Row className="my-4">
           <Col>
-            <GalleryImage imageName={Image1} id={3}>
+            <GalleryImage imageName={Image2} id={3}>
               ExampleHeading
             </GalleryImage>
           </Col>
           <Col>
-            <GalleryImage imageName={Image1} id={4}>
+            <GalleryImage imageName={Image3} id={4}>
               ExampleHeading
             </GalleryImage>
           </Col>
@@ -105,7 +111,7 @@ function Gallery() {
         </Row>
         <Row className="my-4">
           <Col>
-            <GalleryImage imageName={Image1} id={5}>
+            <GalleryImage imageName={Image4} id={5}>
               ExampleHeading
             </GalleryImage>
           </Col>
@@ -119,7 +125,7 @@ function Gallery() {
             </GalleryText>
           </Col>
           <Col>
-            <GalleryImage imageName={Image1} id={6}>
+            <GalleryImage imageName={Image5} id={6}>
               ExampleHeading
             </GalleryImage>
           </Col>

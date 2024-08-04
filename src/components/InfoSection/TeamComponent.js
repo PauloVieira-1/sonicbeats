@@ -1,17 +1,17 @@
 import { Container, Row, Col } from "react-bootstrap";
-import ExampleImage from "../../assets/jpeg/Vertical.jpeg";
 import Card from "react-bootstrap/Card";
 import Dan from "../../assets/jpeg/dan_2.jpg";
 import Daph from "../../assets/jpeg/daphine.jpg";
+import "./InfoSection.css";
 
 function TeamComponent(props) {
   return (
     <>
       <Container
         style={{ minHeight: "400px", zIndex: "0" }}
-        className={`mt-3 mb-5 bg-secondary rounded-4 ${props.shadow ? "shadow" : ""} ${props.active ? "transition-width" : "transition-reverse-width"}`}
+        className={`mt-3 mb-5 bg-secondary rounded-4 ${props.shadow ? "shadow" : ""} ${props.active ? "transition-width" : ""}`}
       >
-        <Row>
+        <Row className="team-effect">
           <Col className="p-3">
             <Card className="bg-dark text-white">
               <Card.Img src={Dan} alt="Card image" />

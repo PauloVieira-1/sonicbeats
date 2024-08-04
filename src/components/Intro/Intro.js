@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import "./Intro.css";
 import introImage from "../../assets/png/Intro-Image.png";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 function Intro() {
   return (
@@ -21,13 +22,16 @@ function Intro() {
                 quality and timeless craftsmanship. Elevate your listening
                 experience with Soniccraft.
               </p>
-              <Button
-                className="btn-rounded padding d-none d-md-none d-lg-block"
-                variant="outline-primary"
-                style={{ marginTop: "15px" }}
-              >
-                Discover Projects
-              </Button>{" "}
+              <Link to="/gallery" className="text-decoration-none">
+                <Button
+                  className="btn-rounded padding d-none d-md-none d-lg-block"
+                  variant="outline-primary"
+                  style={{ marginTop: "15px" }}
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  Discover Projects
+                </Button>{" "}     
+              </Link>
             </div>
           </Col>
           <Col lg={7} sm={12} className="text-center">

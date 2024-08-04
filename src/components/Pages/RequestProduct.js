@@ -14,7 +14,7 @@ function RequestProduct() {
 
   return (
     <>
-      <Container className="my-3">
+      <Container className="my-3" sm={12} lg={6}>
         <Row>
           <Col className="p-4">
             {/* <h2 className="mb-3">Request Custom Speaker</h2>

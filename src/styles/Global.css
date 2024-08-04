@@ -56,18 +56,9 @@
   animation-duration: 0.7s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  transition: width 0.7s ease-out;
   z-index: 0;
 }
 
-.transition-reverse-width {
-  animation-name: transition-reverse-width;
-  animation-duration: 0.7s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  transition: width 0.7s ease-out;
-  z-index: 0;
-}
 
 @keyframes transition-reverse-width {
   from {
