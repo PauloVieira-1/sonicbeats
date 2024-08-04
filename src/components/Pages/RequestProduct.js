@@ -2,11 +2,14 @@ import { Container, Row, Col } from "react-bootstrap";
 import RequestProductForm from "../RequestProductForm/RequestProductForm.js";
 import Hand from "../../assets/svg/hand.svg";
 import "../RequestProductForm/Request.css";
+import { useState } from "react";
 
 function RequestProduct() {
-  const handleFlip = () => {
-    const card = document.querySelector(".card-custom");
-    card.classList.toggle("flip");
+  
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
   };
 
   return (
@@ -25,10 +28,10 @@ function RequestProduct() {
             </p> */}
             <Container
               className="main-container transition-fast"
-              onClick={() => handleFlip()}
+              onClick={() => handleClick()}
             >
               <Row>
-                <div className="card-custom bg-light rounded-4 mt-5 shadow m-2">
+                <div className={`card-custom bg-light rounded-4 mt-5 shadow m-2 ${isFlipped ? 'flip' : ''}`}>
                   <div className="card-front p-5 mb-2">
                     <h1 className="fw-bold display-5 mb-5">
                       Help us design your speaker

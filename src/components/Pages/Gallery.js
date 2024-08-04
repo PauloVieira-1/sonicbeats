@@ -71,7 +71,7 @@ function Gallery() {
             </GalleryText>
           </Col>
           <Col>
-            <GalleryImage imageName={Image1} id={1}>
+            <GalleryImage imageName={Image1} subHeading="subHeading" description="description" id={1}>
               ExampleHeading
             </GalleryImage>
           </Col>

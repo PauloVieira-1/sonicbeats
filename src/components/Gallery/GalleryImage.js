@@ -1,15 +1,18 @@
 import { Container } from "react-bootstrap";
 import "./Gallery.css";
+import { useState } from "react";
 
 function GalleryImage({ imageName, children, id, ...props }) {
-  function handleClick() {
-    const imgCard = document.getElementById(`flip-img ${id}`);
-    imgCard.classList.toggle("flip");
-  }
+  
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
+  };  
 
   return (
     <Container className="p-0 main-container" onClick={() => handleClick()}>
-      <div className="img-custom" id={`flip-img ${id}`}>
+      <div className= {`img-custom ${isFlipped ? 'flip' : ''}`} id={`flip-img ${id}`}>
         <div
           style={{ height: "400px", width: "100%" }}
           className="d-flex gap-2 bg-custom-color-grey img-front"
