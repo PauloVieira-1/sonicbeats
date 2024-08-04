@@ -58,7 +58,7 @@ function NavRounded() {
               </Link>
             </Nav.Link>
             <Nav.Link href="/">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/gallery">
                 Gallery
               </Link>
             </Nav.Link>

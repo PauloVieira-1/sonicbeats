@@ -15,14 +15,14 @@ function TeamComponent(props) {
           <Col className="p-3">
             <Card className="bg-dark text-white">
               <Card.Img src={Dan} alt="Card image" />
-              <Card.ImgOverlay >
+              <Card.ImgOverlay>
                 <Card.Title>Daphine Vorstenbosch</Card.Title>
                 <Card.Text className="fw-light">
                   Designer & Marketing Lead
                 </Card.Text>
                 <Card.Text>
                   Daphine Vorstenbosch, the creative force behind Sonicraft's
-                  aesthetic and brand, leads the design and marketing efforts. 
+                  aesthetic and brand, leads the design and marketing efforts.
                 </Card.Text>
               </Card.ImgOverlay>
             </Card>
@@ -36,7 +36,8 @@ function TeamComponent(props) {
                   Founder & Master Craftsman
                 </Card.Text>
                 <Card.Text>
-                   Dan Vorstenbosch, the heart and soul of Sonicraft, meticulously handcrafts each speaker from scratch. 
+                  Dan Vorstenbosch, the heart and soul of Sonicraft,
+                  meticulously handcrafts each speaker from scratch.
                 </Card.Text>
               </Card.ImgOverlay>
             </Card>

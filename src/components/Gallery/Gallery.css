@@ -1,0 +1,42 @@
+.img-effect {
+  transition: all 0.4s ease-out;
+}
+
+.img-effect:hover {
+  transform: scale(1.06);
+}
+
+.main-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.img-custom {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.img-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.img-back {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg) scale(1.06);
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
