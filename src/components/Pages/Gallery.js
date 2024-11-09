@@ -1,22 +1,22 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useMemo } from "react";
 
 import GalleryText from "../Gallery/GalleryText";
 import GalleryImage from "../Gallery/GalleryImage";
 
-import Image from "../../assets/jpeg/Product1.jpeg";
-import Image1 from "../../assets/GalleryImages/Image1.PNG";
-import Image2 from "../../assets/GalleryImages/Image2.JPG";
-import Image3 from "../../assets/GalleryImages/Image3.JPG";
-import Image4 from "../../assets/GalleryImages/Image4.JPG";
-import Image5 from "../../assets/GalleryImages/Image5.JPG";
+import Image from "../../assets/GalleryImages/Strijp.JPG";
+import Image1 from "../../assets/GalleryImages/Table1.JPG";
+import Image2 from "../../assets/GalleryImages/Train.JPG";
+import Image3 from "../../assets/GalleryImages/Table3.JPG";
+import Image4 from "../../assets/GalleryImages/Bench.JPG";
+import Image5 from "../../assets/GalleryImages/Image1-2.JPG";
 
 
 function Gallery() {
   const headingRef = useRef(null);
   const paraRef = useRef(null);
 
-  const revealRefs = [headingRef, paraRef];
+  const revealRefs = useMemo(() => [headingRef, paraRef], []);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -71,6 +71,7 @@ function Gallery() {
             <GalleryText
               subHeading={"Discover how we bring the design to reality"}
               button={true}
+              page={"designprocess"}
             >
               {" "}
               The Design Process{" "}
@@ -78,12 +79,12 @@ function Gallery() {
           </Col>
           <Col>
             <GalleryImage imageName={Image} subHeading="subHeading" description="description" id={1}>
-              ExampleHeading
+              Heading
             </GalleryImage>
           </Col>
           <Col>
             <GalleryImage imageName={Image1} id={2}>
-              ExampleHeading
+              Heading
             </GalleryImage>
           </Col>
         </Row>
@@ -91,12 +92,12 @@ function Gallery() {
         <Row className="my-4">
           <Col>
             <GalleryImage imageName={Image2} id={3}>
-              ExampleHeading
+              Heading
             </GalleryImage>
           </Col>
           <Col>
-            <GalleryImage imageName={Image3} id={4}>
-              ExampleHeading
+            <GalleryImage imageName={Image3} id={4} subHeading="Compact Powerhouse with Superior Sound" description="These compact speakers deliver powerful, clear sound, handcrafted with sustainable Eik wood for an eco-friendly audio experience. Featuring our unique OmniWave technology, they provide immersive 360-degree sound, filling any space with rich audio.">
+              The Little Men
             </GalleryImage>
           </Col>
           <Col>
@@ -112,7 +113,7 @@ function Gallery() {
         <Row className="my-4">
           <Col>
             <GalleryImage imageName={Image4} id={5}>
-              ExampleHeading
+              Heading
             </GalleryImage>
           </Col>
           <Col>
@@ -126,7 +127,7 @@ function Gallery() {
           </Col>
           <Col>
             <GalleryImage imageName={Image5} id={6}>
-              ExampleHeading
+              Heading
             </GalleryImage>
           </Col>
         </Row>

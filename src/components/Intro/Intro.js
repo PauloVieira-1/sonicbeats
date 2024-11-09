@@ -2,7 +2,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Intro.css";
-import introImage from "../../assets/png/Intro-Image.png";
+import Option1 from "../../assets/png/Intro-Image.png";
+import Option2 from "../../assets/jpeg/Option2.jpeg"
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
@@ -35,7 +36,7 @@ function Intro() {
             </div>
           </Col>
           <Col lg={7} sm={12} className="text-center">
-            <img src={introImage} alt="intro" className="img-fluid"></img>
+            <img src={Option1} alt="intro" className="img-fluid"></img>
           </Col>
         </Row>
       </Container>

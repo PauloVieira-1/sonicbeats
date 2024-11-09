@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
-import Logo from "../../assets/svg/Logo.svg";
+import Logo from "../../assets/jpeg/Logo2.jpeg";
 import Facebook from "../../assets/svg/facebook.svg";
 import Instagram from "../../assets/svg/instagram.svg";
 import Twitter from "../../assets/svg/twitter-x.svg";
@@ -26,11 +26,10 @@ function Footer() {
               <img
                 alt=""
                 src={Logo}
-                width="30"
-                height="30"
+                width="160"
+                height="33"
                 className="d-inline-block align-top"
               />{" "}
-              Soniccraft
             </Col>
           </Row>
           <Row className="text-center">

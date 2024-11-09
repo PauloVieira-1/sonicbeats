@@ -15,7 +15,7 @@ function ProductCards() {
   }
 
   return (
-    <Container className="mt-5 bg-light px-4 pt-4 rounded-5 shadow">
+    <Container className="mt-5 bg-light px-4 pt-4 rounded-5 shadow mb-5" > 
       <Row>
         <Col xs={12} md={12}>
           <h2>Our Speaker Selection</h2>
@@ -62,8 +62,8 @@ function ProductCards() {
           </TabButton>
         </Col>
       </Row>
-      <Row>
-        <div className="mt-4 mb-5">
+      <Row >
+        <div className="mt-4 mb-5" >
           <Container>
             <Row className="rounded-3 bg-white border">
               <Col className="p-0" sm={12} lg={6}>
@@ -71,6 +71,7 @@ function ProductCards() {
                   src={ProductExamples[product].image}
                   alt={ProductExamples[product].title}
                   className="img-fluid rounded-3 h-100"
+                  style={{ maxHeight: "360px", minWidth: "100%", objectFit: "cover", minHeight: "360px" }}
                 />
               </Col>
               <Col className="px-5 py-4" sm={12} lg={6}>

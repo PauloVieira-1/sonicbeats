@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import Dan from "../../assets/jpeg/dan_2.jpg";
+import Dan from "../../assets/jpeg/Dan_3.JPG";
 import Daph from "../../assets/jpeg/daphine.jpg";
 import "./InfoSection.css";
 
@@ -8,10 +8,10 @@ function TeamComponent(props) {
   return (
     <>
       <Container
-        style={{ minHeight: "400px", zIndex: "0" }}
-        className={`mt-3 mb-5 bg-secondary rounded-4 ${props.shadow ? "shadow" : ""} ${props.active ? "transition-width" : ""}`}
+        style={{ minHeight: "400px", zIndex: "-10", position: "relative" }}
+        id="team" className={`mt-3 mb-5 bg-secondary rounded-4 team-effect ${props.shadow ? "shadow" : ""} ${props.active ? "transition-down" : "transition-up"}`}
       >
-        <Row className="team-effect">
+        <Row className="">
           <Col className="p-3">
             <Card className="bg-dark text-white">
               <Card.Img src={Dan} alt="Card image" />
@@ -28,8 +28,8 @@ function TeamComponent(props) {
             </Card>
           </Col>
           <Col className="p-3">
-            <Card className="bg-dark text-white" style={{ height: "100%" }}>
-              <Card.Img src={Daph} alt="Card image" className=" h-100" />
+            <Card className="bg-dark text-white" >
+              <Card.Img src={Daph} alt="Card image" />
               <Card.ImgOverlay>
                 <Card.Title>Dan Vorstenbosch</Card.Title>
                 <Card.Text className="fw-light">

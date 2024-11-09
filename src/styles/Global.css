@@ -1,3 +1,5 @@
+@import 'cloudinary-video-player/cld-video-player.min.css';
+
 .btn-rounded {
   border-radius: 50px !important;
 }
@@ -42,31 +44,13 @@
   transition: all 0.5s ease-out;
 }
 
-.transition-down {
-  animation-name: transition-down;
-  animation-duration: 0.7s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  transition: ease-out;
-  z-index: 0;
-}
 
 .transition-width {
   animation-name: transition-width;
   animation-duration: 0.7s;
-  animation-iteration-count: 1;
   animation-fill-mode: forwards;
   z-index: 0;
-}
-
-
-@keyframes transition-reverse-width {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0;
-  }
+  transition: ease-in;
 }
 
 @keyframes transition-width {
@@ -93,15 +77,6 @@
   }
   to {
     max-height: 500px;
-  }
-}
-
-@keyframes transition-down {
-  from {
-    transform: translateY(-1000px);
-  }
-  to {
-    transform: translateY(0);
   }
 }
 
@@ -133,3 +108,5 @@
     opacity: 1;
   }
 }
+
+

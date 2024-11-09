@@ -3,6 +3,7 @@ import InfoSection from "../InfoSection/InfoSection";
 import VerticalImage from "../../assets/jpeg/dan.jpeg";
 import ImageCarousel from "../ImageCarousel/ImageCarousel";
 import TeamComponent from "../InfoSection/TeamComponent";
+import { useMemo } from "react";
 import { useRef, useState, useEffect } from "react";
 
 function About() {
@@ -10,7 +11,7 @@ function About() {
   const paraRef = useRef(null);
   const infoSection = useRef(null);
 
-  const revealRefs = [headingRef, paraRef, infoSection];
+  const revealRefs = useMemo(() => [headingRef, paraRef, infoSection], []);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -53,9 +54,8 @@ function About() {
   const [teamActive, setTeamActive] = useState(false);
   function handleSelect() {
     setTeamActive(!teamActive);
+    console.log(teamActive);
   }
-
-  let teamComponent = <TeamComponent shadow={true} active={teamActive} />;
 
   return (
     <>
@@ -89,7 +89,7 @@ function About() {
             active={teamActive}
           />
         </div>
-        {teamActive ? teamComponent : null}
+        <TeamComponent shadow={true} active={teamActive} />
         <div ref={infoSection}>
           <InfoSection
             title={"Our Mission"}

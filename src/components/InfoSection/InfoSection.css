@@ -1,3 +1,54 @@
-.team-effect {
-    transition: all 0.4s ease-in;
+#team {
+  visibility:hidden; /* Initially hidden */
+  max-height: 0px;
 }
+
+.transition-up, .transition-down {
+  display: flex;
+  opacity: 0;
+  animation-duration: 0.7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  transition: ease-out;
+  z-index: 0;
+}
+
+.transition-up {
+  animation-name: transition-up;
+}
+
+.transition-down {
+  animation-name: transition-down;
+}
+
+@keyframes transition-up {
+  from {
+      max-height: 250px !important;
+      opacity: 1;
+      transform: translateY(0px);
+      visibility: visible;
+  }
+  to {
+      max-height: 0px;
+      opacity: 0;
+      transform: translateY(-650px);
+      visibility: hidden;
+  }
+}
+
+@keyframes transition-down {
+  from {
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-650px);
+      visibility: hidden;
+  }
+  to {
+      max-height: 250px !important;
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+  }
+}
+
+  

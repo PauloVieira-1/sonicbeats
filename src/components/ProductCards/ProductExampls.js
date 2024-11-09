@@ -1,11 +1,11 @@
-import product1Image from "../../assets/jpeg/Product1c.jpeg";
+import product1Image from "../../assets/jpeg/Product1d.jpeg";
 import product2Image from "../../assets/jpeg/Product2.jpeg";
 import product3Image from "../../assets/jpeg/Product3.jpeg";
-import product4Image from "../../assets/jpeg/Product4.jpeg";
+import product4Image from "../../assets/jpeg/Product4a.jpeg";
 
 export const ProductExamples = {
   Product1: {
-    name: "Infinity",
+    name: "Enigma Artifact",
     image: product4Image,
     title: "Unleash Endless Sound with Infinity",
     description:

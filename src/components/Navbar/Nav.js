@@ -1,9 +1,8 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import "./Nav.css";
-import Logo from "../../assets/svg/Logo.svg";
+import Logo from "../../assets/jpeg/Logo2.jpeg";
 import { useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
@@ -37,11 +36,10 @@ function NavRounded() {
             <img
               alt=""
               src={Logo}
-              width="30"
-              height="30"
+              width="190"
+              height="35"
               className="d-inline-block align-top"
             />{" "}
-            Soniccraft
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -62,33 +60,23 @@ function NavRounded() {
                 Gallery
               </Link>
             </Nav.Link>
-            <NavDropdown
-              title="Learn More"
-              id="basic-nav-dropdown"
-              className="nav-link"
-            >
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
+            <Nav.Link href="/">
+              <Link className="nav-link" to="/additional-services">
                 Additional Services
-              </NavDropdown.Item>
-            </NavDropdown>
+              </Link>
+            </Nav.Link>
           </Nav>
-          <Nav.Link className="mx-3 d-none d-md-none d-lg-block" href="#home">
-            <Link to={"/request-product"}>
-              <Button className="btn-rounded" variant="outline-primary">
-                Request Product
+          <Nav.Link className="d-none d-md-none d-lg-block" href="#home">
+            <Link to={"/shop"}>
+              <Button className="btn-rounded mx-1 px-5" variant="outline-primary" style={{ left: "-10px"}}>
+                Shop
               </Button>{" "}
             </Link>
-          </Nav.Link>
-          <Nav.Link className="mx-0 d-md-block d-lg-none mt-4" href="#home">
+            </Nav.Link>
+            <Nav.Link className="mx-3 d-none d-md-none d-lg-block" href="#home">
             <Link to={"/request-product"}>
-              <Button className="btn-rounded" variant="outline-primary" style={{ left: "-10px"}}>
-                Request Product
+              <Button className="btn-rounded" variant="outline-primary">
+                Request Custom
               </Button>{" "}
             </Link>
           </Nav.Link>

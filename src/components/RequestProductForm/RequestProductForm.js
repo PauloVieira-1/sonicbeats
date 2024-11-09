@@ -2,7 +2,7 @@ import { Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./Request.css";
-import axios from "axios";
+// import axios from "axios";
 
 function RequestProductForm() {
   let form = useFormik({
@@ -28,14 +28,14 @@ function RequestProductForm() {
       alert(JSON.stringify(values, null, 2));
       console.log(values);
 
-      const response = await axios
-        .post("http://localhost:3000/requests", values)
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      // const response = await axios
+      //   .post("http://localhost:3000/requests", values)
+      //   .then((response) => {
+      //     console.log(response);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
     },
   });
 

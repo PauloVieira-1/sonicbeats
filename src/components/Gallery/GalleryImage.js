@@ -26,7 +26,7 @@ function GalleryImage({ imageName, children, id, ...props }) {
         </div>
         <div className="img-back bg-custom-color-grey-2">
           <div className="text-center d-flex flex-column justify-content-center align-items-center p-5 ">
-            <h3 className="fw-bold text-align-center mt-5">{children}</h3>
+            <h3 className="fw-bold text-align-center mt-2">{children}</h3>
             <h5 className="fw-lighter mt-2">{props.subHeading}</h5>
             <p>{props.description}</p>
           </div>

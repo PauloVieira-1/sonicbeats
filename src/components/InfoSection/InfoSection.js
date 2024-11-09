@@ -1,7 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { forwardRef } from "react";
-import PlusImage from "../../assets/svg/plus-circle.svg";
 import "../ImageCarousel/ImageCarousel.css";
 
 const InfoSection = forwardRef(function InfoSection(props, ref) {
@@ -13,29 +12,13 @@ const InfoSection = forwardRef(function InfoSection(props, ref) {
         className={`d-flex align-items-center btn-rounded d-none d-lg-block position-relative start-10 bottom-0 ${props.active ? "active shadow-transition" : ""}`}
         style={{
           marginTop: "65px",
-          paddingLeft: "8px",
+          paddingLeft: "16px",
           paddingRight: "16px",
         }}
         variant="outline-secondary"
         ref={ref}
         onClick={props.onSelect}
       >
-        {" "}
-        <span className="recolor-image-h">
-          <img
-            src={PlusImage}
-            alt="plus"
-            style={{
-              marginRight: "6px",
-              marginLeft: "6px",
-              verticalAlign: "middle",
-              position: "relative",
-              top: "-1px",
-              opacity: "0.6",
-            }}
-            className={props.active ? "recolor-image" : ""}
-          />
-        </span>
         Discover Team
       </Button>
     );

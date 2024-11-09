@@ -2,7 +2,7 @@ import { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Product1 from "../../assets/jpeg/carousel-image-1.jpeg";
 import Product2 from "../../assets/jpeg/carousel-image-2.jpeg";
-import Product3 from "../../assets/jpeg/carousel-image-3.jpeg";
+import Product3 from "../../assets/jpeg/Product4.JPG";
 import "../ImageCarousel/ImageCarousel.css";
 
 function ImageCarousel() {
@@ -52,9 +52,9 @@ function ImageCarousel() {
             alt="Third slide"
           ></img>
           <Carousel.Caption style={{ textAlign: "left" }}>
-            <h3>Third slide label</h3>
+            <h3>Donnager</h3>
             <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              Meaning "Great" or "Powerful" in old German, this sspeaker delivers a sound that equals its name.
             </p>
           </Carousel.Caption>
         </Carousel.Item>
