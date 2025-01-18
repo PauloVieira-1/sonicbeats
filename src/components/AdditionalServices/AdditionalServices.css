@@ -1,38 +1,37 @@
-.img-effect {
+@media only screen and (min-width: 1000px) {
+  .img-effect {
     transition: all 0.4s ease-out;
   }
-  
+
   .img-effect:hover {
     transform: scale(1.02);
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  }  
+    box-shadow:
+      rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
 
-
-  .card-paragraph{
+  .card-paragraph {
     opacity: 0;
   }
 
-.cardbox:hover {
-    
-  .card-paragraph {
-    opacity: 1;
-    transition: all 0.5s ease-out;
-    translate: 0px -45px;
+  .cardbox:hover {
+    .card-paragraph {
+      opacity: 1;
+      transition: all 0.5s ease-in-out;
+      translate: 0px -45px;
+    }
 
+    img {
+      transform: scale(0.8);
+      transition: all 0.5s ease-out;
+      translate: 0px -25px;
+    }
+
+    h2 {
+      transform: scale(0.76);
+      transition: all 0.5s ease-out;
+      translate: 0px -55px;
+    }
   }
-
-  img{
-    transform: scale(0.8);
-    transition: all 0.5s ease-out;
-    translate: 0px -25px;
-  }
-
-  h2{
-    transform: scale(0.76);
-    transition: all 0.5s ease-out;
-    translate: 0px -55px;
-  }
-
-
-  }
-
+}

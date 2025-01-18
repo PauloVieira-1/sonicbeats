@@ -5,7 +5,6 @@ import "../RequestProductForm/Request.css";
 import { useState } from "react";
 
 function RequestProduct() {
-  
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
@@ -31,7 +30,9 @@ function RequestProduct() {
               onClick={() => handleClick()}
             >
               <Row>
-                <div className={`card-custom bg-light rounded-4 mt-5 shadow m-2 ${isFlipped ? 'flip' : ''}`}>
+                <div
+                  className={`card-custom bg-light rounded-4 mt-5 shadow m-2 ${isFlipped ? "flip" : ""}`}
+                >
                   <div className="card-front p-5 mb-2">
                     <h1 className="fw-bold display-5 mb-5">
                       Help us design your speaker

@@ -1,11 +1,22 @@
 import express from "express";
 import { MongoClient } from "mongodb";
 
-const start = async () => {
-  const client = await MongoClient.connect("mongodb://localhost:27017", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+console.log(process);
+
+const stripe = require("stripe")(
+  "sk_test_51QMYorFhBZUQjeLQ34vBmNw09WuKR0XtTdqrU0rfCAI1C7XfBaYatXiYTToru05crpJAwqlcgPPRBDSKJqza9r7100oBNRuPQJ",
+);
+
+function calculateAmount(items) {
+  let total = 0;
+  items.forEach((item) => {
+    total += item.count * item.price * 100;
   });
+  return total; // reduce
+}
+
+const start = async () => {
+  const client = await MongoClient.connect("mongodb://localhost:27017");
 
   const db = client.db("Sonicbeats");
 
@@ -15,6 +26,7 @@ const start = async () => {
   const port = process.env.PORT || 8081;
 
   app.use(cors());
+  app.use(express.static("public"));
   app.use(express.json()); // When a request us made it will be sent to the .body method (.body will be undefined if not added)
 
   app.get("/requests", async (req, res) => {
@@ -29,6 +41,38 @@ const start = async () => {
 
     console.log(response);
     res.status(200).json(request);
+  });
+
+  app.post("/create-payment-intent", async (req, res) => {
+    const items = req.body; // { items:[]}
+
+    // if (!Array.isArray(items) || items.length === 0) {
+    //   return res.status(400).json({ error: "Invalid items" });
+    // }
+
+    const amount = calculateAmount(items) > 1 ? calculateAmount(items) : 1;
+    const itemNames = items
+      .map((item) => `${item.name} (x${item.count})`)
+      .join(", ");
+
+    // if (amount <= 0) {
+    //   return res.status(400).send({ error: "Amount must be greater than 0" });
+    // }
+
+    try {
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount,
+        currency: "eur",
+        automatic_payment_methods: { enabled: true },
+        receipt_email: "dHs9X@example.com",
+        description: itemNames,
+      });
+
+      res.send({ clientSecret: paymentIntent.client_secret });
+    } catch (error) {
+      console.error("Stripe error:", error);
+      res.status(500).send({ error: "Failed to create PaymentIntent" });
+    }
   });
 
   app.listen(port, () => {

@@ -64,7 +64,7 @@ function Footer() {
             </Col>
           </Row>
           <p className="text-center mt-3">
-            © 2023 Soniccraft. All rights reserved.
+            © 2025 Sonicbeats. All rights reserved.
           </p>
         </div>
       </Container>

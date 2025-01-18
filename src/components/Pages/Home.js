@@ -56,8 +56,14 @@ function Home() {
         <Intro />
         <ProductCards />
       </main>
-      <Container className="d-flex justify-content-center p-0 my-5" style={{ maxHeight: "10px !important", minWidth: "100%"}}>
-        <VideoPlayer publicId="Sonicbeats/hsaleberrpz6t6ara8lv" id="video-player"/>
+      <Container
+        className="d-flex justify-content-center p-0 my-5"
+        style={{ maxHeight: "10px !important", minWidth: "100%" }}
+      >
+        <VideoPlayer
+          publicId="Sonicbeats/hsaleberrpz6t6ara8lv"
+          id="video-player"
+        />
       </Container>
       <Container>
         <Col className="text-center" style={{ marginTop: "110px" }}>
@@ -96,14 +102,14 @@ function Home() {
         </Col>
       </Container>
       <div className="bg-custom-color-grey">
-        <Container className="mt-5" >
-          <Row >
+        <Container className="mt-5">
+          <Row>
             <Col lg={7} sm={12} md={12} className="px-0">
               <img
                 src={EndImage}
                 alt=""
                 className="img-fluid"
-                style={{ height: "100%" ,maxHeight: "600px"}}
+                style={{ height: "100%", maxHeight: "600px" }}
               />
             </Col>
             <Col lg={5} sm={12} className="p-5">
@@ -114,20 +120,24 @@ function Home() {
                 At Sonicbeats, we specialize in a range of custom-made
                 sound-related products designed to meet your unique needs.
                 Whether you are looking for bespoke home audio systems,
-                professional studio equipment, or personalized sound solutions,
-                our team is dedicated to delivering exceptional quality and
-                innovative design. 
+                professional installations, or personalized sound solutions, our
+                team is dedicated to delivering exceptional quality and
+                innovative design.
               </p>
               <div className="pl-5 text-end">
-              <Link to="/additional-services" className="text-decoration-none">
-                <Button
-                  className="btn-rounded wide"
-                  variant="outline-secondary"
-                  style={{ marginTop: "15px" }}
+                <Link
+                  to="/additional-services"
+                  className="text-decoration-none"
                 >
-                  Learn More
-                </Button>{" "}
-              </Link>
+                  <Button
+                    className="btn-rounded wide"
+                    variant="outline-secondary"
+                    style={{ marginTop: "15px" }}
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
+                    Learn More
+                  </Button>{" "}
+                </Link>
               </div>
             </Col>
           </Row>

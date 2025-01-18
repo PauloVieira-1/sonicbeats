@@ -3,15 +3,7 @@ import { useRef, useEffect, useMemo } from "react";
 
 import GalleryText from "../Gallery/GalleryText";
 import GalleryImage from "../Gallery/GalleryImage";
-
-import Image from "../../assets/GalleryImages/Strijp.JPG";
-import Image1 from "../../assets/GalleryImages/Table1.JPG";
-import Image2 from "../../assets/GalleryImages/Train.JPG";
-import Image3 from "../../assets/GalleryImages/Table3.JPG";
-import Image4 from "../../assets/GalleryImages/Bench.JPG";
-import Image5 from "../../assets/GalleryImages/Image1-2.JPG";
-
-
+import preloadImages from "../Navbar/LoadImages";
 function Gallery() {
   const headingRef = useRef(null);
   const paraRef = useRef(null);
@@ -66,68 +58,100 @@ function Gallery() {
         </Row>
       </Container>
       <Container>
-        <Row className="my-4">
-          <Col>
+        <Row className="d-flex justify-content-center">
+          <Col xs={12} md={4} className="my-3">
             <GalleryText
-              subHeading={"Discover how we bring the design to reality"}
+              subHeading={"Explore some of our ready to produce models"}
               button={true}
-              page={"designprocess"}
+              page={"shop"}
             >
               {" "}
-              The Design Process{" "}
+              Shop{" "}
             </GalleryText>
           </Col>
-          <Col>
-            <GalleryImage imageName={Image} subHeading="subHeading" description="description" id={1}>
-              Heading
+          <Col xs={12} md={4} className="my-3">
+            <GalleryImage
+              imageName={preloadImages[0]}
+              subHeading="A look of what is to come"
+              description="A concept for a speake that is large, powerful and yet portable"
+              id={1}
+            >
+              Vision
             </GalleryImage>
           </Col>
-          <Col>
-            <GalleryImage imageName={Image1} id={2}>
-              Heading
+          <Col xs={12} md={4} className="my-3">
+            <GalleryImage
+              imageName={preloadImages[1]}
+              id={2}
+              subHeading="The Blackbox is portable, lightweight, and made out of natural pinewood"
+              description="50-watt Rms with 8hr battery life"
+            >
+              Blackbox
             </GalleryImage>
           </Col>
         </Row>
 
-        <Row className="my-4">
-          <Col>
-            <GalleryImage imageName={Image2} id={3}>
-              Heading
+        <Row className="my-">
+          <Col xs={12} md={4} className="my-3">
+            <GalleryImage
+              imageName={preloadImages[2]}
+              id={3}
+              subHeading="A compact design for those on the go"
+              description="These compact speakers deliver powerful, clear sound, handcrafted with sustainable Eik wood for an eco-friendly audio experience."
+            >
+              Perfect for Daily Use
             </GalleryImage>
           </Col>
-          <Col>
-            <GalleryImage imageName={Image3} id={4} subHeading="Compact Powerhouse with Superior Sound" description="These compact speakers deliver powerful, clear sound, handcrafted with sustainable Eik wood for an eco-friendly audio experience. Featuring our unique OmniWave technology, they provide immersive 360-degree sound, filling any space with rich audio.">
-              The Little Men
+          <Col xs={12} md={4} className="my-3">
+            <GalleryImage
+              imageName={preloadImages[3]}
+              id={4}
+              subHeading="Styly and beautiful, made out of natural Oakwood"
+              description="12V battery, and weighs only 9.5kg"
+            >
+              Enigma
             </GalleryImage>
           </Col>
-          <Col>
+          <Col xs={12} md={4} className="my-3">
             <GalleryText
-              subHeading={"Discover how we bring the design to reality"}
+              subHeading={"Find out about thos who bring our designs to life"}
               button={true}
+              page={"about"}
             >
               {" "}
-              The Design Process{" "}
+              About Us{" "}
             </GalleryText>{" "}
           </Col>
         </Row>
-        <Row className="my-4">
-          <Col>
-            <GalleryImage imageName={Image4} id={5}>
-              Heading
+        <Row className="m">
+          <Col xs={12} md={4} className="my-3">
+            <GalleryImage
+              imageName={preloadImages[4]}
+              id={5}
+              subHeading="The Blackbox perfectly integrates into any lifestyle"
+              description="50-watt Rms with 8hr battery life"
+            >
+              Blackbox
             </GalleryImage>
           </Col>
-          <Col>
+          <Col xs={12} md={4} className="my-3">
             <GalleryText
-              subHeading={"Discover how we bring the design to reality"}
+              subHeading={"Design your own speaker in collaboration with us"}
               button={true}
+              page={"request-product"}
             >
               {" "}
-              The Design Process{" "}
+              Request a Custom Product{" "}
             </GalleryText>
           </Col>
-          <Col>
-            <GalleryImage imageName={Image5} id={6}>
-              Heading
+          <Col xs={12} md={4} className="my-3">
+            <GalleryImage
+              imageName={preloadImages[5]}
+              id={6}
+              subHeading="Bike system integration"
+              description="Integrated speaker system, with control dashboard"
+            >
+              A Look to the Past
             </GalleryImage>
           </Col>
         </Row>

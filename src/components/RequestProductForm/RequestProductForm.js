@@ -2,9 +2,16 @@ import { Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./Request.css";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 // import axios from "axios";
 
 function RequestProductForm() {
+  const [show, setShow] = useState(false);
+
+  const submition = useRef();
+
   let form = useFormik({
     initialValues: {
       name: "",
@@ -25,17 +32,17 @@ function RequestProductForm() {
     }),
 
     onSubmit: async (values) => {
-      alert(JSON.stringify(values, null, 2));
-      console.log(values);
-
-      // const response = await axios
-      //   .post("http://localhost:3000/requests", values)
-      //   .then((response) => {
-      //     console.log(response);
-      //   })
-      //   .catch((error) => {
-      //     console.log(error);
-      //   });
+      emailjs
+        .sendForm(
+          "service_xedvn6r",
+          "template_ib5kavn",
+          submition.current,
+          "lefNpA0eeHK4rVGKZ",
+        )
+        .then((result) => {
+          setShow(true);
+          console.log(result.text);
+        });
     },
   });
 
@@ -43,7 +50,7 @@ function RequestProductForm() {
   console.log(form.errors);
 
   return (
-    <Form onSubmit={form.handleSubmit}>
+    <Form onSubmit={form.handleSubmit} ref={submition}>
       <Form.Group className="mb-3">
         <Form.Label
           className={`${form.touched.name && form.errors.name === "name is a required field" ? "invalid-color" : ""}`}
@@ -58,6 +65,7 @@ function RequestProductForm() {
           name="name"
           value={form.values.name}
           onChange={form.handleChange}
+          id="name"
         />
       </Form.Group>
       <Form.Group className="mb-3" value={form.values.email}>
@@ -75,6 +83,7 @@ function RequestProductForm() {
           name="email"
           value={form.values.email}
           onChange={form.handleChange}
+          id="email"
         />
       </Form.Group>
       <Form.Group className="mb-3">
@@ -93,6 +102,7 @@ function RequestProductForm() {
           name="phone"
           value={form.values.phone}
           onChange={form.handleChange}
+          id="phone"
         />
       </Form.Group>
       <Form.Group className="mb-3">
@@ -101,6 +111,7 @@ function RequestProductForm() {
           name="spec"
           value={form.values.spec}
           onChange={form.handleChange}
+          id="spec"
         >
           <option>Select Speaker Spec</option>
           <option value="1">X</option>
@@ -114,6 +125,7 @@ function RequestProductForm() {
           name="material"
           value={form.values.material}
           onChange={form.handleChange}
+          id="material"
         >
           <option>Select Speaker Material</option>
           <option value="1">X</option>
@@ -122,21 +134,37 @@ function RequestProductForm() {
         </Form.Select>
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label className={`${form.touched.description && form.errors.description === "description is a required field" ? "invalid-color" : ""}`}>{(form.touched.description && form.errors.description) ===
+        <Form.Label
+          className={`${form.touched.description && form.errors.description === "description is a required field" ? "invalid-color" : ""}`}
+        >
+          {(form.touched.description && form.errors.description) ===
           "description is a required field"
             ? "Required"
-            : "Description"}</Form.Label>
+            : "Description"}
+        </Form.Label>
         <Form.Control
           as="textarea"
           rows={3}
           name="description"
           value={form.values.description}
           onChange={form.handleChange}
+          id="description"
         />
       </Form.Group>
-      <Button variant="primary" type="submit" className="rounded-5 px-5 mt-3">
+      <Button
+        variant="primary"
+        type="submit"
+        id="send"
+        className="rounded-5 px-5 mt-3"
+      >
         Submit
       </Button>
+      {show && (
+        <div className="alert alert-success mt-5" role="alert">
+          <h4 className="alert-heading">Success</h4>
+          <p>Product Requested Successfully</p>
+        </div>
+      )}
     </Form>
   );
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import Product1 from "../../assets/jpeg/carousel-image-1.jpeg";
+import Product1 from "../../assets/jpeg/Speakers_two.JPG";
 import Product2 from "../../assets/jpeg/carousel-image-2.jpeg";
 import Product3 from "../../assets/jpeg/Product4.JPG";
 import "../ImageCarousel/ImageCarousel.css";
@@ -22,12 +22,8 @@ function ImageCarousel() {
             alt="First slide"
           ></img>
           <Carousel.Caption style={{ textAlign: "left" }}>
-            <h3>Infinity</h3>
-            <p>
-              A name that embodies timeless elegance and boundless possibilities{" "}
-              <br />
-              in audio excellence. Limited Availability.
-            </p>
+            <h3>Enigma + Blackbox</h3>
+            <p>A deisgn philosophy captured in two form factors </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="c-item">
@@ -54,7 +50,8 @@ function ImageCarousel() {
           <Carousel.Caption style={{ textAlign: "left" }}>
             <h3>Donnager</h3>
             <p>
-              Meaning "Great" or "Powerful" in old German, this sspeaker delivers a sound that equals its name.
+              Meaning "Great" or "Powerful" in old German, this sspeaker
+              delivers a sound that equals its name.
             </p>
           </Carousel.Caption>
         </Carousel.Item>

@@ -1,9 +1,16 @@
 #team {
-  visibility:hidden; /* Initially hidden */
-  max-height: 0px;
+  max-height: 0;
+  overflow: hidden; /* Prevent layout shifts */
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    margin-bottom 0.7s ease-out,
+    max-height 0.7s ease-out,
+    opacity 0.7s ease-out;
 }
 
-.transition-up, .transition-down {
+.transition-up,
+.transition-down {
   display: flex;
   opacity: 0;
   animation-duration: 0.7s;
@@ -23,32 +30,34 @@
 
 @keyframes transition-up {
   from {
-      max-height: 250px !important;
-      opacity: 1;
-      transform: translateY(0px);
-      visibility: visible;
+    max-height: 250px !important;
+    opacity: 1;
+    transform: translateY(0px);
+    visibility: visible;
+    display: flex;
   }
   to {
-      max-height: 0px;
-      opacity: 0;
-      transform: translateY(-650px);
-      visibility: hidden;
+    max-height: 0px;
+    opacity: 0;
+    transform: translateY(-650px);
+    visibility: hidden;
+    display: none;
   }
 }
 
 @keyframes transition-down {
   from {
-      max-height: 0;
-      opacity: 0;
-      transform: translateY(-650px);
-      visibility: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-650px);
+    visibility: hidden;
+    display: none;
   }
   to {
-      max-height: 250px !important;
-      opacity: 1;
-      transform: translateY(0);
-      visibility: visible;
+    max-height: 250px !important;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    display: flex;
   }
 }
-
-  

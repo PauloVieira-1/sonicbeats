@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Intro.css";
 import Option1 from "../../assets/png/Intro-Image.png";
-import Option2 from "../../assets/jpeg/Option2.jpeg"
+// import Option2 from "../../assets/jpeg/Option2.jpeg";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
@@ -18,7 +18,7 @@ function Intro() {
             </h1>
             <div className="transition-slow">
               <p className="lead mt-4 fw-light">
-                Crafting Superior Sound Since 2010. Explore our meticulously
+                Crafting Superior Sound Since 2018. Explore our meticulously
                 handmade speakers, designed to deliver unparalleled audio
                 quality and timeless craftsmanship. Elevate your listening
                 experience with Soniccraft.
@@ -31,7 +31,7 @@ function Intro() {
                   onClick={() => window.scrollTo(0, 0)}
                 >
                   Discover Projects
-                </Button>{" "}     
+                </Button>{" "}
               </Link>
             </div>
           </Col>

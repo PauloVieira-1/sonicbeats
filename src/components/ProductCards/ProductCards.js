@@ -15,15 +15,16 @@ function ProductCards() {
   }
 
   return (
-    <Container className="mt-5 bg-light px-4 pt-4 rounded-5 shadow mb-5" > 
+    <Container className="mt-5 bg-light px-4 pt-4 rounded-5 shadow mb-5">
       <Row>
         <Col xs={12} md={12}>
           <h2>Our Speaker Selection</h2>
           <p>
             Explore our collection of past speaker models. Each product is
-            unique, offering distinctive features and quality sound. While these
-            models showcase our past innovations, you can place orders for
-            customized, individual speakers tailored to your specific needs.
+            unique, offering distinctive features and quality sound. These
+            models showcase some of our existing models, however, you can place
+            orders for customized, individual speakers tailored to your specific
+            needs.
           </p>
         </Col>
         <Col xs={6} md={4}></Col>
@@ -62,8 +63,8 @@ function ProductCards() {
           </TabButton>
         </Col>
       </Row>
-      <Row >
-        <div className="mt-4 mb-5" >
+      <Row>
+        <div className="mt-4 mb-5">
           <Container>
             <Row className="rounded-3 bg-white border">
               <Col className="p-0" sm={12} lg={6}>
@@ -71,7 +72,12 @@ function ProductCards() {
                   src={ProductExamples[product].image}
                   alt={ProductExamples[product].title}
                   className="img-fluid rounded-3 h-100"
-                  style={{ maxHeight: "360px", minWidth: "100%", objectFit: "cover", minHeight: "360px" }}
+                  style={{
+                    maxHeight: "430px",
+                    minWidth: "100%",
+                    objectFit: "cover",
+                    minHeight: "430px",
+                  }}
                 />
               </Col>
               <Col className="px-5 py-4" sm={12} lg={6}>
@@ -83,6 +89,13 @@ function ProductCards() {
                       <li key={key} className="text-start bullets">
                         {key.split("_").join(" ")}:{" "}
                         {ProductExamples[product].specifications[key]}
+                      </li>
+                    ),
+                  )}
+                  {Object.keys(ProductExamples[product].aditionalInfo).map(
+                    (key) => (
+                      <li className="text-start bullets" key={key}>
+                        {ProductExamples[product].aditionalInfo[key]}
                       </li>
                     ),
                   )}
