@@ -7,6 +7,12 @@ const CartElement = forwardRef((props, ref) => {
   const [count, setCount] = useState(props.quantity);
 
   let cart = JSON.parse(localStorage.getItem("cart"));
+
+  useEffect(() => {
+    cart.find((item) => item.name === props.title).count = count;
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [count, props.title, cart]);
+
   const handleIncrement = () => {
     cart.find((item) => item.name === props.title).count = count;
     setCount(count + 1);
@@ -22,10 +28,6 @@ const CartElement = forwardRef((props, ref) => {
     }
   };
 
-  useEffect(() => {
-    cart.find((item) => item.name === props.title).count = count;
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [count, props.title, cart]);
 
   useImperativeHandle(ref, () => ({
     callParentFunction: props.totalIncrement,

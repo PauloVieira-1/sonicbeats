@@ -29,9 +29,31 @@ function Cart() {
 
   const handleIncrement = (item) => {
     setTotal(total + ProductsAvailable[item].price);
+    const existingItem = cart.find((i) => i.name === item);
+    if (existingItem) {
+      const updatedCart = cart.map((i) => {
+        if (i.name === item) {
+          return { ...i, count: i.count + 1 };
+        }
+        return i;
+      });
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      setCart(updatedCart);
+    }
   };
   const handleDecrement = (item) => {
     setTotal(total - ProductsAvailable[item].price);
+    const existingItem = cart.find((i) => i.name === item);
+    if (existingItem){
+      const updatedCart = cart.map((i) => {
+        if (i.name = item){
+          return { ...i, count: i.count - 1 };
+        }
+        return i;
+      })
+      localStorage.setItem("cart", JSON.stringify(updatedCart));  
+      setCart(updatedCart);
+    }
   };
 
   const HandleRemoveItem = (title) => {

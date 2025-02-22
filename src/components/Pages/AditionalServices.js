@@ -34,35 +34,35 @@ function AdditionalServices() {
           />
         </Col>
         <Col md={7}>
-          <Row className="mt-5 mb-3">
+          <Row className="mt-5 mb-3 ps-3">
             <Col xs={12} lg={6} className="mb-3">
               <ServiceCard
                 image={Speaker}
                 title="Installation"
-                description="Our expert team provides professional installation services, ensuring your speakers and audio systems are set up for optimal performance. From home theaters to commercial spaces, we handle every detail with precision."
+                description="Our expert team provides professional installation services, ensuring your speakers and audio systems are set up for optimal performance."
               />
             </Col>
             <Col>
               <ServiceCard
                 image={Gear}
                 title="Tunning"
-                description="Achieve the perfect sound with our advanced tuning services. We’ll calibrate your audio system to match the acoustics of your space, creating a rich and immersive listening experience tailored to your environment."
+                description="Achieve the perfect sound with our advanced tuning services. We’ll calibrate your audio system to match your wants and needs."
               />
             </Col>
           </Row>
-          <Row className="mb-4">
+          <Row className="mb-4 ps-3">
             <Col xs={12} lg={6} className="mb-3">
               <ServiceCard
                 image={Note}
                 title="Custom"
-                description="Unleash your creativity with our custom speaker design service. Collaborate with our craftsmen to create bespoke speakers that reflect your style and deliver unparalleled sound quality."
+                description="Unleash your creativity with our custom speaker design service. Collaborate with our craftsmen to create a speaker that perfectly aligns with your vision."
               />
             </Col>
             <Col>
               <ServiceCard
                 image={Tools}
                 title="Repair"
-                description="Extend the life of your beloved audio equipment with our repair services. Our skilled technicians can diagnose and fix a wide range of issues, restoring your system to its original brilliance."
+                description="Extend the life of your beloved audio equipment with our repair services. We specialize in restoring your system to its original brilliance."
               />
             </Col>
           </Row>
