@@ -2,29 +2,28 @@ import { Card } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./Product.css";
-import { useContext } from "react";
-import CartContext from "../../Context/CartContext";
+
 import { useState } from "react";
 
 function ProductItem(props) {
-  const { cart, setCart } = useContext(CartContext);
  
   const [success, setSuccess] = useState(false);
+  // const [cartshop, setCartShop] = useState(props.cart || []);
 
   const handleAddToCart = () => {
-    const existingItem = cart.find((item) => item.name === props.title);
+    const existingItem = props.cart?.find((item) => item.name === props.title);
 
     const updatedCart = existingItem
-      ? cart.map((item) => {
+      ? props.cart.map((item) => {
           if (item.name === props.title) {
             return { ...item, count: item.count + 1, price: item.price };
           }
           return item;
         })
-      : [...cart, { name: props.title, count: 1, price: props.price }];
+      : [...props.cart, { name: props.title, count: 1, price: props.price }];
 
     localStorage.setItem("cart", JSON.stringify(updatedCart));
-    setCart(updatedCart);
+    props.setCart(updatedCart);
     setSuccess(true);
   };
 
@@ -32,7 +31,7 @@ function ProductItem(props) {
     <Card className="mx-3 my-3 img-effect" style={{ width: "25rem" }}>
       <Card.Img
         variant="top"
-        src={props.image}
+        src={props.image || ""}  
         className="img-fluid"
         style={{
           height: "100%",

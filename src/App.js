@@ -25,6 +25,7 @@ const stripePromise = loadStripe(
 function App() {
 
   const [clientSecret, setClientSecret] = useState(null); // default value of a different type
+  const [cart, setCart] = useState([]);
 
   const options = {
     clientSecret: clientSecret,
@@ -35,7 +36,14 @@ function App() {
   };
 
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem("cart"));
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if (!cart) {
+      cart = [];
+    }
+    setCart(cart);
+  }, []);
+
+  useEffect(() => {
   
     fetch("http://localhost:4242/create-payment-intent", {
       method: "POST",
@@ -48,7 +56,7 @@ function App() {
       });
   
     console.log(cart);
-  }, []); 
+  }, [cart]); 
 
 
   // useEffect(() => {
@@ -96,7 +104,7 @@ function App() {
 
   return (
     <>
-      <Elements options={options} stripe={stripePromise}>
+      <Elements options={options} stripe={stripePromise} key={clientSecret}>
         <NavRounded />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -105,8 +113,8 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/designprocess" element={<DesignProcess />} />
           <Route path="/additional-services" element={<AdditionalServices />} />
-          <Route path="/shop" element={<Purchase />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/shop" element={<Purchase cart={cart} setCart={setCart} /> } />
+          <Route path="/cart" element={<Cart cartApp={cart} setCartApp={setCart}/>} />
           <Route path="/checkout" element={<Checkout clientSecret={clientSecret} />} />
           <Route path="/complete-checkout" element={<CompleteCheckout />} />
           <Route path="/fail" element={<FailPage />} />

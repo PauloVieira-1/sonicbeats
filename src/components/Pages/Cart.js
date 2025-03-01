@@ -7,15 +7,17 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import cartImg from "../../assets/svg/cart4.svg";
 
-function Cart() {
+
+
+function Cart({cartApp, setCartApp}) {
   const cartRef = useRef(null);
 
   const [total, setTotal] = useState(0);
-  const getCart = () => {
-    return JSON.parse(localStorage.getItem("cart")) || [];
-  };
+  // const getCart = () => {
+  //   return JSON.parse(localStorage.getItem("cart")) || [];
+  // };
 
-  const [cart, setCart] = useState(getCart());
+  const [cart, setCart] = useState(cartApp);
   const [cartEmpty, setCartEmpty] = useState(true);
 
   useEffect(() => {
@@ -39,6 +41,7 @@ function Cart() {
       });
       localStorage.setItem("cart", JSON.stringify(updatedCart));
       setCart(updatedCart);
+      setCartApp(updatedCart);
     }
   };
   const handleDecrement = (item) => {
@@ -54,6 +57,7 @@ function Cart() {
       
       localStorage.setItem("cart", JSON.stringify(updatedCart));
       setCart(updatedCart);
+      setCartApp(updatedCart);
     }
   };
 
@@ -63,6 +67,7 @@ function Cart() {
     localStorage.setItem("cart", JSON.stringify(filtered));
     // setTotal(total - ProductsAvailable[title].price * cart.find((item) => item.title = title).count);
     setCart(filtered);
+    setCartApp(filtered);
   };
 
   function totalAmount(cart) {
@@ -72,10 +77,10 @@ function Cart() {
     );
   }
 
-  function clickHandler() {
-    localStorage.setItem("cart", JSON.stringify([]));
-    setCart([]);
-  }
+  // function clickHandler() {
+  //   localStorage.setItem("cart", JSON.stringify([]));
+  //   setCart([]);
+  // }
 
   return (
     <Container className="my-5">
@@ -120,7 +125,7 @@ function Cart() {
             <div className="mx-1 my-4">
               {totalAmount(cart) > 0 && (
                 <Link to="/checkout">
-                  <Button className="btn-rounded" onClick={clickHandler}>
+                  <Button className="btn-rounded">
                     Checkout
                   </Button>
                 </Link>

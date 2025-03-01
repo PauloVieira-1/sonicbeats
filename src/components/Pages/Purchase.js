@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import Simplistic from "../../assets/jpeg/simplisticbg.jpeg";
 import ProductItem from "../Shop/ProductItem";
 import { ProductsAvailable } from "../../components/Shop/ProductsAvailable";
-function Purchase() {
+function Purchase({cart, setCart}) {
   return (
     <Container
       className="my-5 mx-0 transition-fast"
@@ -44,6 +44,8 @@ function Purchase() {
                 spec1={ProductsAvailable[key].spec1}
                 spec2={ProductsAvailable[key].spec2}
                 spec3={ProductsAvailable[key].spec3}
+                cart={cart}
+                setCart={setCart}
               />
             </Col>
           );
