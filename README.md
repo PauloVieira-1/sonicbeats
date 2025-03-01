@@ -1,72 +1,77 @@
-# Getting Started with Create React App
+# SonicBeats
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SonicBeats is a bespoke audio solutions company dedicated to sustainability, innovation, and high-quality sound. This repository contains the codebase for the SonicBeats website, designed and developed to showcase the company's custom-made speakers and additional audio services.
 
-## Available Scripts
+## Table of Contents
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-In the project directory, you can run:
+## Features
+- Interactive website built with React and 3.js for dynamic visual effects.
+- Custom speaker design interface allowing users to collaborate with SonicBeats.
+- Sustainability-focused product pages highlighting recycled materials and innovation.
+- Additional Services page detailing installation, tuning, custom builds, and repairs.
+- Fully responsive design optimized for desktop and mobile users.
 
-### `npm start`
+## Tech Stack
+### **Frontend:**
+- **React.js** – A JavaScript library for building user interfaces with reusable components.
+- **JavaScript (ES6+)** – Modern JavaScript features for a cleaner and more efficient codebase.
+- **Bootstrap** – A CSS framework for responsive and mobile-first design.
+- **CSS Modules** – Scoped styling to avoid conflicts and maintain modularity.
+- **3.js** – A powerful JavaScript library for creating 3D visualizations and interactive web experiences.
+- **Webpack & Babel** – Module bundler and JavaScript compiler for optimizing performance and compatibility.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **Backend:**
+- **Node.js** – A JavaScript runtime environment for executing server-side code.
+- **Express.js** – A lightweight and flexible web application framework for Node.js.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **Database:**
+- **MongoDB** – A NoSQL document-oriented database for efficient data storage and retrieval.
+- **Mongoose** – An ODM (Object Data Modeling) library for MongoDB and Node.js.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run this project locally, follow these steps:
 
-### `npm run build`
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/PauloVieira-1/sonicbeats.git
+   ```
+2. Navigate into the project directory:
+   ```sh
+   cd sonicbeats
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Start the development server:
+   ```sh
+   npm start
+   ```
+5. Open `http://localhost:3000` in your browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
+- Browse and explore SonicBeats' product catalog.
+- Use the interactive custom speaker design tool.
+- Learn about sustainable materials used in SonicBeats speakers.
+- Contact the SonicBeats team for custom projects and services.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## License
+This project is licensed under the MIT License.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contact
+For inquiries or collaboration, reach out to:
+- **Paulo Vieira** – Developer & Maintainer
+- **Website:** [SonicBeats](https://sonicbeats.com)
+- **Email:** contact@sonicbeats.com
 
-### `npm run eject`
+```
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-# soniccraft-website
