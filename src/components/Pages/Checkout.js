@@ -6,26 +6,10 @@ import {
   LinkAuthenticationElement,
   AddressElement,
 } from "@stripe/react-stripe-js";
-import emailjs from "@emailjs/browser";
 
 const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
-
-
-  const sendEmail = async (e) => {
-    emailjs
-        .sendForm(
-          "service_xedvn6r",
-          "template_t7h4lp9",
-          e.target,
-          "lefNpA0eeHK4rVGKZ",
-        )
-        .then((result) => {
-          console.log(result.text);
-        });
-    }
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
