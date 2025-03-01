@@ -44,14 +44,15 @@ function Cart() {
   const handleDecrement = (item) => {
     setTotal(total - ProductsAvailable[item].price);
     const existingItem = cart.find((i) => i.name === item);
-    if (existingItem){
+    if (existingItem && existingItem.count > 1) {
       const updatedCart = cart.map((i) => {
-        if (i.name = item){
+        if (i.name === item) {
           return { ...i, count: i.count - 1 };
         }
         return i;
-      })
-      localStorage.setItem("cart", JSON.stringify(updatedCart));  
+      });
+      
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
       setCart(updatedCart);
     }
   };

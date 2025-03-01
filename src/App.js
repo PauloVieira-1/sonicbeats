@@ -16,14 +16,13 @@ import { Elements } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import Logo from "./assets/jpeg/Logo2.jpeg";
 import { Container } from "react-bootstrap";
+import FailPage from "./components/Pages/FailPage";
 
 const stripePromise = loadStripe(
   "pk_test_51QsRhPFb6wjMdquvTpSk3zcc0QmBsfpgFj93vYigON7NbdTQiGxNFVXRGpDMocPA6nHE4dayUS3Nrgly5a9g55u4005hIKHfTg",
-); //Callig here avoids re-creating the Stripe object on every render
+); //Calling here avoids re-creating the Stripe object on every render
 
 function App() {
-  // let cart = [{ name: "test", count: 1 }];
-  // const cart = useContext(CartContext);
 
   const [clientSecret, setClientSecret] = useState(null); // default value of a different type
 
@@ -37,7 +36,7 @@ function App() {
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart"));
-
+  
     fetch("http://localhost:4242/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -45,11 +44,39 @@ function App() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setClientSecret(data.clientSecret);
+        setClientSecret(data.clientSecret); 
       });
-
+  
     console.log(cart);
-  }, []);
+  }, []); 
+
+
+  // useEffect(() => {
+  //   const handlePayment = async () => {
+  //     if (!clientSecret) return; 
+  
+  //     const stripe = await stripePromise;
+  //     if (!stripe) {
+  //       console.error("Stripe failed to initialize.");
+  //       return;
+  //     }
+  
+  //     const { paymentIntent, error } = await stripe.confirmPayment(clientSecret);
+  
+  //     if (error) {
+  //       console.error("Error confirming card payment:", error);
+  //     } else if (paymentIntent && paymentIntent.status === "succeeded") {
+  //       console.log("Payment succeeded!");
+  //     }
+  //   };
+  
+  //   if (clientSecret) {
+  //     handlePayment();
+  //   }
+
+  // }, [clientSecret]); 
+  
+
 
   if (!clientSecret) {
     return (
@@ -80,8 +107,9 @@ function App() {
           <Route path="/additional-services" element={<AdditionalServices />} />
           <Route path="/shop" element={<Purchase />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkout" element={<Checkout clientSecret={clientSecret} />} />
           <Route path="/complete-checkout" element={<CompleteCheckout />} />
+          <Route path="/fail" element={<FailPage />} />
         </Routes>
         <Footer />
       </Elements>

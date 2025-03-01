@@ -83,13 +83,13 @@ function About() {
             }
             shadow={true}
             image={VerticalImage}
-            button={true}
+            // button={true}
             ref={DiscoverTeamRef}
             onSelect={handleSelect}
-            active={teamActive}
+            // active={teamActive}
           />
         </div>
-        <TeamComponent shadow={true} active={teamActive} />
+        {/* <TeamComponent shadow={true} active={teamActive} /> */}
         <div ref={infoSection}>
           <InfoSection
             title={"Our Mission"}

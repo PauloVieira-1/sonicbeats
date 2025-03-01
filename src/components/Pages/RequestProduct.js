@@ -66,8 +66,8 @@ function RequestProduct() {
                           desire (e.g., Black, Silver, white).
                         </li>
                         <li className="text-start bullets">
-                          Preferred Wood Finish: Choose from our available
-                          recycled Eik wood finishes.
+                          Preferred Wood Finish: Specify the wood finish you
+                          prefer (e.g., Oak).
                         </li>
                         <li className="text-start bullets">
                           Additional Features: Specify any additional features
@@ -86,6 +86,7 @@ function RequestProduct() {
                           the speaker (e.g., name, quote).
                         </li>
                       </ul>
+                      <h6 className="fw-light mt-5">* We cannot guarantee all requests can be met</h6>
                     </Col>
                   </div>
                 </div>

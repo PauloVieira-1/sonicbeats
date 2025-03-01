@@ -17,8 +17,8 @@ function RequestProductForm() {
       name: "",
       email: "",
       phone: "",
-      spec: "",
-      material: "",
+      // spec: "",
+      // material: "",
       description: "",
     },
 
@@ -26,12 +26,12 @@ function RequestProductForm() {
       name: Yup.string().required(),
       email: Yup.string().email("Invalid email address").required(),
       phone: Yup.string().required(),
-      spec: Yup.string().required(),
-      material: Yup.string().required(),
+      // spec: Yup.string().required(),
+      // material: Yup.string().required(),
       description: Yup.string().required().max(300),
     }),
 
-    onSubmit: async (values) => {
+    onSubmit: async () => {
       emailjs
         .sendForm(
           "service_xedvn6r",
@@ -105,8 +105,8 @@ function RequestProductForm() {
           id="phone"
         />
       </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>Technical Specification</Form.Label>
+      {/* <Form.Group className="mb-3"> */}
+        {/* <Form.Label>Technical Specification</Form.Label>
         <Form.Select
           name="spec"
           value={form.values.spec}
@@ -131,8 +131,8 @@ function RequestProductForm() {
           <option value="1">X</option>
           <option value="2">Y</option>
           <option value="3">Z</option>
-        </Form.Select>
-      </Form.Group>
+        </Form.Select> */}
+      {/* </Form.Group> */}
       <Form.Group className="mb-3">
         <Form.Label
           className={`${form.touched.description && form.errors.description === "description is a required field" ? "invalid-color" : ""}`}
@@ -162,7 +162,7 @@ function RequestProductForm() {
       {show && (
         <div className="alert alert-success mt-5" role="alert">
           <h4 className="alert-heading">Success</h4>
-          <p>Product Requested Successfully</p>
+          <p>Product Requested Successfully Sent</p>
         </div>
       )}
     </Form>
