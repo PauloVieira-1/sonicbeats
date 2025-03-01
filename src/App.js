@@ -18,7 +18,7 @@ import Logo from "./assets/jpeg/Logo2.jpeg";
 import { Container } from "react-bootstrap";
 
 const stripePromise = loadStripe(
-  "pk_test_51QMYorFhBZUQjeLQBntca2dZJ2i8IKltEPhKRt298k59vWIJH25NIRsTqBjpWyHB5qDB90q3FK5M827UWbOXOEZ900hB0QudX3",
+  "pk_test_51QsRhPFb6wjMdquvTpSk3zcc0QmBsfpgFj93vYigON7NbdTQiGxNFVXRGpDMocPA6nHE4dayUS3Nrgly5a9g55u4005hIKHfTg",
 ); //Callig here avoids re-creating the Stripe object on every render
 
 function App() {

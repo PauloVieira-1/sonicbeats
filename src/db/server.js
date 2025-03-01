@@ -1,11 +1,14 @@
 import express from "express";
 import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
 
-console.log(process);
+dotenv.config();
 
-const stripe = require("stripe")(
-  "sk_test_51QMYorFhBZUQjeLQ34vBmNw09WuKR0XtTdqrU0rfCAI1C7XfBaYatXiYTToru05crpJAwqlcgPPRBDSKJqza9r7100oBNRuPQJ",
-);
+const apikey =  process.env.REACT_APP_API_KEY
+
+console.log(`API Key: ${apikey}`);
+
+const stripe = require("stripe")(process.env.REACT_APP_API_KEY);
 
 function calculateAmount(items) {
   let total = 0;
