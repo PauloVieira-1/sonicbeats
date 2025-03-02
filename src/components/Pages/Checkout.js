@@ -26,10 +26,6 @@ const CheckoutForm = () => {
       },
     });
 
-    if (!error) {
-      sendEmail(e)
-    }
-
     if (error.type === "card_error" || error.type === "validation_error") {
       console.log("Error:", error.message);
     }

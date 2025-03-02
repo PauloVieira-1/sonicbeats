@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import CartElement from "../CartElement/CartElement";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { ProductsAvailable } from "../Shop/ProductsAvailable";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
@@ -13,42 +13,45 @@ function Cart({cartApp, setCartApp}) {
   const cartRef = useRef(null);
 
   const [total, setTotal] = useState(0);
-  // const getCart = () => {
-  //   return JSON.parse(localStorage.getItem("cart")) || [];
-  // };
-
-  const [cart, setCart] = useState(cartApp);
   const [cartEmpty, setCartEmpty] = useState(true);
 
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-    setTotal(totalAmount(cart));
+  const totalAmount = useCallback(
+    (cart) =>
+      cart.reduce(
+        (sum, item) => sum + item.count * ProductsAvailable[item.name].price,
+        0
+      ),
+    []
+  );  
 
-    if (cart.length > 0) {
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartApp));
+    setTotal(totalAmount(cartApp));
+
+    if (cartApp.length > 0) {
       setCartEmpty(false);
     }
-  }, [cart]);
+  }, [cartApp, totalAmount]);
 
   const handleIncrement = (item) => {
     setTotal(total + ProductsAvailable[item].price);
-    const existingItem = cart.find((i) => i.name === item);
+    const existingItem = cartApp.find((i) => i.name === item);
     if (existingItem) {
-      const updatedCart = cart.map((i) => {
+      const updatedCart = cartApp.map((i) => {
         if (i.name === item) {
           return { ...i, count: i.count + 1 };
         }
         return i;
       });
       localStorage.setItem("cart", JSON.stringify(updatedCart));
-      setCart(updatedCart);
       setCartApp(updatedCart);
     }
   };
   const handleDecrement = (item) => {
     setTotal(total - ProductsAvailable[item].price);
-    const existingItem = cart.find((i) => i.name === item);
+    const existingItem = cartApp.find((i) => i.name === item);
     if (existingItem && existingItem.count > 1) {
-      const updatedCart = cart.map((i) => {
+      const updatedCart = cartApp.map((i) => {
         if (i.name === item) {
           return { ...i, count: i.count - 1 };
         }
@@ -56,31 +59,17 @@ function Cart({cartApp, setCartApp}) {
       });
       
       localStorage.setItem("cart", JSON.stringify(updatedCart));
-      setCart(updatedCart);
       setCartApp(updatedCart);
     }
   };
 
   const HandleRemoveItem = (title) => {
-    const filtered = cart.filter((item) => item.name !== title);
+    const filtered = cartApp.filter((item) => item.name !== title);
 
     localStorage.setItem("cart", JSON.stringify(filtered));
-    // setTotal(total - ProductsAvailable[title].price * cart.find((item) => item.title = title).count);
-    setCart(filtered);
     setCartApp(filtered);
   };
 
-  function totalAmount(cart) {
-    return cart.reduce(
-      (sum, item) => sum + item.count * ProductsAvailable[item.name].price,
-      0,
-    );
-  }
-
-  // function clickHandler() {
-  //   localStorage.setItem("cart", JSON.stringify([]));
-  //   setCart([]);
-  // }
 
   return (
     <Container className="my-5">
@@ -103,7 +92,7 @@ function Cart({cartApp, setCartApp}) {
               ></img>
             </div>
           )}
-          {cart.map((item, index) => (
+          {cartApp.map((item, index) => (
             <CartElement
               key={index}
               image={ProductsAvailable[item.name].image}
@@ -123,7 +112,7 @@ function Cart({cartApp, setCartApp}) {
             <h1 className="fw-bold mt-3 mb-2 mx-3">Total</h1>
             <h4 className="fw-light mx-3 mt-1 mb-3">€ {total}</h4>
             <div className="mx-1 my-4">
-              {totalAmount(cart) > 0 && (
+              {totalAmount(cartApp) > 0 && (
                 <Link to="/checkout">
                   <Button className="btn-rounded">
                     Checkout
