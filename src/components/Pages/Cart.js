@@ -34,7 +34,7 @@ function Cart({cartApp, setCartApp}) {
   }, [cartApp, totalAmount]);
 
   const handleIncrement = (item) => {
-    setTotal(total + ProductsAvailable[item].price);
+    setTotal((prevtotal) => prevtotal + ProductsAvailable[item].price);
     const existingItem = cartApp.find((i) => i.name === item);
     if (existingItem) {
       const updatedCart = cartApp.map((i) => {
@@ -48,7 +48,7 @@ function Cart({cartApp, setCartApp}) {
     }
   };
   const handleDecrement = (item) => {
-    setTotal(total - ProductsAvailable[item].price);
+    setTotal((prevtotal) => prevtotal - ProductsAvailable[item].price);
     const existingItem = cartApp.find((i) => i.name === item);
     if (existingItem && existingItem.count > 1) {
       const updatedCart = cartApp.map((i) => {
@@ -60,7 +60,7 @@ function Cart({cartApp, setCartApp}) {
       
       localStorage.setItem("cart", JSON.stringify(updatedCart));
       setCartApp(updatedCart);
-    }
+    } 
   };
 
   const HandleRemoveItem = (title) => {

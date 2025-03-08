@@ -16,7 +16,6 @@ import { Elements } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import Logo from "./assets/jpeg/Logo2.jpeg";
 import { Container } from "react-bootstrap";
-import FailPage from "./components/Pages/FailPage";
 
 const stripePromise = loadStripe(
   "pk_test_51QsRhPFb6wjMdquvTpSk3zcc0QmBsfpgFj93vYigON7NbdTQiGxNFVXRGpDMocPA6nHE4dayUS3Nrgly5a9g55u4005hIKHfTg",
@@ -85,7 +84,6 @@ function App() {
   // }, [clientSecret]); 
   
 
-
   if (!clientSecret) {
     return (
       <Container
@@ -117,7 +115,6 @@ function App() {
           <Route path="/cart" element={<Cart cartApp={cart} setCartApp={setCart}/>} />
           <Route path="/checkout" element={<Checkout clientSecret={clientSecret} />} />
           <Route path="/complete-checkout" element={<CompleteCheckout />} />
-          <Route path="/fail" element={<FailPage />} />
         </Routes>
         <Footer />
       </Elements>
