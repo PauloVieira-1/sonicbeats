@@ -44,7 +44,7 @@ function App() {
 
   useEffect(() => {
   
-    fetch("http://localhost:4242/create-payment-intent", {
+    fetch("https://create-payment-intent.onrender.com", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(cart),
