@@ -22,9 +22,8 @@ function ProductCards() {
           <p>
             Explore our collection of past speaker models. Each product is
             unique, offering distinctive features and quality sound. These
-            models showcase some of our existing models, however, you can place
-            orders for customized, individual speakers tailored to your specific
-            needs.
+            photos showcase some of our past and current designs, however, you can place
+            orders for customized speakers tailored to your specific needs.
           </p>
         </Col>
         <Col xs={6} md={4}></Col>
