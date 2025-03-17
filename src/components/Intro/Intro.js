@@ -21,7 +21,7 @@ function Intro() {
                 Crafting Superior Sound Since 2018. Explore our meticulously
                 handmade speakers, designed to deliver unparalleled audio
                 quality and timeless craftsmanship. Elevate your listening
-                experience with Soniccraft.
+                experience with Sonicbeats.
               </p>
               <Link to="/gallery" className="text-decoration-none">
                 <Button
