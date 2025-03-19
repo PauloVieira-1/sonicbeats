@@ -41,30 +41,16 @@ function Footer() {
                 className="mx-3"
                 onClick={() =>
                   window.open(
-                    "https://www.instagram.com/sonicbeats.nl/",
+                    "https://www.instagram.com/sonicbeat.s",
                     "_blank",
                   )
                 }
                 alt="instagram"
               ></img>
-              <img
-                src={Facebook}
-                width="25"
-                height="25"
-                className="mx-3"
-                alt="facebook"
-              ></img>
-              <img
-                src={Twitter}
-                width="25"
-                height="25"
-                className="mx-3"
-                alt="twitter"
-              ></img>
             </Col>
           </Row>
           <p className="text-center mt-3">
-            © 2025 Sonicbeats. All rights reserved.
+            © 2025 Sonicbeat. All rights reserved.
           </p>
         </div>
       </Container>

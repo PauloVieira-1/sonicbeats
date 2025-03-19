@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Product1 from "../../assets/jpeg/Speakers_two.JPG";
-import Product2 from "../../assets/jpeg/carousel-image-2.jpeg";
+import Product2 from "../../assets/jpeg/tiny2.jpeg";
 import Product3 from "../../assets/jpeg/Product4.JPG";
 import "../ImageCarousel/ImageCarousel.css";
 
@@ -28,7 +28,7 @@ function ImageCarousel() {
         </Carousel.Item>
         <Carousel.Item className="c-item">
           <Carousel.Caption style={{ textAlign: "left" }}>
-            <h3>Little Men</h3>
+            <h3>Tinymen</h3>
             <p>
               A compact powerhouse that defies its size, delivering impressive{" "}
               <br />
@@ -50,7 +50,7 @@ function ImageCarousel() {
           <Carousel.Caption style={{ textAlign: "left" }}>
             <h3>Donnager</h3>
             <p>
-              Meaning "Great" or "Powerful" in old German, this sspeaker
+              Meaning "Thunder" in old German, this speaker
               delivers a sound that equals its name.
             </p>
           </Carousel.Caption>

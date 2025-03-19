@@ -4,6 +4,7 @@ import { useRef, useEffect, useMemo } from "react";
 import GalleryText from "../Gallery/GalleryText";
 import GalleryImage from "../Gallery/GalleryImage";
 import preloadImages from "../Navbar/LoadImages";
+
 function Gallery() {
   const headingRef = useRef(null);
   const paraRef = useRef(null);
@@ -49,7 +50,7 @@ function Gallery() {
         <Row>
           <Col className="text-center p-5 my-5">
             <h1 className="fw-bold display-3" ref={headingRef}>
-              Welcome to the Sonicraft Gallery
+              Welcome to the Sonicbeat Gallery
             </h1>
             <h3 className="fw-lighter mt-3" ref={paraRef}>
               Explore Our Craftsmanship and Innovation in Every Detail
@@ -97,7 +98,7 @@ function Gallery() {
               imageName={preloadImages[2]}
               id={3}
               subHeading="A compact design for those on the go"
-              description="These compact speakers deliver powerful, clear sound, handcrafted with sustainable Eik wood for an eco-friendly audio experience."
+              description="These compact speakers deliver powerful, clear sound, handcrafted with sustainable pine wood for an eco-friendly audio experience."
             >
               Perfect for Daily Use
             </GalleryImage>
@@ -128,10 +129,10 @@ function Gallery() {
             <GalleryImage
               imageName={preloadImages[4]}
               id={5}
-              subHeading="The Blackbox perfectly integrates into any lifestyle"
-              description="50-watt Rms with 8hr battery life"
+              subHeading="A compact design for those on the go"
+              description="The button arrangement is designed to promote an easy grip"
             >
-              Blackbox
+              Tinymen
             </GalleryImage>
           </Col>
           <Col xs={12} md={4} className="my-3">

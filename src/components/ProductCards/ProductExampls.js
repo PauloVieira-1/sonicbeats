@@ -1,6 +1,6 @@
 import product1Image from "../../assets/jpeg/Product1d.jpeg";
 import product2Image from "../../assets/jpeg/Product4.jpeg";
-import product3Image from "../../assets/jpeg/carousel-image-2.jpeg";
+import product3Image from "../../assets/jpeg/tinymen.JPG";
 import product4Image from "../../assets/jpeg/Product4a.jpeg";
 
 export const ProductExamples = {
@@ -35,13 +35,12 @@ export const ProductExamples = {
     aditionalInfo: ["unique lighting system", "Recycled floor material"],
   },
   Product3: {
-    name: "Little Men",
+    name: "Tinymen",
     image: product3Image,
-    title: "Experience Power in a Compact Form with Little Men",
+    title: "Experience Power in a Compact Form with Tinymen",
     description:
-      "Introducing Little Men, our versatile Bluetooth 5.0 speaker designed for those who value portability without comprimising on performance. Despite its compact size, Little Men delivers robust sound quality and is crafted from recycled Eik wood, embodying our commitment to sustainability and excellence.",
+      "Introducing Tinymen, our versatile Bluetooth 5.0 speaker designed for those who value portability without comprimising on performance. Despite its compact size, Tinymen delivers robust sound quality and is crafted from recycled Oak wood, embodying our commitment to sustainability and excellence.",
     specifications: {
-      Battery_Life: "12 Hours",
       Material: "Eik",
       Power_Output: "50W RMS",
     },

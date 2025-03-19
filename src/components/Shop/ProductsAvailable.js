@@ -1,6 +1,7 @@
 import Product1 from "../../assets/jpeg/ProductsAvailable/Available1.jpeg";
 import Product2 from "../../assets/jpeg/Donneger2.jpg";
 import Product3 from "../../assets/jpeg/ProductsAvailable/Available3.jpeg";
+import Product4 from "../../assets/jpeg/tinymen.JPG";
 
 export const ProductsAvailable = {
   Blackbox: {
@@ -16,13 +17,13 @@ export const ProductsAvailable = {
 
   Donrager: {
     image: Product2,
-    title: "Donrager",
+    title: "Donager",
     description:
       "Perfect for artists and musicians looking to meet audio needs",
     spec1: "200W RMS",
     spec2: "10kg",
     spec3: "18hr Battery Life",
-    price: 885,
+    price: 1150,
   },
 
   Enigma: {
@@ -33,6 +34,17 @@ export const ProductsAvailable = {
     spec1: "100W RMS",
     spec2: "12kg",
     spec3: "10hr Battery Life",
-    price: 620,
+    price: 720,
+  },
+
+  TinyMen: {
+    image: Product4,
+    title: "TinyMen",
+    description:
+      "Compact speaker with a robust sound experience, and a unique design",
+    spec1: "50W RMS",
+    spec2: "3kg",
+    spec3: "12hr Battery Life",
+    price: 100,
   },
 };

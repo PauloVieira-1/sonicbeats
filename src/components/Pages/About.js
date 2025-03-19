@@ -2,9 +2,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import InfoSection from "../InfoSection/InfoSection";
 import VerticalImage from "../../assets/jpeg/dan.jpeg";
 import ImageCarousel from "../ImageCarousel/ImageCarousel";
-import TeamComponent from "../InfoSection/TeamComponent";
 import { useMemo } from "react";
 import { useRef, useState, useEffect } from "react";
+import about from "../../assets/jpeg/about.JPG";
 
 function About() {
   const headingRef = useRef(null);
@@ -82,7 +82,7 @@ function About() {
               "At Sonicbeats, we believe that great sound should come with a great story. Our journey began with a passion for music and a commitment to sustainability, led by our founder, Dan Vorstenbosch. Each of our bespoke speakers is crafted from the finest materials, including our signature recycled Eik wood, ensuring not only exceptional sound quality but also a positive impact on the environment. Dan's vision was to create products that blend innovative technology with traditional craftsmanship, reflecting both a dedication to superior audio experiences and a sustainable future."
             }
             shadow={true}
-            image={VerticalImage}
+            image={about}
             // button={true}
             ref={DiscoverTeamRef}
             onSelect={handleSelect}
