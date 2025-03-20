@@ -13,9 +13,9 @@ export const ProductsAvailable = {
     spec2: "7kg",
     spec3: "12hr Battery Life",
     price: 399,
+    id: "blackbox",
   },
-
-  Donrager: {
+  Donager: {
     image: Product2,
     title: "Donager",
     description:
@@ -24,8 +24,8 @@ export const ProductsAvailable = {
     spec2: "10kg",
     spec3: "18hr Battery Life",
     price: 1150,
+    id: "donager",
   },
-
   Enigma: {
     image: Product3,
     title: "Enigma",
@@ -35,8 +35,8 @@ export const ProductsAvailable = {
     spec2: "12kg",
     spec3: "10hr Battery Life",
     price: 720,
+    id: "enigma",
   },
-
   TinyMen: {
     image: Product4,
     title: "TinyMen",
@@ -46,5 +46,7 @@ export const ProductsAvailable = {
     spec2: "3kg",
     spec3: "12hr Battery Life",
     price: 100,
+    id: "tinymen",
   },
 };
+

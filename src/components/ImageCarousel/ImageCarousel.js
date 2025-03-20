@@ -48,7 +48,7 @@ function ImageCarousel() {
             alt="Third slide"
           ></img>
           <Carousel.Caption style={{ textAlign: "left" }}>
-            <h3>Donnager</h3>
+            <h3>Donager</h3>
             <p>
               Meaning "Thunder" in old German, this speaker
               delivers a sound that equals its name.

@@ -6,6 +6,8 @@ import Option1 from "../../assets/png/Intro-Image.png";
 // import Option2 from "../../assets/jpeg/Option2.jpeg";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import IntroImage from "../../assets/jpeg/introimage.jpeg"
+import { max } from "lodash";
 
 function Intro() {
   return (
@@ -36,7 +38,7 @@ function Intro() {
             </div>
           </Col>
           <Col lg={7} sm={12} className="text-center">
-            <img src={Option1} alt="intro" className="img-fluid"></img>
+            <img src={IntroImage} alt="intro" className="img-fluid" style={{maxWidth: "100%", maxHeight: "65vh"}}></img>
           </Col>
         </Row>
       </Container>
