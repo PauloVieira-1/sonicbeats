@@ -24,7 +24,6 @@ SonicBeats is a bespoke audio solutions company dedicated to sustainability, inn
 - **JavaScript (ES6+)** – Modern JavaScript features for a cleaner and more efficient codebase.
 - **Bootstrap** – A CSS framework for responsive and mobile-first design.
 - **CSS Modules** – Scoped styling to avoid conflicts and maintain modularity.
-- **3.js** – A powerful JavaScript library for creating 3D visualizations and interactive web experiences.
 - **Webpack & Babel** – Module bundler and JavaScript compiler for optimizing performance and compatibility.
 
 ### **Backend:**
@@ -69,8 +68,8 @@ This project is licensed under the MIT License.
 ## Contact
 For inquiries or collaboration, reach out to:
 - **Paulo Vieira** – Developer & Maintainer
-- **Website:** [SonicBeats](https://sonicbeats.com)
-- **Email:** contact@sonicbeats.com
+- **Website:** [SonicBeats](https://sonicbeats.nl)
+- **Email:** designed-at@sonicbeats.nl
 
 ```
 ```
