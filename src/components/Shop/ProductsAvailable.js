@@ -41,11 +41,11 @@ export const ProductsAvailable = {
     image: Product4,
     title: "TinyMen",
     description:
-      "Compact speaker with a robust sound experience, and a unique design",
+      "Studio monitor speakers with 2 x 80W maximum RMS power output",
     spec1: "50W RMS",
     spec2: "3kg",
-    spec3: "12hr Battery Life",
-    price: 100,
+    spec3: "Connected to Outlet",
+    price: 499,
     id: "tinymen",
   },
 };

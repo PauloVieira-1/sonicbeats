@@ -22,7 +22,7 @@ export const ProductExamples = {
     ],
   },
   Product2: {
-    name: "Inquiry",
+    name: "Infinity",
     image: product2Image,
     title: "Discover Pure Sound with Inquiry",
     description:
@@ -42,7 +42,7 @@ export const ProductExamples = {
       "Introducing Tinymen, our versatile Bluetooth 5.0 speaker designed for those who value portability without comprimising on performance. Despite its compact size, Tinymen delivers robust sound quality and is crafted from recycled Oak wood, embodying our commitment to sustainability and excellence.",
     specifications: {
       Material: "Eik",
-      Power_Output: "50W RMS",
+      Power_Output: "2 x 50W RMS",
     },
     aditionalInfo: ["Ideal for musicians to test audio", "high precision"],
   },
