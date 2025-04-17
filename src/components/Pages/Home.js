@@ -61,7 +61,7 @@ function Home() {
         style={{ maxHeight: "10px !important", minWidth: "100%" }}
       >
         <VideoPlayer
-          publicId="Sonicbeats/hsaleberrpz6t6ara8lv"
+          publicId="7228719a-4d7f-4452-950b-b8f9ba407612_h8abdu"
           id="video-player"
         />
       </Container>

@@ -12,10 +12,10 @@ const VideoPlayer = ({ id, publicId, ...props }) => {
 
     const player = cloudinaryRef.current.videoPlayer(playerRef.current, {
       cloudName: "dbmhp9fdm",
-      autoplay: true,
-      autoplayMode: "on-scroll",
-      muted: true,
-      controls: false,
+      autoplay: false,
+      autoplayMode: "loop",
+      muted: false,
+      controls: true,
       showLogo: false,
     });
 
