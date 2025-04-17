@@ -10,7 +10,7 @@ export const ProductsAvailable = {
     description:
       "Portable speaker, designed to produce maximum output in a small form factor",
     spec1: "100W RMS",
-    spec2: "7kg",
+    spec2: "3kg",
     spec3: "12hr Battery Life",
     price: 399,
     id: "blackbox",

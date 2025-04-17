@@ -85,7 +85,7 @@ function Gallery() {
               imageName={preloadImages[1]}
               id={2}
               subHeading="The Blackbox is portable, lightweight, and made out of natural pinewood"
-              description="50-watt Rms with 8hr battery life"
+              description="100-watt Rms with 12hr battery life"
             >
               Blackbox
             </GalleryImage>
@@ -107,7 +107,7 @@ function Gallery() {
             <GalleryImage
               imageName={preloadImages[3]}
               id={4}
-              subHeading="Styly and beautiful, made out of natural Oakwood"
+              subHeading="Style and beautiful, made out of natural Oakwood"
               description="12V battery, and weighs only 9.5kg"
             >
               Enigma
@@ -129,7 +129,7 @@ function Gallery() {
             <GalleryImage
               imageName={preloadImages[4]}
               id={5}
-              subHeading="A compact design for those on the go"
+              subHeading="Studio monitor speakers designed for audiophiles"
               description="The button arrangement is designed to promote an easy grip"
             >
               Tinymen
