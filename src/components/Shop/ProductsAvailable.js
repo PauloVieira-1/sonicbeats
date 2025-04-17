@@ -31,7 +31,7 @@ export const ProductsAvailable = {
     title: "TinyMen",
     description:
       "Studio monitor speakers with 2 x 80W maximum RMS power output",
-    spec1: "80W RMS",
+    spec1: "160W RMS",
     spec2: "3kg",
     spec3: "Connected to Outlet",
     price: 499,
