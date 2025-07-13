@@ -1,61 +1,62 @@
-import { PaymentElement } from "@stripe/react-stripe-js";
+import { useEffect, useState } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutForm from "./CheckoutForm"; // your form component
+import Logo from "../../assets/jpeg/Logo2.jpeg"; // fallback logo (optional)
 import { Container } from "react-bootstrap";
-import {
-  useStripe,
-  useElements,
-  LinkAuthenticationElement,
-  AddressElement,
-} from "@stripe/react-stripe-js";
 
-const CheckoutForm = () => {
-  const stripe = useStripe();
-  const elements = useElements();
+const stripePromise = loadStripe(
+  "pk_test_51QsRhPFb6wjMdquvTpSk3zcc0QmBsfpgFj93vYigON7NbdTQiGxNFVXRGpDMocPA6nHE4dayUS3Nrgly5a9g55u4005hIKHfTg"
+);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const Checkout = ({ cart }) => {
+  const [clientSecret, setClientSecret] = useState(null);
 
-    if (!stripe || !elements) {
-      return;
-    }
+  useEffect(() => {
+    if (!cart || cart.length === 0) return;
 
-    const { error } = await stripe.confirmPayment({
-      elements,
-      redirect: "if_required",
-      confirmParams: {
-        return_url: "http://localhost:4243/complete-checkout",
-      },
-    });
+    fetch("https://create-payment-intent.onrender.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(cart),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.clientSecret) {
+          setClientSecret(data.clientSecret);
+        }
+      })
+      .catch((err) => console.error("Payment intent fetch error:", err));
+  }, [cart]);
 
-    if (error.type === "card_error" || error.type === "validation_error") {
-      console.log("Error:", error.message);
-    }
+  const options = {
+    clientSecret,
+    appearance: {
+      theme: "stripe",
+    },
   };
 
-  return (
-    <Container className="my-5">
-      <form onSubmit={handleSubmit}>
-        <h3 className="my-4">Contact info</h3>
-        <LinkAuthenticationElement
-          // onChange={(event) => {
-          //   setEmail(event.value.email);
-          // }}
-          options={{
-            defaultValues: {
-              email: "",
-            },
-          }}
+  if (!clientSecret) {
+    return (
+      <Container
+        className="d-flex justify-content-center align-items-center text-center"
+        style={{ height: "100vh" }}
+      >
+        <img
+          src={Logo}
+          alt="Loading checkout..."
+          className="img-fluid"
+          style={{ width: "500px", height: "100px" }}
         />
-        <h3 className="my-4">Shipping</h3>
-        <AddressElement
-          options={{ mode: "shipping", allowedCountries: ["NL"] }}
-        />
-        <h3 className="my-4">Payment</h3>
+      </Container>
+    );
+  }
 
-        <PaymentElement />
-        <button className="my-4 btn btn-primary rounded-5 px-4">Submit</button>
-      </form>
-    </Container>
+  return (
+    <Elements stripe={stripePromise} options={options} key={clientSecret}>
+      <CheckoutForm />
+    </Elements>
   );
 };
 
-export default CheckoutForm;
+export default Checkout;
