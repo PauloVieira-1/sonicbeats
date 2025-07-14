@@ -104,12 +104,20 @@ function Home() {
       <div className="bg-custom-color-grey">
         <Container className="mt-5">
           <Row>
-            <Col lg={7} sm={12} md={12} className="px-0">
+            <Col lg={7} sm={12} md={12} className="px-0 d-none d-lg-block">
               <img
                 src={EndImage}
                 alt=""
                 className="img-fluid object-fit-cover"
                 style={{ height: "100%", maxHeight: "600px" }}
+              />
+            </Col>
+            <Col lg={7} sm={12} md={12} className="px-0 d-block d-lg-none">
+              <img
+                src={EndImage}
+                alt=""
+                className="img-fluid object-fit-cover"
+                style={{ height: "30vh", maxHeight: "600px" }}
               />
             </Col>
             <Col lg={5} sm={12} className="p-5">
