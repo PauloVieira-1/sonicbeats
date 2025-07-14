@@ -14,7 +14,7 @@ function Purchase({cart, setCart}) {
           <img
             src={Simplistic}
             alt=""
-            className="img-fluid"
+            className="img-fluid object-fit-cover"
             style={{ height: "100%", minWidth: "100%" }}
           ></img>
         </Col>
