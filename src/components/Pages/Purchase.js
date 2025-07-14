@@ -10,13 +10,21 @@ function Purchase({cart, setCart}) {
       style={{ minHeight: "50vh", minWidth: "100vw" }}
     >
       <Row>
-        <Col className="" md={5}>
+        <Col xs={12} md={5}>
+          <img
+            src={Simplistic}
+            alt=""
+            className="img-fluid object-fit-cover mb-4"
+            style={{ height: "40vh", minWidth: "100%" }}
+          />
+        </Col>
+        <Col xs={12} md={5} className="d-none d-md-block">
           <img
             src={Simplistic}
             alt=""
             className="img-fluid object-fit-cover"
-            style={{ height: "100%", minWidth: "100%" }}
-          ></img>
+            style={{ height: "80vh", minWidth: "100%" }}
+          />
         </Col>
         <Col
           className="bg-custom-color-grey mx-0 p-5 d-flex  justify-content-center text-start flex-column "
