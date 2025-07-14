@@ -108,7 +108,7 @@ function Home() {
               <img
                 src={EndImage}
                 alt=""
-                className="img-fluid"
+                className="img-fluid object-fit-cover"
                 style={{ height: "100%", maxHeight: "600px" }}
               />
             </Col>
