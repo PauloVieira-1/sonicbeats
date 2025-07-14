@@ -10,7 +10,7 @@ function Purchase({cart, setCart}) {
       style={{ minHeight: "50vh", minWidth: "100vw" }}
     >
       <Row>
-        <Col xs={12} md={5}>
+        <Col xs={12} md={5} className="d-block d-md-none">
           <img
             src={Simplistic}
             alt=""
