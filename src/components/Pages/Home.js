@@ -117,7 +117,7 @@ function Home() {
                 src={EndImage}
                 alt=""
                 className="img-fluid object-fit-cover"
-                style={{ height: "30vh", maxHeight: "600px" }}
+                style={{ height: "50vh", maxHeight: "600px" }}
               />
             </Col>
             <Col lg={5} sm={12} className="p-5">
