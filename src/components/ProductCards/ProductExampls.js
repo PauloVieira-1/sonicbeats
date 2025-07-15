@@ -24,9 +24,9 @@ export const ProductExamples = {
   Product2: {
     name: "Infinity",
     image: product2Image,
-    title: "Discover Pure Sound with Inquiry",
+    title: "Discover Pure Sound with Infinity",
     description:
-      "Introducing Inquiry, our high-fidelity Bluetooth 5.0 speaker engineered for those love deisgn who seek clarity and precision. The Inquiry speaker is made from recycled oak wood, ensuring a luxurious finish while promoting eco-friendliness. Inquiry stands as a testament to our dedication to superior sound and sustainable design.",
+      "Introducing Infinity, our high-fidelity Bluetooth 5.0 speaker engineered for those who love design and seek clarity and precision. The Infinity speaker is made from recycled oak wood, ensuring a luxurious finish while promoting eco-friendliness. Infinity stands as a testament to our dedication to superior sound and sustainable design.",
     specifications: {
       Battery_Life: "18 Hours",
       Material: "Oak",
