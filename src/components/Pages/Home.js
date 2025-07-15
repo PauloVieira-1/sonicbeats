@@ -1,6 +1,7 @@
 import Intro from "../Intro/Intro";
 import ProductCards from "../ProductCards/ProductCards";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
+import ExpandingCards from "../Expandingcards/ExpandingCards";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -12,9 +13,23 @@ import "../../styles/colors.css";
 import "../../styles/Global.css";
 import EndImage from "../../assets/png/End-Image.png";
 import Logo from "../../assets/jpeg/Logo2.jpeg";
+import Image1 from "../../assets/jpeg/carousel-image-1.jpeg";
+import Image2 from "../../assets/jpeg/Product3.jpeg";
+import Image3 from "../../assets/jpeg/Product1b.jpeg";
+import Image4 from "../../assets/jpeg/simplisticbg.jpeg";
+
+
 
 import { useEffect, useRef, useMemo } from "react";
 import { Link } from "react-router-dom";
+
+const images = [
+    {text: "Handcrafted speakers", image: Image1, subtext: "Experience the finest craftsmanship."},
+    {text: "Portable power", image: Image2, subtext: "Unleash power on the go."},
+    {text: "Sonic purity", image: Image3, subtext: "Hear the difference in every note."},
+    {text: "Simplistic beauty", image: Image4, subtext: "Elegance in simplicity."},
+];
+
 
 function Home() {
   const headingRef = useRef(null);
@@ -151,6 +166,9 @@ function Home() {
           </Row>
         </Container>
       </div>
+        <Container className="mt-5 mb-5">
+          <ExpandingCards images={images}/>
+        </Container>
     </>
   );
 }
