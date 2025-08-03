@@ -48,10 +48,12 @@ function Purchase({cart, setCart}) {
                 title={ProductsAvailable[key].title}
                 price={ProductsAvailable[key].price}
                 image={ProductsAvailable[key].image}
+                image2={ProductsAvailable[key].image2}
+                image3={ProductsAvailable[key].image3}
                 description={ProductsAvailable[key].description}
-                spec1={ProductsAvailable[key].spec1}
-                spec2={ProductsAvailable[key].spec2}
-                spec3={ProductsAvailable[key].spec3}
+                specifications={ProductsAvailable[key].specifications}
+                treble={ProductsAvailable[key].treble}
+                key={key}
                 cart={cart}
                 setCart={setCart}
               />

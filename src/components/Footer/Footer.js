@@ -39,9 +39,10 @@ function Footer() {
                 width="25"
                 height="25"
                 className="mx-3"
+                style={{ cursor: "pointer" }}
                 onClick={() =>
                   window.open(
-                    "https://www.instagram.com/sonicbeat.s",
+                    "https://www.instagram.com/sonicbeats_official?igsh=d25qOXRlem41NWYw",
                     "_blank",
                   )
                 }

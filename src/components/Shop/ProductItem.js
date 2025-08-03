@@ -2,13 +2,12 @@ import { Card } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./Product.css";
-
 import { useState } from "react";
 
 function ProductItem(props) {
- 
+  
   const [success, setSuccess] = useState(false);
-  // const [cartshop, setCartShop] = useState(props.cart || []);
+  const [mainImage, setMainImage] = useState(props.image); // Track displayed image
 
   const handleAddToCart = () => {
     const existingItem = props.cart?.find((item) => item.name === props.title);
@@ -29,9 +28,10 @@ function ProductItem(props) {
 
   return (
     <Card className="mx-3 my-3 img-effect" style={{ width: "25rem" }}>
+      {/* Main Image */}
       <Card.Img
         variant="top"
-        src={props.image || ""}  
+        src={mainImage || ""}
         className="img-fluid"
         style={{
           height: "100%",
@@ -40,24 +40,47 @@ function ProductItem(props) {
           objectFit: "cover",
         }}
       />
-      <Card.Body>
+
+      {/* Thumbnails */}
+      <div className="d-flex justify-content-center gap-2 my-2">
+        {[props.image, props.image2, props.image3, props.treble]
+          .filter(Boolean) // remove undefined
+          .map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`thumb-${index}`}
+              onClick={() => setMainImage(img)}
+              style={{
+                width: "60px",
+                height: "60px",
+                objectFit: "cover",
+                cursor: "pointer",
+                border: mainImage === img ? "2px solid #007bff" : "2px solid transparent",
+                borderRadius: "5px"
+              }}
+            />
+          ))}
+      </div>
+
+      <Card.Body className="p-4">
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>{props.description}</Card.Text>
+
         <ListGroup className="list-group-flush my-4">
-          <ListGroup.Item>{props.spec1}</ListGroup.Item>
-          <ListGroup.Item>{props.spec2}</ListGroup.Item>
-          <ListGroup.Item>{props.spec3}</ListGroup.Item>
-          <ListGroup.Item>€ {props.price}</ListGroup.Item>
+          {props.specifications.map((spec, index) => (
+            <ListGroup.Item key={index} className="border-0">- {spec}</ListGroup.Item>
+          ))}
         </ListGroup>
+        <Card.Text className="fw-bold fs-5">
+          ${props.price.toFixed(2)}
+        </Card.Text>
         <Button
           variant={`${success ? "success" : "primary"}`}
           className="rounded-5 px-4"
-          onClick={() => {
-            handleAddToCart();
-            console.log(localStorage.getItem("cart"));
-          }}
+          onClick={handleAddToCart}
         >
-          {success ? "Added Sucessfully" : "Add to Cart"}
+          {success ? "Added Successfully" : "Add to Cart"}
         </Button>
       </Card.Body>
     </Card>
