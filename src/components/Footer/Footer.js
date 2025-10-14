@@ -50,9 +50,13 @@ function Footer() {
               ></img>
             </Col>
           </Row>
-          <p className="text-center mt-3">
+          <p className="text-center mt-3 mb-5">
             © 2025 Sonicbeat. All rights reserved.
           </p>
+          <p className="text-center mb-3">
+            Designed and Developed by Sonicbeat Team
+          </p>
+          <p className="text-center mb-5 pb-5 fw-bold">designed@sonicbeats.nl</p>
         </div>
       </Container>
     </div>
