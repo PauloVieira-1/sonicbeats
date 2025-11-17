@@ -75,7 +75,7 @@ export const ProductsAvailable = {
       "Bluetooth 5.0 Wireless",
       "Built-In Equalizer"
     ],
-    price: 549, 
+    price: 599, 
     id: "aurora",
   },
 };
