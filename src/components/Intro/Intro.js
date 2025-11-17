@@ -12,7 +12,7 @@ import { max } from "lodash";
 function Intro() {
   return (
     <>
-      <Container id="intro">
+      <Container id="intro" className="mt-5 pt-5">
         <Row className="mt-5">
           <Col lg={5} sm={12}>
             <h1 className="fw-bold display-3 transition-fast">
