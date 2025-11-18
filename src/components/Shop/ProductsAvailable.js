@@ -18,11 +18,15 @@ import color3 from "../../assets/jpeg/ProductsAvailable/color3.jpeg";
 import color4 from "../../assets/jpeg/ProductsAvailable/color4.jpeg";
 import bg1 from "../../assets/jpeg/ProductsAvailable/bg1.jpeg";
 import bg2 from "../../assets/jpeg/ProductsAvailable/bg2.jpeg";
+import wine from "../../assets/jpeg/ProductsAvailable/wine.jpg";
+import people from "../../assets/jpeg/ProductsAvailable/people.jpg";
 
 
 export const ProductsAvailable = {
   Blackbox: {
-    image: BlackBox3,
+    image: wine,
+    image2: people,
+    image3: BlackBox3,
     image5: color2,
     image6: color3,
     image7: color4,
