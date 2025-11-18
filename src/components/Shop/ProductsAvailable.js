@@ -12,13 +12,21 @@ import A2 from "../../assets/jpeg/ProductsAvailable/A2.jpeg";
 import A3 from "../../assets/jpeg/ProductsAvailable/A3.jpeg"; 
 import DA from "../../assets/jpeg/ProductsAvailable/DonagerA.jpeg";
 import DB from "../../assets/jpeg/ProductsAvailable/DonagerB.jpeg";
-// Add more Aurora images if you have them
+import color1 from "../../assets/jpeg/ProductsAvailable/color1.jpeg";
+import color2 from "../../assets/jpeg/ProductsAvailable/color2.jpeg";
+import color3 from "../../assets/jpeg/ProductsAvailable/color3.jpeg";
+import color4 from "../../assets/jpeg/ProductsAvailable/color4.jpeg";
+import bg1 from "../../assets/jpeg/ProductsAvailable/bg1.jpeg";
+import bg2 from "../../assets/jpeg/ProductsAvailable/bg2.jpeg";
+
 
 export const ProductsAvailable = {
   Blackbox: {
-    image: Product1,
-    image2: BlackBox2,
-    image3: BlackBox3,
+    image: BlackBox3,
+    image5: color2,
+    image6: color3,
+    image7: color4,
+
     treble: Treble,
     title: "Blackbox",
     description:
@@ -35,9 +43,10 @@ export const ProductsAvailable = {
   },
 
   Donager: {
-    image: Product2,
-    image2: DA,
-    image3: DB,
+    image3: DA,
+    image: DB,
+    image4: bg1,
+    image5: bg2,
     treble: Treble,
     title: "Donager",
     description:

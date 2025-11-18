@@ -7,7 +7,7 @@ import { useState } from "react";
 function ProductItem(props) {
   
   const [success, setSuccess] = useState(false);
-  const [mainImage, setMainImage] = useState(props.image); // Track displayed image
+  const [mainImage, setMainImage] = useState(props.image ); // Track displayed image
 
   const handleAddToCart = () => {
     const existingItem = props.cart?.find((item) => item.name === props.title);
@@ -43,8 +43,7 @@ function ProductItem(props) {
 
       {/* Thumbnails */}
       <div className="d-flex justify-content-center gap-2 my-2">
-        {[props.image, props.image2, props.image3, props.treble]
-          .filter(Boolean) // remove undefined
+        {[props.image, props.image2, props.image3, props.image4, props.image5, props.image6, props.treble].filter(img => img !== undefined && img !== null)
           .map((img, index) => (
             <img
               key={index}

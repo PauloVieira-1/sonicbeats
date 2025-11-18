@@ -50,6 +50,12 @@ function Purchase({cart, setCart}) {
                 image={ProductsAvailable[key].image}
                 image2={ProductsAvailable[key].image2}
                 image3={ProductsAvailable[key].image3}
+                image4={ProductsAvailable[key]?.image4}
+                image5={ProductsAvailable[key]?.image5}
+                image6={ProductsAvailable[key]?.image6}
+                image7={ProductsAvailable[key]?.image7}
+                image8={ProductsAvailable[key]?.image8}
+                image9={ProductsAvailable[key].image9}
                 description={ProductsAvailable[key].description}
                 specifications={ProductsAvailable[key].specifications}
                 treble={ProductsAvailable[key].treble}
