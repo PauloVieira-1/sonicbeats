@@ -64,8 +64,8 @@ export const ProductsAvailable = {
     title: "TinyMen",
     description:
       "Compact studio monitors with impressive 160W RMS output.",
-    specifications: ["160W RMS", "3kg", "Powered via Outlet"],
-    price: 499,
+    specifications: ["30% off!", "160W RMS", "3kg", "Powered via Outlet"],
+    price: 349.3,
     id: "tinymen",
   },
 
