@@ -1,15 +1,33 @@
 #nav {
   margin-top: 10px;
-  background: rgb(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(15, 18, 22, 0.06);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 12px 32px -12px rgba(15, 23, 42, 0.12);
   list-style-type: none;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
   animation-name: slideInDown;
-  animation-duration: 1s;
+  animation-duration: 0.9s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   animation-iteration-count: 1;
-  transition: top 0.3s;
+  transition: top 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   top: 0;
   position: sticky;
   z-index: 9999;
+}
+
+#nav .nav-link {
+  color: rgba(15, 18, 22, 0.65);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#nav .nav-link:hover,
+#nav .nav-link:focus-visible {
+  color: #0f1216;
 }
 
 @keyframes slideInDown {
@@ -19,6 +37,29 @@
   }
   to {
     transform: translate3d(0, 0, 0);
+  }
+}
+
+/* ── Mobile menu ──────────────────────────────────────────── */
+@media (max-width: 991px) {
+  #nav .navbar-collapse {
+    padding: 0.5rem 0.5rem 1rem;
+  }
+
+  #nav .nav-link {
+    font-size: 1.05rem;
+    padding: 0.65rem 0.5rem;
+    border-radius: 0.625rem;
+  }
+
+  #nav .nav-link:active {
+    background: rgba(15, 18, 22, 0.05);
+  }
+
+  .sb-mobile-actions {
+    border-top: 1px solid rgba(15, 18, 22, 0.08);
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
   }
 }
 

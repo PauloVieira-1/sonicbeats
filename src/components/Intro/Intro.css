@@ -1,3 +1,37 @@
-.bt-rounded {
-  transition: 2s;
+/* Staged product visual — soft light panel, white JPEG bg melts
+   into the surface via multiply blend */
+.sb-hero-visual {
+  border-radius: 1.75rem;
+  background: radial-gradient(120% 130% at 50% 0%, #f6f8fa 0%, #e8edf1 100%);
+  padding: 2.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: sb-rise 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+.sb-hero-visual img {
+  mix-blend-mode: multiply;
+  max-height: 58vh;
+  object-fit: contain;
+}
+
+.sb-eyebrow-intro {
+  color: #8a5a2b;
+  font-weight: 700;
+}
+
+/* Mobile: tighter scale, calmer rhythm */
+@media (max-width: 575.98px) {
+  #intro h1 {
+    font-size: 2.4rem;
+  }
+
+  #intro .lead {
+    font-size: 1.05rem;
+  }
+
+  .sb-hero-visual {
+    padding: 1.5rem 1.25rem;
+  }
 }

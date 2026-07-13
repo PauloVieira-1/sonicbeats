@@ -1,5 +1,308 @@
 @import "cloudinary-video-player/cld-video-player.min.css";
 
+/* ════════════════════════════════════════════════════════════
+   SonicBeats design system — tokens
+   ════════════════════════════════════════════════════════════ */
+:root {
+  --sb-ink: #0f1216;
+  --sb-text: #31373d;
+  --sb-text-muted: #5b646d;
+  --sb-primary: #34618b;
+  --sb-primary-bright: #3d6f9d;
+  --sb-primary-deep: #2a5074;
+  --sb-surface: #fcfcfd;
+  --sb-border: #e5e9ed;
+
+  /* Motion */
+  --sb-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --sb-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Layered ambient shadows */
+  --sb-shadow-sm:
+    0 1px 2px rgba(15, 23, 42, 0.05),
+    0 2px 8px -2px rgba(15, 23, 42, 0.06);
+  --sb-shadow-md:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 8px 24px -6px rgba(15, 23, 42, 0.1);
+  --sb-shadow-lg:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 12px 32px -8px rgba(15, 23, 42, 0.12),
+    0 32px 64px -16px rgba(15, 23, 42, 0.1);
+}
+
+/* ── Base refinement ────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+}
+
+::selection {
+  background: var(--sb-ink);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(52, 97, 139, 0.55);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Typography scale ───────────────────────────────────────── */
+h1,
+h2,
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+  letter-spacing: -0.025em;
+}
+
+h3,
+h4,
+.display-5,
+.display-6 {
+  letter-spacing: -0.015em;
+}
+
+.display-1,
+.display-2,
+.display-3 {
+  font-weight: 800;
+}
+
+.lead {
+  color: var(--sb-text-muted);
+}
+
+/* Headings inside dark / white-text contexts stay white
+   (headings otherwise carry their own near-black color) */
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+.carousel-caption h1,
+.carousel-caption h2,
+.carousel-caption h3,
+.panel h1,
+.panel h2,
+.panel h3 {
+  color: #fff;
+}
+
+/* ── Section rhythm ─────────────────────────────────────────── */
+.py-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.pb-section {
+  padding-bottom: 6rem;
+}
+
+@media (max-width: 768px) {
+  .py-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .pb-section {
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* Eyebrow label — quiet accent line above section headings */
+.sb-eyebrow {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--sb-text-muted);
+  margin-bottom: 0.9rem;
+}
+
+/* Pill chip on dark surfaces (e.g. "Coming soon") */
+.sb-chip-dark {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Dimmed body text on dark surfaces */
+.sb-text-dim {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Dark section with subtle ambient glow */
+.sb-dark-section {
+  background:
+    radial-gradient(
+      55% 75% at 22% 35%,
+      rgba(84, 110, 190, 0.16),
+      transparent 65%
+    ),
+    var(--sb-ink);
+}
+
+/* Magazine-style two-column body text */
+.sb-columns {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .sb-columns {
+    column-count: 2;
+    column-gap: 3rem;
+  }
+}
+
+/* Ink summary panel (cart totals, etc.) */
+.sb-totals {
+  background: var(--sb-ink);
+}
+
+/* Spec rows — quiet data table with hairline separators */
+.sb-spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(15, 18, 22, 0.08);
+  font-size: 0.95rem;
+}
+
+.sb-spec-row:first-child {
+  border-top: 1px solid rgba(15, 18, 22, 0.08);
+}
+
+.sb-spec-label {
+  color: var(--sb-text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sb-spec-value {
+  color: #14181d;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* Scroll reveal — rise & settle once, staggerable via --sb-reveal-delay */
+.sb-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s var(--sb-ease-out),
+    transform 0.7s var(--sb-ease-out);
+  transition-delay: var(--sb-reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.sb-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sb-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Gentle crossfade for tab-switched content */
+.sb-fade-in {
+  animation: sb-fade-in 0.45s var(--sb-ease-out) both;
+}
+
+@keyframes sb-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Shadows: override Bootstrap's hard defaults ────────────── */
+.shadow {
+  box-shadow: var(--sb-shadow-lg) !important;
+}
+
+.shadow-sm {
+  box-shadow: var(--sb-shadow-sm) !important;
+}
+
+/* ── Buttons: flat, decisive, ink-first ─────────────────────
+   No gradients, no fake depth. Solid ink primaries, hairline
+   ghost secondaries that fill on hover. Color does the work. */
+.btn {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: none;
+  transition:
+    background-color 0.25s var(--sb-ease),
+    border-color 0.25s var(--sb-ease),
+    color 0.25s var(--sb-ease),
+    transform 0.15s var(--sb-ease);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Primary action = solid ink */
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--sb-ink);
+  --bs-btn-border-color: var(--sb-ink);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #2b333b;
+  --bs-btn-hover-border-color: #2b333b;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #05070a;
+  --bs-btn-active-border-color: #05070a;
+  --bs-btn-disabled-bg: #9aa1a8;
+  --bs-btn-disabled-border-color: #9aa1a8;
+}
+
+/* Secondary actions = quiet ghosts, hairline border, ink fill on hover */
+.btn-outline-primary,
+.btn-outline-secondary {
+  --bs-btn-color: #14181d;
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: rgba(15, 18, 22, 0.18);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--sb-ink);
+  --bs-btn-hover-border-color: var(--sb-ink);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #05070a;
+  --bs-btn-active-border-color: #05070a;
+}
+
+/* Ghosts on dark surfaces */
+.btn-outline-light {
+  --bs-btn-border-color: rgba(255, 255, 255, 0.35);
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-color: #0f1216;
+  --bs-btn-hover-border-color: #fff;
+}
+
 .btn-rounded {
   border-radius: 50px !important;
 }
@@ -12,18 +315,24 @@
   padding: 5px 40px 5px 40px;
 }
 
+/* ── Reveal motion: rise & settle (was: slide from -1000px) ── */
 .transition-fast {
-  animation-name: transition-to-left;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  transition: top 0.3s;
+  animation: sb-rise 0.8s var(--sb-ease-out) both;
 }
 
 .transition-slow {
-  animation-name: transition-to-left;
-  animation-duration: 1.3s;
-  animation-iteration-count: 1;
-  transition: top 0.3s;
+  animation: sb-rise 1s var(--sb-ease-out) 0.12s both;
+}
+
+@keyframes sb-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .shadow-transition {
@@ -34,7 +343,7 @@
 }
 
 .fade-in-animation {
-  animation: fadeInAnimation ease-in 1s;
+  animation: fadeInAnimation 1s var(--sb-ease-out);
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -84,18 +393,7 @@
     box-shadow: none;
   }
   to {
-    box-shadow:
-      rgba(75, 75, 75, 0.25) 0px 14px 28px,
-      rgba(50, 50, 50, 0.22) 0px 10px 10px;
-  }
-}
-
-@keyframes transition-to-left {
-  from {
-    transform: translateX(-1000px);
-  }
-  to {
-    transform: translateX(0);
+    box-shadow: var(--sb-shadow-md);
   }
 }
 
@@ -108,14 +406,29 @@
   }
 }
 
+/* ── Card / image hover: subtle lift, ambient light ─────────── */
 .img-effect {
-  transition: all 0.4s ease-out;
+  transition:
+    transform 0.45s var(--sb-ease-out),
+    box-shadow 0.45s var(--sb-ease-out);
 }
 
 .img-effect:hover {
-  transform: scale(1.02);
-  box-shadow:
-    rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  transform: translateY(-4px) scale(1.005);
+  box-shadow: var(--sb-shadow-lg);
+}
+
+/* ── Accessibility: respect reduced motion ──────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

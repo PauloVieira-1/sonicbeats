@@ -1,21 +1,15 @@
-import { Container } from "react-bootstrap";
 import "../AdditionalServices/AdditionalServices.css";
+
 function ServiceCard(props) {
   return (
-    <Container className="bg-custom-color-grey cardbox rounded-4 p-4 img-effect">
-      <div className="cardbox mt-2">
-        <img
-          src={props.image}
-          alt=""
-          className="img-fluid my-4 d-flex justify-content-center"
-          style={{ height: "110px", width: "100%" }}
-        ></img>
-        <div className="text-center">
-          <h2 className="fw-bold mt-2">{props.title}</h2>
-          <p className="card-paragraph">{props.description}</p>
-        </div>
+    <div className="bg-custom-color-grey-2 rounded-4 p-4 h-100 img-effect">
+      <div className="sb-service-icon mb-4">
+        <img src={props.image} alt="" />
       </div>
-    </Container>
+      <h5 className="fw-bold">{props.title}</h5>
+      <p className="text-muted small mb-0 mt-2">{props.description}</p>
+    </div>
   );
 }
+
 export default ServiceCard;

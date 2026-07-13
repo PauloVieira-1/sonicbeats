@@ -1,105 +1,57 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import { useEffect, useState } from "react";
-import { forwardRef, useImperativeHandle } from "react";
+import "./CartElement.css";
 
-const CartElement = forwardRef((props, ref) => {
-  const [count, setCount] = useState(props.quantity);
-
-  let cart = JSON.parse(localStorage.getItem("cart"));
-
-  useEffect(() => {
-    cart.find((item) => item.name === props.title).count = count;
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [count, props.title, cart]);
-
-  const handleIncrement = () => {
-    cart.find((item) => item.name === props.title).count = count;
-    setCount(count + 1);
-    console.log(props.title);
-    props.totalIncrement(props.title);
-  };
-
-  const handleDecrement = () => {
-    if (count > 1) {
-      cart.find((item) => item.name === props.title).count = count;
-      setCount(count - 1);
-      props.totalDecrement(props.title);
-    }
-  };
-
-
-  useImperativeHandle(ref, () => ({
-    callParentFunction: props.totalIncrement,
-    callParentFunction2: props.totalDecrement,
-  }));
-
+function CartElement(props) {
   return (
-    <Container className="bg-custom-color-grey py-4 px-3 rounded-4 mb-3 img-effect border">
-      <Row>
-        <Col xs={12} md={4}>
+    <Container className="sb-cart-item rounded-4 p-3 mb-3 position-relative">
+      <button
+        type="button"
+        aria-label={`Remove ${props.title}`}
+        title="Remove"
+        className="sb-cart-remove-btn"
+        onClick={() => props.removeItem(props.title)}
+      >
+        ×
+      </button>
+      <Row className="align-items-center g-3">
+        <Col xs={12} md={3}>
           <img
-            alt=""
+            alt={props.title}
             src={props.image}
-            className="img-fluid rounded-3 border"
-            style={{
-              height: "100%",
-              minWidth: "100%",
-              maxHeight: "160px",
-              objectFit: "cover",
-              maxWidth: "130px",
-            }}
-          ></img>
+            className="sb-cart-thumb rounded-3"
+          />
         </Col>
-        <Col className="d-flex flex-column justify-content-center my-3" md={4}>
-          <h5 className="fw-bold">{props.title}</h5>
-          <h6 className="fw-light">{props.description}</h6>
+        <Col xs={12} md={4}>
+          <h6 className="fw-bold mb-1">{props.title}</h6>
+          <p className="text-muted small mb-0">{props.description}</p>
         </Col>
-        <Col
-          className="d-flex flex-column justify-content-center p-0 align-items-center mt-3"
-          md={1}
-        >
-          <h6 className="fw-bold mb-0"> € {props.price * count}</h6>
-        </Col>
-        <Col
-          className="d-flex flex-row justify-content-center align-items-center gap-3 ps-4 mt-3"
-          md={3}
-        >
-          <Button
-            onClick={handleDecrement}
-            className="position-relative ms-1"
-            style={{ maxHeight: "50px", minWidth: "40px" }}
-          >
-            -
-          </Button>
-
-          <div
-            className="fw-bold position-relative text-center"
-            style={{ maxHeight: "50px", minWidth: "18px" }}
-          >
-            {count}
+        <Col xs={6} md={3}>
+          <div className="sb-qty-stepper">
+            <button
+              type="button"
+              aria-label="Decrease quantity"
+              onClick={() => props.totalDecrement(props.title)}
+            >
+              −
+            </button>
+            <span>{props.quantity}</span>
+            <button
+              type="button"
+              aria-label="Increase quantity"
+              onClick={() => props.totalIncrement(props.title)}
+            >
+              +
+            </button>
           </div>
-
-          <Button
-            onClick={handleIncrement}
-            className="position-relative"
-            style={{ maxHeight: "40px", minWidth: "40px" }}
-          >
-            +
-          </Button>
         </Col>
-        <Col className="d-flex flex-column justify-content-center mt-5 mb-2">
-          <Button
-            variant="outline-secondary"
-            className="btn-rounded"
-            onClick={() => props.removeItem(props.title)}
-          >
-            Remove
-          </Button>
+        <Col xs={6} md={2} className="text-end">
+          <span className="fw-bold">
+            € {(props.price * props.quantity).toFixed(2)}
+          </span>
         </Col>
       </Row>
     </Container>
   );
-});
+}
 
 export default CartElement;

@@ -1,14 +1,46 @@
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 
+// ── SonicBeats design tokens ────────────────────────────────
+// Brand steel blue, deepened for authority
+$primary: #34618b;
+
+// Cool-tinted tonal greys (harmonize with the steel blue)
 $custom-colors: (
-  "custom-color-grey": #e2e2e2,
-  "custom-color-grey-2": #ededed,
-  "primary": #3f75a0,
+  "custom-color-grey": #eef1f4,
+  "custom-color-grey-2": #f6f8fa,
+  "ink": #0f1216,
+  "primary": $primary,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
-$primary: #3f75a0;
+// Typography
+$font-family-sans-serif:
+  "Manrope",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  Arial,
+  sans-serif;
+$headings-font-weight: 700;
+$line-height-base: 1.65;
+
+// Canvas & text
+$body-bg: #fcfcfd;
+$body-color: #31373d;
+$headings-color: #14181d;
+
+// Radius scale (consumed by rounded-* utilities)
+$border-radius: 0.625rem;
+$border-radius-sm: 0.5rem;
+$border-radius-lg: 0.875rem;
+$border-radius-xl: 1.25rem;
+$border-radius-xxl: 1.75rem;
+
+// Softer default borders
+$border-color: #e5e9ed;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

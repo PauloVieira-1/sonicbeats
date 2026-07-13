@@ -1,22 +1,42 @@
-
 .container-box {
     display: flex;
     flex-direction: row;
     width: 90vw;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .panel {
     background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
-    height: 80vh;
-    border-radius: 50px;
+    height: min(72vh, 640px);
+    border-radius: 1.75rem;
     color: white;
     cursor: pointer;
     flex: 0.5;
     margin: 10px;
     position: relative;
-    transition: flex 0.7s ;
+    overflow: hidden;
+    transition: flex 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Legibility scrim under captions on the expanded panel */
+.panel::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.55) 100%);
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
+.panel.active::after {
+    opacity: 1;
 }
 
 .panel h3 {
@@ -26,6 +46,7 @@
     left: 20px;
     margin: 0;
     opacity: 0;
+    z-index: 1;
 }
 
 .panel p {
@@ -35,12 +56,14 @@
     left: 20px;
     margin: 0;
     opacity: 0;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .panel.active {
     flex: 5;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    transition: flex 0.7s;
+    box-shadow: var(--sb-shadow-lg);
+    transition: flex 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .panel.active h3 {
@@ -50,9 +73,8 @@
 
 .panel.active p {
     opacity: 1;
-        transition: opacity 0.3s ease-in 0.4s;
+    transition: opacity 0.3s ease-in 0.4s;
 }
-
 
 @media (max-width: 480px) {
     .container-box {

@@ -1,8 +1,4 @@
-import Product1 from "../../assets/jpeg/ProductsAvailable/Available1.jpeg";
-import Product2 from "../../assets/jpeg/Donneger2.jpg";
-import Product3 from "../../assets/jpeg/ProductsAvailable/Available3.jpeg";
 import Product4 from "../../assets/jpeg/tinymen.JPG";
-import BlackBox2 from "../../assets/jpeg/ProductsAvailable/Blackbox2.jpeg";
 import BlackBox3 from "../../assets/jpeg/ProductsAvailable/BlackBox3.jpeg";
 import TonyMen2 from "../../assets/jpeg/ProductsAvailable/TinyMen2.jpeg";
 import TonyMen3 from "../../assets/jpeg/ProductsAvailable/TinyMen3.jpeg";
@@ -12,7 +8,6 @@ import A2 from "../../assets/jpeg/ProductsAvailable/A2.jpeg";
 import A3 from "../../assets/jpeg/ProductsAvailable/A3.jpeg"; 
 import DA from "../../assets/jpeg/ProductsAvailable/DonagerA.jpeg";
 import DB from "../../assets/jpeg/ProductsAvailable/DonagerB.jpeg";
-import color1 from "../../assets/jpeg/ProductsAvailable/color1.jpeg";
 import color2 from "../../assets/jpeg/ProductsAvailable/color2.jpeg";
 import color3 from "../../assets/jpeg/ProductsAvailable/color3.jpeg";
 import color4 from "../../assets/jpeg/ProductsAvailable/color4.jpeg";

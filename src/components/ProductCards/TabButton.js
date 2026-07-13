@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 import "./ProductCards.css";
 function TabButton({ children, onSelect, isActive }) {
   return (
-    <li>
+    <li className="sb-tab-item">
       <Button
         onClick={onSelect}
         className={`btn-rounded wide ${isActive ? "active shadow-transition" : ""}`}

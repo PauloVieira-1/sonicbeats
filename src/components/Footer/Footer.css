@@ -1,0 +1,67 @@
+.sb-footer {
+  background: var(--sb-ink);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.sb-footer-logo {
+  filter: invert(1);
+  mix-blend-mode: screen;
+  opacity: 0.95;
+}
+
+.sb-footer-link {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sb-footer-link:hover,
+.sb-footer-link:focus-visible {
+  color: #fff;
+}
+
+.sb-footer-divider {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 0;
+}
+
+.sb-footer-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition:
+    background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sb-footer-social:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-2px);
+}
+
+.sb-footer-fineprint {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.sb-footer-mail {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sb-footer-mail:hover {
+  color: #fff;
+}

@@ -1,15 +1,8 @@
-.img-effect {
-  transition: all 0.4s ease-out;
-}
-
-.img-effect:hover {
-  transform: scale(1.06);
-}
-
 .main-container {
   position: relative;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .img-custom {
@@ -17,7 +10,7 @@
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: all 0.5s ease;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .img-front {
@@ -26,6 +19,8 @@
   height: 100%;
   backface-visibility: hidden;
   transform-style: preserve-3d;
+  border-radius: 1.25rem;
+  overflow: hidden;
 }
 
 .img-back {
@@ -35,6 +30,8 @@
   backface-visibility: hidden;
   transform-style: preserve-3d;
   transform: rotateY(180deg) scale(1.06);
+  border-radius: 1.25rem;
+  overflow: hidden;
 }
 
 .flip {

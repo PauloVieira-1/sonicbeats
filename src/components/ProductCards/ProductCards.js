@@ -10,107 +10,68 @@ import { ProductExamples } from "./ProductExampls";
 
 function ProductCards() {
   const [product, setProduct] = useState("Product1");
-  function handleSelect(product) {
-    setProduct(product);
-  }
+  const selected = ProductExamples[product];
 
   return (
-    <Container className="mt-5 bg-light px-4 pt-4 rounded-5 shadow mb-5">
+    <Container className="mt-5 bg-custom-color-grey-2 px-4 px-md-5 pt-5 pb-4 rounded-4 mb-5">
       <Row>
-        <Col xs={12} md={12}>
-          <h2>Our Speaker Selection</h2>
-          <p>
-            Explore our collection of past speaker models. Each product is
-            unique, offering distinctive features and quality sound. These
-            photos showcase some of our past and current designs, however, you can place
-            orders for customized speakers tailored to your specific needs.
+        <Col xs={12} lg={8}>
+          <span className="sb-eyebrow">The collection</span>
+          <h2 className="display-6 fw-bold">Our speaker selection</h2>
+          <p className="text-muted mt-2">
+            Browse our handcrafted speaker range and explore the details that
+            make each model unique. Every design can be tailored to suit your
+            space, style, and sound preferences.
           </p>
         </Col>
-        <Col xs={6} md={4}></Col>
       </Row>
-      <Row className="mt-3">
-        <Col xs={6} md={3} className="mt-3">
-          <TabButton
-            isActive={product === "Product1"}
-            onSelect={() => handleSelect("Product1")}
-          >
-            {ProductExamples["Product1"].name}
-          </TabButton>
-        </Col>
-        <Col xs={6} md={3} className="mt-3">
-          <TabButton
-            isActive={product === "Product2"}
-            onSelect={() => handleSelect("Product2")}
-          >
-            {ProductExamples["Product2"].name}
-          </TabButton>
-        </Col>
-        <Col xs={6} md={3} className="mt-3">
-          <TabButton
-            isActive={product === "Product3"}
-            onSelect={() => handleSelect("Product3")}
-          >
-            {ProductExamples["Product3"].name}
-          </TabButton>
-        </Col>
-        <Col xs={6} md={3} className="mt-3">
-          <TabButton
-            isActive={product === "Product4"}
-            onSelect={() => handleSelect("Product4")}
-          >
-            {ProductExamples["Product4"].name}
-          </TabButton>
-        </Col>
+      <Row className="mt-2">
+        {Object.keys(ProductExamples).map((key) => (
+          <Col xs={6} md={3} className="mt-3" key={key}>
+            <TabButton
+              isActive={product === key}
+              onSelect={() => setProduct(key)}
+            >
+              {ProductExamples[key].name}
+            </TabButton>
+          </Col>
+        ))}
       </Row>
       <Row>
-        <div className="mt-4 mb-5">
-          <Container>
-            <Row className="rounded-3 bg-white border">
-              <Col className="p-0" sm={12} lg={6}>
-                <img
-                  src={ProductExamples[product].image}
-                  alt={ProductExamples[product].title}
-                  className="img-fluid rounded-3 h-100"
-                  style={{
-                    maxHeight: "430px",
-                    minWidth: "100%",
-                    objectFit: "cover",
-                    minHeight: "430px",
-                  }}
-                />
-              </Col>
-              <Col className="px-5 py-4" sm={12} lg={6}>
-                <h3 className="mb-3">{ProductExamples[product].title}</h3>
-                <p>{ProductExamples[product].description}</p>
-                <ul className="fw-lighter ml-0">
-                  {Object.keys(ProductExamples[product].specifications).map(
-                    (key) => (
-                      <li key={key} className="text-start bullets">
-                        {key.split("_").join(" ")}:{" "}
-                        {ProductExamples[product].specifications[key]}
-                      </li>
-                    ),
-                  )}
-                  {Object.keys(ProductExamples[product].aditionalInfo).map(
-                    (key) => (
-                      <li className="text-start bullets" key={key}>
-                        {ProductExamples[product].aditionalInfo[key]}
-                      </li>
-                    ),
-                  )}
-                </ul>
-              </Col>
-            </Row>
-          </Container>
-          {/*<Card>
-            <Card.Img variant="top" src={ProductExamples[product].image}/>
-            <Card.Body>
-              <Card.Title>{ProductExamples[product].title}</Card.Title>
-              <Card.Text>
-                {ProductExamples[product].description}
-              </Card.Text>
-            </Card.Body>
-          </Card>*/}
+        <div className="mt-4 mb-4">
+          <Row
+            key={product}
+            className="sb-fade-in rounded-4 bg-white overflow-hidden"
+          >
+            <Col className="p-0" sm={12} lg={6}>
+              <img
+                src={selected.image}
+                alt={selected.title}
+                className="img-fluid h-100 w-100"
+                style={{
+                  maxHeight: "480px",
+                  minHeight: "430px",
+                  objectFit: "cover",
+                }}
+              />
+            </Col>
+            <Col className="px-4 px-lg-5 py-4 py-lg-5" sm={12} lg={6}>
+              <h3 className="fw-bold mb-3">{selected.title}</h3>
+              <p className="text-muted">{selected.description}</p>
+              <div className="mt-4">
+                {Object.keys(selected.specifications).map((key) => (
+                  <div className="sb-spec-row" key={key}>
+                    <span className="sb-spec-label">
+                      {key.split("_").join(" ")}
+                    </span>
+                    <span className="sb-spec-value">
+                      {selected.specifications[key]}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </Col>
+          </Row>
         </div>
       </Row>
     </Container>

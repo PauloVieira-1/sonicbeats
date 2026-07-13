@@ -1,13 +1,14 @@
 import { Card } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import ListGroup from "react-bootstrap/ListGroup";
 import "./Product.css";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 function ProductItem(props) {
-  
   const [success, setSuccess] = useState(false);
-  const [mainImage, setMainImage] = useState(props.image ); // Track displayed image
+  const [mainImage, setMainImage] = useState(props.image);
+  const revertTimer = useRef(null);
+
+  useEffect(() => () => clearTimeout(revertTimer.current), []);
 
   const handleAddToCart = () => {
     const existingItem = props.cart?.find((item) => item.name === props.title);
@@ -24,63 +25,69 @@ function ProductItem(props) {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     props.setCart(updatedCart);
     setSuccess(true);
+    clearTimeout(revertTimer.current);
+    revertTimer.current = setTimeout(() => setSuccess(false), 1600);
   };
 
+  const thumbnails = [
+    props.image,
+    props.image2,
+    props.image3,
+    props.image4,
+    props.image5,
+    props.image6,
+    props.treble,
+  ].filter((img) => img !== undefined && img !== null);
+
   return (
-    <Card className="mx-3 my-3 img-effect" style={{ width: "25rem" }}>
-      {/* Main Image */}
+    <Card
+      className="sb-product-card rounded-4 overflow-hidden img-effect h-100"
+      style={{ width: "100%", maxWidth: "25rem" }}
+    >
       <Card.Img
         variant="top"
         src={mainImage || ""}
-        className="img-fluid"
-        style={{
-          height: "100%",
-          minWidth: "100%",
-          maxHeight: "300px",
-          objectFit: "cover",
-        }}
+        className="sb-product-hero"
+        alt={props.title}
       />
 
       {/* Thumbnails */}
-      <div className="d-flex justify-content-center gap-2 my-2">
-        {[props.image, props.image2, props.image3, props.image4, props.image5, props.image6, props.treble].filter(img => img !== undefined && img !== null)
-          .map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`thumb-${index}`}
-              onClick={() => setMainImage(img)}
-              style={{
-                width: "60px",
-                height: "60px",
-                objectFit: "cover",
-                cursor: "pointer",
-                border: mainImage === img ? "2px solid #007bff" : "2px solid transparent",
-                borderRadius: "5px"
-              }}
-            />
-          ))}
+      <div className="d-flex gap-2 px-3 pt-3 flex-wrap">
+        {thumbnails.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt=""
+            onClick={() => setMainImage(img)}
+            className={`sb-thumb ${mainImage === img ? "is-selected" : ""}`}
+          />
+        ))}
       </div>
 
-      <Card.Body className="p-4">
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text>{props.description}</Card.Text>
-
-        <ListGroup className="list-group-flush my-4">
-          {props.specifications.map((spec, index) => (
-            <ListGroup.Item key={index} className="border-0">- {spec}</ListGroup.Item>
-          ))}
-        </ListGroup>
-        <Card.Text className="fw-bold fs-5">
-          ${props.price.toFixed(2)}
+      <Card.Body className="p-4 d-flex flex-column">
+        <Card.Title as="h5" className="fw-bold">
+          {props.title}
+        </Card.Title>
+        <Card.Text className="text-muted small mb-3">
+          {props.description}
         </Card.Text>
-        <Button
-          variant={`${success ? "success" : "primary"}`}
-          className="rounded-5 px-4"
-          onClick={handleAddToCart}
-        >
-          {success ? "Added Successfully" : "Add to Cart"}
-        </Button>
+
+        <ul className="sb-product-specs list-unstyled small text-muted mb-0">
+          {props.specifications.map((spec, index) => (
+            <li key={index}>{spec}</li>
+          ))}
+        </ul>
+
+        <div className="d-flex justify-content-between align-items-center mt-auto pt-4">
+          <span className="fw-bold fs-4">€ {props.price.toFixed(2)}</span>
+          <Button
+            variant="primary"
+            className="btn-rounded px-4"
+            onClick={handleAddToCart}
+          >
+            {success ? "Added ✓" : "Add to cart"}
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   );

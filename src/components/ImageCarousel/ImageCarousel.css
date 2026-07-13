@@ -1,11 +1,27 @@
 .c-item {
-  height: 580px;
+  height: min(72vh, 580px);
 }
 
 .c-img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+/* Legibility scrim under captions */
+.c-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45%;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.55) 100%);
+  pointer-events: none;
+}
+
+.carousel-caption {
+  z-index: 1;
 }
 
 .recolor-image-h img {

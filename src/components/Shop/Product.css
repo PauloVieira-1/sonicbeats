@@ -1,11 +1,40 @@
-.img-effect {
-  transition: all 0.4s ease-out;
+.sb-product-card {
+  border: 1px solid rgba(15, 18, 22, 0.08);
 }
 
-.img-effect:hover {
-  transform: scale(1.02);
-  box-shadow:
-    rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+.sb-product-hero {
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.sb-thumb {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  opacity: 0.75;
+  transition:
+    opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sb-thumb:hover {
+  opacity: 1;
+}
+
+.sb-thumb.is-selected {
+  border-color: var(--sb-ink);
+  opacity: 1;
+}
+
+.sb-product-specs li {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(15, 18, 22, 0.06);
+}
+
+.sb-product-specs li:last-child {
+  border-bottom: 0;
 }

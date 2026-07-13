@@ -1,62 +1,39 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import { forwardRef } from "react";
-import "../ImageCarousel/ImageCarousel.css";
 
-const InfoSection = forwardRef(function InfoSection(props, ref) {
-  let additionalButton = null;
-
-  if (props.button) {
-    additionalButton = (
-      <Button
-        className={`d-flex align-items-center btn-rounded d-none d-lg-block position-relative start-10 bottom-0 ${props.active ? "active shadow-transition" : ""}`}
-        style={{
-          marginTop: "65px",
-          paddingLeft: "16px",
-          paddingRight: "16px",
-        }}
-        variant="outline-secondary"
-        ref={ref}
-        onClick={props.onSelect}
-      >
-        Discover Team
-      </Button>
-    );
-  }
-
+function InfoSection(props) {
   return (
     <div className="p-1">
       <Container
-        style={{ minHeight: "400px" }}
-        className={`my-4 bg-light rounded-4 ${props.shadow ? "shadow" : ""}`}
+        className={`my-4 bg-custom-color-grey-2 rounded-4 overflow-hidden ${
+          props.shadow ? "shadow" : ""
+        }`}
       >
-        <Row>
-          <Col className="p-5">
-            <h3 className="fw-medium fs-1 mb-">{props.title}</h3>
-            <h5 className="fw-lighter mt-3">{props.heading}</h5>
-            <p className="mt-3">{props.content}</p>
-            <div className="flex">{additionalButton}</div>
+        <Row className="align-items-stretch">
+          <Col lg={props.image ? 7 : 12} className="p-4 p-lg-5">
+            <span className="sb-eyebrow">{props.title}</span>
+            <h3 className="fw-bold mb-3">{props.heading}</h3>
+            <p className="text-muted mb-0" style={{ maxWidth: "44rem" }}>
+              {props.content}
+            </p>
           </Col>
-          {additionalContent(props)}
+          {props.image && (
+            <Col lg={5} className="p-0">
+              <img
+                className="w-100 h-100"
+                style={{
+                  objectFit: "cover",
+                  minHeight: "300px",
+                  maxHeight: "480px",
+                }}
+                src={props.image}
+                alt=""
+              />
+            </Col>
+          )}
         </Row>
       </Container>
     </div>
   );
-});
+}
 
 export default InfoSection;
-
-function additionalContent(props) {
-  if (props.image) {
-    return (
-      <Col md={4} className="p-4 text-center .d-sm-none .d-md-block">
-        <img
-          className="img-fluid rounded-3 border"
-          style={{ height: "400px" }}
-          src={props.image}
-          alt=""
-        />
-      </Col>
-    );
-  }
-}

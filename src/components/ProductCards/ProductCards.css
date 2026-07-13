@@ -1,4 +1,4 @@
-li {
+.sb-tab-item {
   list-style: none;
   text-align: center;
 }
@@ -7,7 +7,9 @@ li {
   list-style: circle;
 }
 
-.active {
-  background-color: #3f75a0;
-  transition: shadow-transition 0.5s;
+/* Active selection tab — ink pill for confident contrast */
+.btn.active {
+  background-color: var(--sb-ink);
+  border-color: var(--sb-ink);
+  color: #fff;
 }

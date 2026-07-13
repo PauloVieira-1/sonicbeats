@@ -1,7 +1,7 @@
 import cloudinary from "cloudinary-video-player";
 import { useEffect, useRef } from "react";
 
-const VideoPlayer = ({ id, publicId, ...props }) => {
+const VideoPlayer = ({ id, publicId, active, ...props }) => {
   const cloudinaryRef = useRef();
   const playerRef = useRef();
 

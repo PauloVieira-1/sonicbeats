@@ -185,10 +185,10 @@ function NavRounded() {
             </Button>
           </Link>
 
-          {/* MOBILE MENU BUTTONS */}
-          <div className="d-block d-md-block d-lg-none">
+          {/* MOBILE MENU — secondary actions */}
+          <div className="d-block d-lg-none sb-mobile-actions">
             <Link
-              className="d-block text-decoration-none nav-link mx-2"
+              className="d-block text-decoration-none nav-link"
               to={"/shop"}
               onClick={() => {
                 window.scrollTo(0, 0);
@@ -199,18 +199,18 @@ function NavRounded() {
             </Link>
 
             <Link
-              className="mx-2 d-block mb-3 text-decoration-none nav-link"
+              className="d-block text-decoration-none nav-link"
               to={"/request-product"}
               onClick={() => {
                 window.scrollTo(0, 0);
                 setExpanded(false);
               }}
             >
-              Request Custom
+              Request custom
             </Link>
 
             <Link
-              className="mx-2 d-block"
+              className="d-block text-decoration-none mt-3"
               to={"/cart"}
               onClick={() => {
                 window.scrollTo(0, 0);
@@ -218,10 +218,17 @@ function NavRounded() {
               }}
             >
               <Button
-                className="btn-rounded d-flex align-items-center justify-content-center px-5 mt-2"
+                className="btn-rounded w-100 d-flex align-items-center justify-content-center gap-2 py-2"
                 variant="primary"
               >
-                <img alt="" src={Cart} width="18" height="18" />
+                <img
+                  alt=""
+                  src={Cart}
+                  width="17"
+                  height="17"
+                  style={{ filter: "invert(1)" }}
+                />
+                View cart
               </Button>
             </Link>
           </div>

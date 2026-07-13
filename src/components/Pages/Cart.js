@@ -1,125 +1,122 @@
 import { Container, Row, Col } from "react-bootstrap";
 import CartElement from "../CartElement/CartElement";
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { ProductsAvailable } from "../Shop/ProductsAvailable";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import cartImg from "../../assets/svg/cart4.svg";
 
-
-
-function Cart({cartApp, setCartApp}) {
-  const cartRef = useRef(null);
-
+function Cart({ cartApp, setCartApp }) {
   const [total, setTotal] = useState(0);
-  const [cartEmpty, setCartEmpty] = useState(true);
 
   const totalAmount = useCallback(
     (cart) =>
       cart.reduce(
         (sum, item) => sum + item.count * ProductsAvailable[item.name].price,
-        0
+        0,
       ),
-    []
-  );  
+    [],
+  );
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartApp));
     setTotal(totalAmount(cartApp));
-
-    if (cartApp.length > 0) {
-      setCartEmpty(false);
-    }
   }, [cartApp, totalAmount]);
 
-  const handleIncrement = (item) => {
-    setTotal((prevtotal) => prevtotal + ProductsAvailable[item].price);
-    const existingItem = cartApp.find((i) => i.name === item);
-    if (existingItem) {
-      const updatedCart = cartApp.map((i) => {
-        if (i.name === item) {
-          return { ...i, count: i.count + 1 };
-        }
-        return i;
-      });
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
-      setCartApp(updatedCart);
-    }
-  };
-  const handleDecrement = (item) => {
-    setTotal((prevtotal) => prevtotal - ProductsAvailable[item].price);
-    const existingItem = cartApp.find((i) => i.name === item);
-    if (existingItem && existingItem.count > 1) {
-      const updatedCart = cartApp.map((i) => {
-        if (i.name === item) {
-          return { ...i, count: i.count - 1 };
-        }
-        return i;
-      });
-      
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
-      setCartApp(updatedCart);
-    } 
+  const changeQuantity = (name, delta) => {
+    setCartApp(
+      cartApp.map((item) =>
+        item.name === name
+          ? { ...item, count: Math.max(1, item.count + delta) }
+          : item,
+      ),
+    );
   };
 
-  const HandleRemoveItem = (title) => {
-    const filtered = cartApp.filter((item) => item.name !== title);
+  const handleIncrement = (name) => changeQuantity(name, 1);
+  const handleDecrement = (name) => changeQuantity(name, -1);
 
-    localStorage.setItem("cart", JSON.stringify(filtered));
-    setCartApp(filtered);
+  const handleRemoveItem = (name) => {
+    setCartApp(cartApp.filter((item) => item.name !== name));
   };
 
+  const cartEmpty = cartApp.length === 0;
 
   return (
-    <Container className="my-5">
-      <Row>
-        <div className="pb-3">
-          <h2>Shopping Cart</h2>
-          <hr></hr>
-        </div>
-        <Col xs={12} lg={7}>
+    <Container className="mb-5 mt-5 pt-5" style={{ minHeight: "55vh" }}>
+      <Row className="pt-4 pb-3">
+        <Col>
+          <span className="sb-eyebrow">Your order</span>
+          <h1 className="display-5 fw-bold">Shopping cart</h1>
+        </Col>
+      </Row>
+      <Row className="gy-4">
+        <Col xs={12} lg={8}>
           {cartEmpty && (
-            <div className="text-center p-5 mb-4">
-              <p className="fw-bold fs-5 mx-1 text-center mt-1 mb-2">
-                Your Cart is Empty
+            <div className="text-center py-5">
+              <div
+                className="d-inline-flex align-items-center justify-content-center rounded-circle bg-custom-color-grey-2"
+                style={{ width: "88px", height: "88px" }}
+              >
+                <img
+                  src={cartImg}
+                  alt=""
+                  style={{ width: "36px", height: "36px", opacity: 0.55 }}
+                />
+              </div>
+              <h5 className="fw-bold mt-4">Your cart is empty</h5>
+              <p className="text-muted">
+                Discover our handcrafted speakers and find your sound.
               </p>
-              <img
-                src={cartImg}
-                className="img-fluid"
-                alt=""
-                style={{ height: "70px", width: "70px" }}
-              ></img>
+              <Link to="/shop" className="text-decoration-none">
+                <Button
+                  variant="outline-secondary"
+                  className="btn-rounded wide mt-2"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  Browse the shop
+                </Button>
+              </Link>
             </div>
           )}
-          {cartApp.map((item, index) => (
+          {cartApp.map((item) => (
             <CartElement
-              key={index}
+              key={item.name}
               image={ProductsAvailable[item.name].image}
               title={ProductsAvailable[item.name].title}
               description={ProductsAvailable[item.name].description}
               price={ProductsAvailable[item.name].price}
               quantity={item.count}
-              removeItem={HandleRemoveItem}
+              removeItem={handleRemoveItem}
               totalIncrement={handleIncrement}
               totalDecrement={handleDecrement}
-              ref={cartRef}
             />
           ))}
         </Col>
-        <Col>
-          <Card className="bg-dark text-white px-5 py-3 rounded-4">
-            <h1 className="fw-bold mt-3 mb-2 mx-3">Total</h1>
-            <h4 className="fw-light mx-3 mt-1 mb-3">€ {total}</h4>
-            <div className="mx-1 my-4">
-              {totalAmount(cartApp) > 0 && (
-                <Link to="/checkout">
-                  <Button className="btn-rounded">
-                    Checkout
-                  </Button>
-                </Link>
-              )}
+        <Col xs={12} lg={4}>
+          <Card className="sb-totals text-white rounded-4 border-0 p-4">
+            <h5 className="fw-bold mb-4">Order summary</h5>
+            <div className="d-flex justify-content-between sb-text-dim mb-2">
+              <span>Subtotal</span>
+              <span>€ {total.toFixed(2)}</span>
             </div>
+            <div className="d-flex justify-content-between sb-text-dim mb-3">
+              <span>Shipping</span>
+              <span>{cartEmpty ? "—" : "Free"}</span>
+            </div>
+            <hr className="border-secondary opacity-25 my-2" />
+            <div className="d-flex justify-content-between fw-bold fs-5 mt-2 mb-4">
+              <span>Total</span>
+              <span>€ {total.toFixed(2)}</span>
+            </div>
+            {!cartEmpty && (
+              <Link to="/checkout" className="text-decoration-none d-grid">
+                <Button variant="light" className="btn-rounded py-2 fw-bold">
+                  Checkout
+                </Button>
+              </Link>
+            )}
           </Card>
         </Col>
       </Row>

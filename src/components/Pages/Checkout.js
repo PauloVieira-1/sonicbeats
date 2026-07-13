@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "./CheckoutForm"; // your form component
-import Logo from "../../assets/jpeg/Logo2.jpeg"; // fallback logo (optional)
-import { Container } from "react-bootstrap";
+import CheckoutForm from "./CheckoutForm";
+import { Container, Spinner } from "react-bootstrap";
 
 const stripePromise = loadStripe(
   "pk_test_51QsRhPFb6wjMdquvTpSk3zcc0QmBsfpgFj93vYigON7NbdTQiGxNFVXRGpDMocPA6nHE4dayUS3Nrgly5a9g55u4005hIKHfTg"
@@ -39,15 +38,15 @@ const Checkout = ({ cart }) => {
   if (!clientSecret) {
     return (
       <Container
-        className="d-flex justify-content-center align-items-center text-center"
-        style={{ height: "100vh" }}
+        className="d-flex flex-column justify-content-center align-items-center text-center"
+        style={{ minHeight: "70vh" }}
       >
-        <img
-          src={Logo}
-          alt="Loading checkout..."
-          className="img-fluid"
-          style={{ width: "500px", height: "100px" }}
+        <Spinner
+          animation="border"
+          role="status"
+          style={{ color: "var(--sb-ink)" }}
         />
+        <p className="text-muted mt-3 mb-0">Preparing secure checkout…</p>
       </Container>
     );
   }

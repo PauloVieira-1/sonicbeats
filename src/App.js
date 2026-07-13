@@ -11,17 +11,17 @@ import Purchase from "./components/Pages/Purchase";
 import Cart from "./components/Pages/Cart";
 import Checkout from "./components/Pages/Checkout";
 import CompleteCheckout from "./components/Pages/CompleteCheckout";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
-  const [cart, setCart] = useState([]);
-
-  useEffect(() => {
-    const localCart = JSON.parse(localStorage.getItem("cart"));
-    if (localCart) {
-      setCart(localCart);
+  const [cart, setCart] = useState(() => {
+    try {
+      const localCart = JSON.parse(localStorage.getItem("cart"));
+      return Array.isArray(localCart) ? localCart : [];
+    } catch {
+      return [];
     }
-  }, []);
+  });
 
   return (
     <>

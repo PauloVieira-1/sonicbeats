@@ -26,15 +26,20 @@ const CheckoutForm = () => {
       },
     });
 
-    if (error.type === "card_error" || error.type === "validation_error") {
+    if (
+      error &&
+      (error.type === "card_error" || error.type === "validation_error")
+    ) {
       console.log("Error:", error.message);
     }
   };
 
   return (
-    <Container className="my-5">
+    <Container className="mb-5 mt-5 pt-5" style={{ maxWidth: "640px" }}>
       <form onSubmit={handleSubmit}>
-        <h3 className="my-4">Contact info</h3>
+        <span className="sb-eyebrow">Secure checkout</span>
+        <h1 className="display-6 fw-bold mb-4">Complete your order</h1>
+        <h5 className="my-4 fw-bold">Contact info</h5>
         <LinkAuthenticationElement
           // onChange={(event) => {
           //   setEmail(event.value.email);
@@ -45,14 +50,16 @@ const CheckoutForm = () => {
             },
           }}
         />
-        <h3 className="my-4">Shipping</h3>
+        <h5 className="my-4 fw-bold">Shipping</h5>
         <AddressElement
           options={{ mode: "shipping", allowedCountries: ["NL"] }}
         />
-        <h3 className="my-4">Payment</h3>
+        <h5 className="my-4 fw-bold">Payment</h5>
 
         <PaymentElement />
-        <button className="my-4 btn btn-primary rounded-5 px-4">Submit</button>
+        <button className="my-4 btn btn-primary btn-rounded w-100 py-2 fw-bold">
+          Pay now
+        </button>
       </form>
     </Container>
   );

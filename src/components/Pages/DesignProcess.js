@@ -4,14 +4,13 @@ import Timeline from "../Timeline/Timeline";
 function DesignProcess() {
   return (
     <>
-      <Container className="my-3" sm={12} lg={6}>
+      <Container className="my-3">
         <Row>
           <Col className="text-center p-5 my-5">
-            <h1 className="fw-bold display-3">
-              Welcome to the Sonicraft Design Process
-            </h1>
+            <span className="sb-eyebrow">The process</span>
+            <h1 className="fw-bold display-3">From concept to concert.</h1>
             <h3 className="fw-lighter mt-3">
-              Explore Our Craftsmanship and Innovation in Every Detail
+              Explore our craftsmanship and innovation in every detail
             </h3>
           </Col>
         </Row>

@@ -13,7 +13,7 @@ function GalleryImage({ imageName, children, id, ...props }) {
     <Container
       className="p-2 my-2 main-container"
       onClick={() => handleClick()}
-      style={{ cursor: "-moz-grab", maxHeight: "400px" }}
+      style={{ maxHeight: "400px" }}
     >
       <div
         className={`img-custom ${isFlipped ? "flip" : ""}`}
