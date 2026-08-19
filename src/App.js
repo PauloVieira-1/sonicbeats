@@ -5,7 +5,6 @@ import Gallery from "../src/components/Pages/Gallery";
 import RequestProduct from "../src/components/Pages/RequestProduct";
 import NavRounded from "./components/Navbar/Nav";
 import Footer from "./components/Footer/Footer";
-import DesignProcess from "./components/Pages/DesignProcess";
 import AdditionalServices from "./components/Pages/AditionalServices";
 import Purchase from "./components/Pages/Purchase";
 import Cart from "./components/Pages/Cart";
@@ -31,10 +30,15 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/request-product" element={<RequestProduct />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/designprocess" element={<DesignProcess />} />
         <Route path="/additional-services" element={<AdditionalServices />} />
-        <Route path="/shop" element={<Purchase cart={cart} setCart={setCart} />} />
-        <Route path="/cart" element={<Cart cartApp={cart} setCartApp={setCart} />} />
+        <Route
+          path="/shop"
+          element={<Purchase cart={cart} setCart={setCart} />}
+        />
+        <Route
+          path="/cart"
+          element={<Cart cartApp={cart} setCartApp={setCart} />}
+        />
         <Route path="/checkout" element={<Checkout cart={cart} />} />
         <Route path="/complete-checkout" element={<CompleteCheckout />} />
       </Routes>

@@ -18,14 +18,11 @@
   --sb-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* Layered ambient shadows */
-  --sb-shadow-sm:
-    0 1px 2px rgba(15, 23, 42, 0.05),
+  --sb-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05),
     0 2px 8px -2px rgba(15, 23, 42, 0.06);
-  --sb-shadow-md:
-    0 1px 2px rgba(15, 23, 42, 0.04),
+  --sb-shadow-md: 0 1px 2px rgba(15, 23, 42, 0.04),
     0 8px 24px -6px rgba(15, 23, 42, 0.1);
-  --sb-shadow-lg:
-    0 1px 2px rgba(15, 23, 42, 0.04),
+  --sb-shadow-lg: 0 1px 2px rgba(15, 23, 42, 0.04),
     0 12px 32px -8px rgba(15, 23, 42, 0.12),
     0 32px 64px -16px rgba(15, 23, 42, 0.1);
 }
@@ -147,8 +144,7 @@ h4,
 
 /* Dark section with subtle ambient glow */
 .sb-dark-section {
-  background:
-    radial-gradient(
+  background: radial-gradient(
       55% 75% at 22% 35%,
       rgba(84, 110, 190, 0.16),
       transparent 65%
@@ -431,4 +427,77 @@ h4,
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ── Made-to-order queue ────────────────────────────────────
+   Sets build expectations on the shop. Deliberately quiet: no
+   live badges or pulsing dots, the schedule is the message. */
+.sb-queue-band {
+  background: var(--sb-surface);
+  border: 1px solid var(--sb-border);
+}
+
+.sb-queue-stages {
+  display: grid;
+  gap: 1.5rem 2.5rem;
+}
+
+@media (min-width: 576px) {
+  .sb-queue-stages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.sb-queue-stages li {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.sb-queue-step {
+  flex: 0 0 auto;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--sb-border);
+  color: var(--sb-text-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Reserve terms modal — roomier and softer than Bootstrap's default */
+.sb-modal .modal-content {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: var(--sb-shadow-lg);
+}
+
+/* Required disclosure at checkout */
+.sb-ack {
+  background: var(--sb-surface);
+  border: 1px solid var(--sb-border);
+  border-radius: 0.75rem;
+  padding: 1rem 1.15rem;
+}
+
+.sb-ack .form-check-input:checked {
+  background-color: var(--sb-ink);
+  border-color: var(--sb-ink);
+}
+
+/* Inline text link — ink with a hairline underline, not Bootstrap blue */
+.sb-link {
+  color: var(--sb-ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(15, 18, 22, 0.25);
+  padding-bottom: 2px;
+  transition: border-color 0.25s var(--sb-ease);
+}
+
+.sb-link:hover {
+  color: var(--sb-ink);
+  border-bottom-color: var(--sb-ink);
 }

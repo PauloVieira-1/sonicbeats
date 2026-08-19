@@ -3,6 +3,7 @@ import ProductItem from "../Shop/ProductItem";
 import Reveal from "../Reveal/Reveal";
 import Simplistic from "../../assets/jpeg/simplisticbg.jpeg";
 import { ProductsAvailable } from "../../components/Shop/ProductsAvailable";
+import { CURRENT_SLOT, BUILD_STAGES } from "../../config/queue";
 
 function Purchase({ cart, setCart }) {
   return (
@@ -31,12 +32,43 @@ function Purchase({ cart, setCart }) {
               Browse our shop to find the perfect speaker for you
             </h4>
             <p className="text-muted mt-2" style={{ maxWidth: "34rem" }}>
-              Although you are able to send us custom requests, we have a
-              large inventory of speakers to choose from.
+              Every pair is built by hand once you reserve a slot. Custom
+              requests are welcome too.
             </p>
           </Col>
         </Row>
       </Reveal>
+
+      <Reveal>
+        <div className="sb-queue-band rounded-4 p-4 p-md-5 mb-5">
+          <Row className="g-4 align-items-start">
+            <Col xs={12} lg={4}>
+              <span className="sb-eyebrow">The workshop queue</span>
+              <h4 className="fw-bold mb-2">Now building for {CURRENT_SLOT}</h4>
+              <p className="text-muted mb-3">
+                Nothing here sits on a shelf. Reserving a build slot puts your
+                pair in the queue, and it is made in the order slots are taken.
+              </p>
+            </Col>
+            <Col xs={12} lg={8}>
+              <ol className="sb-queue-stages list-unstyled mb-0">
+                {BUILD_STAGES.map((stage, index) => (
+                  <li key={stage.title}>
+                    <span className="sb-queue-step">{index + 1}</span>
+                    <div>
+                      <h6 className="fw-bold mb-1">{stage.title}</h6>
+                      <p className="text-muted small mb-0">
+                        {stage.description}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </Col>
+          </Row>
+        </div>
+      </Reveal>
+
       <Row className="g-4 justify-content-center">
         {Object.keys(ProductsAvailable).map((key, index) => {
           return (

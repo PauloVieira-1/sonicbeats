@@ -23,7 +23,10 @@ function CartElement(props) {
         </Col>
         <Col xs={12} md={4}>
           <h6 className="fw-bold mb-1">{props.title}</h6>
-          <p className="text-muted small mb-0">{props.description}</p>
+          <p className="text-muted small mb-1">{props.description}</p>
+          <p className="text-muted small mb-0">
+            Built to order in {props.leadTime}
+          </p>
         </Col>
         <Col xs={6} md={3}>
           <div className="sb-qty-stepper">

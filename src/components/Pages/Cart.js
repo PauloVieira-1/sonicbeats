@@ -6,6 +6,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import cartImg from "../../assets/svg/cart4.svg";
+import { leadTimeFor, CURRENT_SLOT } from "../../config/queue";
 
 function Cart({ cartApp, setCartApp }) {
   const [total, setTotal] = useState(0);
@@ -48,7 +49,7 @@ function Cart({ cartApp, setCartApp }) {
       <Row className="pt-4 pb-3">
         <Col>
           <span className="sb-eyebrow">Your order</span>
-          <h1 className="display-5 fw-bold">Shopping cart</h1>
+          <h1 className="display-5 fw-bold">Your build slots</h1>
         </Col>
       </Row>
       <Row className="gy-4">
@@ -65,7 +66,7 @@ function Cart({ cartApp, setCartApp }) {
                   style={{ width: "36px", height: "36px", opacity: 0.55 }}
                 />
               </div>
-              <h5 className="fw-bold mt-4">Your cart is empty</h5>
+              <h5 className="fw-bold mt-4">No build slots reserved</h5>
               <p className="text-muted">
                 Discover our handcrafted speakers and find your sound.
               </p>
@@ -87,6 +88,7 @@ function Cart({ cartApp, setCartApp }) {
               title={ProductsAvailable[item.name].title}
               description={ProductsAvailable[item.name].description}
               price={ProductsAvailable[item.name].price}
+              leadTime={leadTimeFor(item.name)}
               quantity={item.count}
               removeItem={handleRemoveItem}
               totalIncrement={handleIncrement}
@@ -96,13 +98,13 @@ function Cart({ cartApp, setCartApp }) {
         </Col>
         <Col xs={12} lg={4}>
           <Card className="sb-totals text-white rounded-4 border-0 p-4">
-            <h5 className="fw-bold mb-4">Order summary</h5>
+            <h5 className="fw-bold mb-4">Reservation summary</h5>
             <div className="d-flex justify-content-between sb-text-dim mb-2">
               <span>Subtotal</span>
               <span>€ {total.toFixed(2)}</span>
             </div>
             <div className="d-flex justify-content-between sb-text-dim mb-3">
-              <span>Shipping</span>
+              <span>Crating &amp; delivery</span>
               <span>{cartEmpty ? "—" : "Free"}</span>
             </div>
             <hr className="border-secondary opacity-25 my-2" />
@@ -111,11 +113,17 @@ function Cart({ cartApp, setCartApp }) {
               <span>€ {total.toFixed(2)}</span>
             </div>
             {!cartEmpty && (
-              <Link to="/checkout" className="text-decoration-none d-grid">
-                <Button variant="light" className="btn-rounded py-2 fw-bold">
-                  Checkout
-                </Button>
-              </Link>
+              <>
+                <Link to="/checkout" className="text-decoration-none d-grid">
+                  <Button variant="light" className="btn-rounded py-2 fw-bold">
+                    Reserve your build slot
+                  </Button>
+                </Link>
+                <p className="sb-text-dim small mb-0 mt-3">
+                  Made to order — the workshop is currently building for{" "}
+                  {CURRENT_SLOT}. Your slot is confirmed once payment completes.
+                </p>
+              </>
             )}
           </Card>
         </Col>

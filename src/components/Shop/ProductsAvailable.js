@@ -3,9 +3,9 @@ import BlackBox3 from "../../assets/jpeg/ProductsAvailable/BlackBox3.jpeg";
 import TonyMen2 from "../../assets/jpeg/ProductsAvailable/TinyMen2.jpeg";
 import TonyMen3 from "../../assets/jpeg/ProductsAvailable/TinyMen3.jpeg";
 import Treble from "../../assets/jpeg/treble.jpeg";
-import A1 from "../../assets/jpeg/ProductsAvailable/A1.jpeg"; 
-import A2 from "../../assets/jpeg/ProductsAvailable/A2.jpeg"; 
-import A3 from "../../assets/jpeg/ProductsAvailable/A3.jpeg"; 
+import A1 from "../../assets/jpeg/ProductsAvailable/A1.jpeg";
+import A2 from "../../assets/jpeg/ProductsAvailable/A2.jpeg";
+import A3 from "../../assets/jpeg/ProductsAvailable/A3.jpeg";
 import DA from "../../assets/jpeg/ProductsAvailable/DonagerA.jpeg";
 import DB from "../../assets/jpeg/ProductsAvailable/DonagerB.jpeg";
 import color2 from "../../assets/jpeg/ProductsAvailable/color2.jpeg";
@@ -15,7 +15,7 @@ import bg1 from "../../assets/jpeg/ProductsAvailable/bg1.jpeg";
 import bg2 from "../../assets/jpeg/ProductsAvailable/bg2.jpeg";
 import wine from "../../assets/jpeg/ProductsAvailable/wine.jpg";
 import people from "../../assets/jpeg/ProductsAvailable/people.jpg";
-
+import { PRICES } from "../../config/prices";
 
 export const ProductsAvailable = {
   Blackbox: {
@@ -35,9 +35,9 @@ export const ProductsAvailable = {
       "Battery Life: Up to 6.5 hours",
       "Materials: Natural wood, eco 3D-printed shell, natural foam",
       "Weight: 3kg",
-      "Controls: Bass, Treble, Volume"
+      "Controls: Bass, Treble, Volume",
     ],
-    price: 399,
+    price: PRICES.Blackbox,
     id: "blackbox",
   },
 
@@ -51,7 +51,7 @@ export const ProductsAvailable = {
     description:
       "Built for artists and musicians who demand high-performance audio.",
     specifications: ["200W RMS", "10kg", "18hr Battery Life"],
-    price: 1150,
+    price: PRICES.Donager,
     id: "donager",
   },
 
@@ -61,10 +61,9 @@ export const ProductsAvailable = {
     image3: TonyMen3,
     treble: Treble,
     title: "TinyMen",
-    description:
-      "Compact studio monitors with impressive 160W RMS output.",
+    description: "Compact studio monitors with impressive 160W RMS output.",
     specifications: ["30% off!", "160W RMS", "3kg", "Powered via Outlet"],
-    price: 349.3,
+    price: PRICES.TinyMen,
     id: "tinymen",
   },
 
@@ -81,9 +80,9 @@ export const ProductsAvailable = {
       "LED Light Show",
       "Black Manta Fabric & 3D-Printed Shell (75% Natural Friendly)",
       "Bluetooth 5.0 Wireless",
-      "Built-In Equalizer"
+      "Built-In Equalizer",
     ],
-    price: 599, 
+    price: PRICES.Aurora,
     id: "aurora",
   },
 };
